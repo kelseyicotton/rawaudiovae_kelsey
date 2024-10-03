@@ -2,7 +2,7 @@ import os
 import torch
 from torch.utils.data import Dataset, TensorDataset, DataLoader
 
-from spectralvae.dataset import TestDataset, ToTensor
+from spectralaudiovae.spectralvae.dataset import TestDataset, ToTensor #kelsey change to link to file
 
 import numpy as np
 import librosa
