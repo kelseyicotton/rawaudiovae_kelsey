@@ -2,11 +2,9 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
-  """ 
-  Kelsey Changes: 
-  - [ ] No burp bass, maybe try a different activation function on the last dense layer of the decoder? 
-  - [ ] Model experiments: No burp bass, since the window is small, capturing bass may be challenging. How about an LSTM layer? 
-  """
+# Kelsey Changes: 
+# - [ ] No burp bass, maybe try a different activation function on the last dense layer of the decoder? 
+# - [x] Model experiments: No burp bass, since the window is small, capturing bass may be challenging. How about an LSTM layer? 
 
 class VAE(nn.Module):
   def __init__(self, segment_length, n_units, latent_dim, lstm_hidden_size): #kelsey addition

@@ -3,6 +3,7 @@ import torch
 from torch.utils.data import Dataset, TensorDataset, DataLoader
 
 from spectralaudiovae.spectralvae.dataset import TestDataset, ToTensor #kelsey change to link to file
+from rawvae.model import VAE # import new VAE class with the LSTM additions
 
 import numpy as np
 import librosa
@@ -19,13 +20,11 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
   # List the test audio files from the dataset
   test_files = [f for f in my_test_audio.glob('*.wav')]
 
-
-  with open( audio_log_dir.joinpath(test_audio+'.txt'), 'w') as test_audio_txt:
+  with open(audio_log_dir.joinpath(test_audio+'.txt'), 'w') as test_audio_txt:
     test_audio_txt.writelines( "{}\n".format(test_file) for test_file in test_files)
 
   init = True
   for test in test_files:
-      
     audio_full, _ = librosa.load(test, sr=sampling_rate)
 
     if init:
@@ -39,3 +38,5 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
   
   sf.write(audio_log_dir.joinpath('test_original.wav'), test_dataset_audio, sampling_rate)
   return test_dataset, audio_log_dir
+
+# New function to test 
