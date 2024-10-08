@@ -45,7 +45,7 @@ class VAE(nn.Module):
       h3 = h3.unsqueeze(1)  # Add time dimension for LSTM #kelsey addition
       h3, _ = self.lstm_decoder(h3) #kelsey addition
       h3 = h3.squeeze(1) #kelsey addition
-      return F.tanh(self.fc4(h3))
+      return F.tanh(self.fc4(h3)) # for later: experiment with alt activation function
 
   def forward(self, x):
       mu, logvar = self.encode(x.view(-1, self.segment_length))
