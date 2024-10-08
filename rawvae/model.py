@@ -28,6 +28,11 @@ class VAE(nn.Module):
   def decode(self, z):
       h3 = F.relu(self.fc3(z))
       return F.tanh(self.fc4(h3))
+  """ 
+  Kelsey Changes: 
+  - [ ] No burp bass, maybe try a different activation function on the last dense layer of the decoder? 
+  - [ ] Model experiments: No burp bass, since the window is small, capturing bass may be challenging. How about an LSTM layer? 
+  """
 
   def forward(self, x):
       mu, logvar = self.encode(x.view(-1, self.segment_length))
