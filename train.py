@@ -153,7 +153,7 @@ if generate_test:
 
 # Neural Network
 
-model = VAE(segment_length, n_units, latent_dim, lstm_hidden_size).to(device) # add lstm_hidden_size
+model = VAE(segment_length, n_units, latent_dim).to(device) # add lstm_hidden_size
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Some dummy variables to keep track of loss situation
