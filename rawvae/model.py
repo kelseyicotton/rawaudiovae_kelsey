@@ -47,9 +47,13 @@ class VAE(nn.Module):
       eps = torch.randn_like(std)
       return mu + eps*std
 
+  # def decode(self, z):
+  #     h3 = F.relu(self.fc3(z)) # OG model
+  #     return F.relu_(self.fc4(h3)) # OG model #change to a ReLU activation function
+ 
   def decode(self, z):
-      h3 = F.relu(self.fc3(z)) # OG model
-      return F.relu_(self.fc4(h3)) # OG model #change to a ReLU activation function
+      h3 = F.relu(self.fc3(z))
+      return = F.silu(self.fc4(h3)) # Apply SiLU activation to the last layer 
       
       # h3 = F.relu(self.fc3(z)) #lstm_layers_model 
       # h3 = h3.unsqueeze(1) #lstm_layers_model  # Add time dimension for LSTM #kelsey addition
