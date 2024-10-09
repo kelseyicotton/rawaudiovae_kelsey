@@ -53,7 +53,7 @@ class VAE(nn.Module):
  
   def decode(self, z):
       h3 = F.relu(self.fc3(z))
-      return = F.silu(self.fc4(h3)) # Apply SiLU activation to the last layer 
+      return F.silu(self.fc4(h3)) # Apply SiLU activation to the last layer 
       
       # h3 = F.relu(self.fc3(z)) #lstm_layers_model 
       # h3 = h3.unsqueeze(1) #lstm_layers_model  # Add time dimension for LSTM #kelsey addition
