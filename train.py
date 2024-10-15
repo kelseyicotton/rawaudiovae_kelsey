@@ -113,7 +113,7 @@ config['dataset']['workspace'] = str(workdir.resolve())
 print("Workspace: {}".format(workdir))
 
 from torch.utils.tensorboard import SummaryWriter
-writer = SummaryWriter(workdir / "logging") #🪵 Make directory to save tensorboard goodies in
+writer = SummaryWriter(workdir / "tensorboard-logging") #🪵 Make directory to save tensorboard goodies in
 
 # Create the dataset
 print('creating the dataset...')
