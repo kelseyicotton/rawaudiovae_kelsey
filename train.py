@@ -26,6 +26,9 @@ import json
 import matplotlib.pyplot as plt
 import pdb
 
+from torch.utils.tensorboard import SummaryWriter
+writer = SummaryWriter(workdir / "logging") #🪵 Make directory to save tensorboard goodies in
+
 # Parse arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--config', type=str, default ='./default.ini' , help='path to the config file')
@@ -181,8 +184,19 @@ for epoch in range(epochs):
     train_loss += loss.item()
     optimizer.step()
   
+  average_loss = train_loss / len(training_dataset) # Calculate average loss
   print('====> Epoch: {} - Total loss: {} - Average loss: {:.9f}'.format(
-          epoch, train_loss, train_loss / len(training_dataset)))
+          epoch, train_loss, average_loss))
+
+  # 🪵Log the average loss and lr on TensorBoard
+  writer.add_scalar('Loss/train', average_loss, epoch)
+  writer.add_scalar('Learning Rate', learning_rate, epoch) 
+
+  # 🪵Log the weights and gradients
+  for name, param in model.named_parameters():
+    writer.add_histogram(f"Weights/{name}", param.data, epoch)
+    if param.grad is not None:
+      writer.add_histogram(f"Gradients/{name}", param.grad.data, epoch)       
   
   if epoch % checkpoint_interval == 0 and epoch != 0: 
     print('Checkpoint - Epoch {}'.format(epoch))
@@ -277,3 +291,6 @@ else:
 
 with open(config_path, 'w') as configfile:
   config.write(configfile)
+
+# Close TensorBoard writer
+writer.close()
