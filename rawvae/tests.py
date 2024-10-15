@@ -34,7 +34,8 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
       test_dataset_audio = np.concatenate((test_dataset_audio, audio_full ),axis=0)
   
   # Create a dataloader for test dataset
-  test_dataset = TestDataset(test_dataset_audio, segment_length = segment_length, sampling_rate = sampling_rate, transform=ToTensor(), hop_size = hop_size)
+  test_dataset = TestDataset(test_dataset_audio, segment_length = segment_length, sampling_rate = sampling_rate, transform=ToTensor(), hop_size = hop_length)
+  
   
   sf.write(audio_log_dir.joinpath('test_original.wav'), test_dataset_audio, sampling_rate)
   return test_dataset, audio_log_dir
