@@ -27,7 +27,6 @@ import matplotlib.pyplot as plt
 import pdb
 
 from torch.utils.tensorboard import SummaryWriter
-writer = SummaryWriter(workdir / "logging") #🪵 Make directory to save tensorboard goodies in
 
 # Parse arguments
 parser = argparse.ArgumentParser()
@@ -113,6 +112,9 @@ config['dataset']['workspace'] = str(workdir.resolve())
 
 print("Workspace: {}".format(workdir))
 
+from torch.utils.tensorboard import SummaryWriter
+writer = SummaryWriter(workdir / "logging") #🪵 Make directory to save tensorboard goodies in
+
 # Create the dataset
 print('creating the dataset...')
 training_array = []
@@ -180,23 +182,30 @@ for epoch in range(epochs):
     optimizer.zero_grad()
     recon_batch, mu, logvar = model(data)
     loss = loss_function(recon_batch, data, mu, logvar, kl_beta, segment_length)
+
+    # Log batch loss
+    writer.add_scalar('Loss/Batch', loss.item(), epoch * len(training_dataloader) + i)  #🪵 Log batch loss
+
     loss.backward()
     train_loss += loss.item()
+
     optimizer.step()
+
+    # Log learning rate
+    writer.add_scalar('Learning Rate', optimizer.param_groups[0]['lr'], epoch * len(training_dataloader) + i)  #🪵 Log learning rate
   
   average_loss = train_loss / len(training_dataset) # Calculate average loss
   print('====> Epoch: {} - Total loss: {} - Average loss: {:.9f}'.format(
           epoch, train_loss, average_loss))
+  
+  writer.add_scalar('Loss/train', average_loss, epoch) # 🪵Log the average loss 
 
-  # 🪵Log the average loss and lr on TensorBoard
-  writer.add_scalar('Loss/train', average_loss, epoch)
-  writer.add_scalar('Learning Rate', learning_rate, epoch) 
 
-  # 🪵Log the weights and gradients
-  for name, param in model.named_parameters():
-    writer.add_histogram(f"Weights/{name}", param.data, epoch)
-    if param.grad is not None:
-      writer.add_histogram(f"Gradients/{name}", param.grad.data, epoch)       
+  # # 🪵Log the weights and gradients
+  # for name, param in model.named_parameters():
+  #   writer.add_histogram(f"Weights/{name}", param.data, epoch)
+  #   if param.grad is not None:
+  #     writer.add_histogram(f"Gradients/{name}", param.grad.data, epoch)       
   
   if epoch % checkpoint_interval == 0 and epoch != 0: 
     print('Checkpoint - Epoch {}'.format(epoch))

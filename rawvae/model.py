@@ -59,6 +59,7 @@ class VAE(nn.Module):
       # h3 = h3.unsqueeze(1) #lstm_layers_model  # Add time dimension for LSTM #kelsey addition
       # h3, _ = self.lstm_decoder(h3) #lstm_layers_model  #kelsey addition
       # h3 = h3.squeeze(1) #lstm_layers_model  #kelsey addition
+      
       return F.tanh(self.fc4(h3)) #og/lstm_layers_model 
 
   def forward(self, x):
