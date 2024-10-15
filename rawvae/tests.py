@@ -9,6 +9,7 @@ import numpy as np
 import librosa
 from pathlib import Path
 import soundfile as sf
+import configparser
 
 def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_length):
   # Create a set samples to test the network as it trains
@@ -33,9 +34,14 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
     else:
       test_dataset_audio = np.concatenate((test_dataset_audio, audio_full ),axis=0)
   
-  # Create a dataloader for test dataset
-  test_dataset = TestDataset(test_dataset_audio, segment_length = segment_length, sampling_rate = sampling_rate, transform=ToTensor(), hop_size = hop_length)
+  config_path = './default.ini'
+  config = configparser.ConfigParser(allow_no_value=True)
+  config.read(config_path)
+  hop_length = config['audio'].getint('hop_length')
   
+  # Create a dataloader for test dataset
+  test_dataset = TestDataset(test_dataset_audio, segment_length = segment_length, sampling_rate = sampling_rate, transform=ToTensor(), hop_length= hop_length)
+
   
   sf.write(audio_log_dir.joinpath('test_original.wav'), test_dataset_audio, sampling_rate)
   return test_dataset, audio_log_dir
