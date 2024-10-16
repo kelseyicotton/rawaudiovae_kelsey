@@ -147,6 +147,9 @@ os.makedirs(checkpoint_dir, exist_ok=True)
 log_dir = workdir / 'logs'
 os.makedirs(log_dir, exist_ok=True)
 
+#TensorBoard Writer #kelsey/addition
+writer = SummaryWriter(log_dir=log_dir)
+
 if generate_test:
 
   test_dataset, audio_log_dir = init_test_audio(workdir, test_audio, dataset_test_audio, sampling_rate, segment_length)
@@ -185,6 +188,13 @@ for epoch in range(epochs):
   print('====> Epoch: {} - Total loss: {} - Average loss: {:.9f}'.format(
           epoch, train_loss, train_loss / len(training_dataset)))
   
+  # TensorBoard_TrainingLoss #kelsey/addition
+  writer.add_scalar('Loss/training', train_loss / len(training_dataset), epoch)
+
+  # TensorBoard_ModelParameters #kelsey/addition
+  for name, param in model.named_parameters():
+    writer.add_histogram(name, param, epoch)
+  
   if epoch % checkpoint_interval == 0 and epoch != 0: 
     print('Checkpoint - Epoch {}'.format(epoch))
     state = {
@@ -213,6 +223,9 @@ for epoch in range(epochs):
       test_predictions_np = test_predictions.view(-1).cpu().numpy()
       sf.write( audio_out, test_predictions_np, sampling_rate)
       print('Audio examples generated: {}'.format(audio_out))
+
+      #TensorBoard_ReconstructedAudio #kelsey/addition
+      writer.add_audio('Reconstructed Audio', test_predictions_np, epoch, sample_rate=sampling_rate)
     
     torch.save(state, checkpoint_dir.joinpath('ckpt_{:05d}'.format(epoch)))
   
@@ -278,3 +291,6 @@ else:
 
 with open(config_path, 'w') as configfile:
   config.write(configfile)
+
+# TensorBoard_Close #kelsey/addition
+writer.close()

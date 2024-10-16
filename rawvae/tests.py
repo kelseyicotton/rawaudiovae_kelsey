@@ -2,7 +2,9 @@ import os
 import torch
 from torch.utils.data import Dataset, TensorDataset, DataLoader
 
-from spectralvae.dataset import TestDataset, ToTensor
+# from spectralvae.dataset import TestDataset, ToTensor #kelsey: spectralvae.dataset does not exist in this repo
+# check with kt if below is what he meant
+from rawvae.dataset import TestDataset, ToTensor
 
 import numpy as np
 import librosa
