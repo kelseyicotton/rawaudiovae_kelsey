@@ -32,15 +32,18 @@ class VAE(nn.Module):
     # self.lstm_decoder = nn.LSTM(lstm_hidden_size, n_units, batch_first=True) #lstm_layers_model #kelsey addition
     # self.fc4 = nn.Linear(n_units, segment_length)
 
+  # ORIGINAL
   def encode(self, x):
       h1 = F.relu(self.fc1(x))
       return self.fc21(h1), self.fc22(h1)
-
-      # h1 = F.relu(self.fc1(x)) #lstm_layers_model #kelsey addition
-      # h1 = h1.unsqueeze(1) #lstm_layers_model # Add time dimension for LSTM #kelsey addition
-      # _, (h_n, _) = self.lstm_encoder(h1) #lstm_layers_model  #kelsey addition
-      # h_n = h_n.squeeze(0) #lstm_layers_model  #kelsey addition
-      # return self.fc21(h_n), self.fc22(h_n) #lstm_layers_model  #kelsey addition
+  
+  # LSTM LAYERS
+  # def encode(self, x):
+      # h1 = F.relu(self.fc1(x)) 
+      # h1 = h1.unsqueeze(1) # Add time dimension for LSTM
+      # _, (h_n, _) = self.lstm_encoder(h1) 
+      # h_n = h_n.squeeze(0) 
+      # return self.fc21(h_n), self.fc22(h_n) 
 
   def reparameterize(self, mu, logvar):
       std = torch.exp(0.5*logvar)
