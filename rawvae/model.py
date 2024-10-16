@@ -46,15 +46,16 @@ class VAE(nn.Module):
       std = torch.exp(0.5*logvar)
       eps = torch.randn_like(std)
       return mu + eps*std
-
-  # def decode(self, z):
-  #     h3 = F.relu(self.fc3(z)) # OG model
-  #     return F.relu_(self.fc4(h3)) # OG model #change to a ReLU activation function
  
   # ORIGINAL  
   def decode(self, z):
       h3 = F.relu(self.fc3(z))      
       return F.tanh(self.fc4(h3)) 
+  
+  #ReLU ACTIVATION
+  # def decode(self, z):
+  #   h3 = F.relu(self.fc3(z))
+  #     return F.relu_(self.fc4(h3)) 
   
   # SiLU ACTIVATION
   # def decode(self, z):
