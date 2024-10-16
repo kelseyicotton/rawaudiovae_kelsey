@@ -26,7 +26,7 @@ import json
 import matplotlib.pyplot as plt
 import pdb
 
-from torch.utils.tensorboard import SummaryWriter #kelsey/addition
+from torch.utils.tensorboard import SummaryWriter 
 
 # Parse arguments
 parser = argparse.ArgumentParser()
