@@ -76,6 +76,7 @@ latent_dim = config['VAE'].getint('latent_dim')
 n_units = config['VAE'].getint('n_units')
 kl_beta = config['VAE'].getfloat('kl_beta')
 device = config['VAE'].get('device')
+lstm_hidden_size = config['VAE'].getint('lstm_hidden_size')
 
 # etc
 example_length = config['extra'].getint('example_length')
@@ -157,7 +158,7 @@ if generate_test:
 
 # Neural Network
 
-model = VAE(segment_length, n_units, latent_dim).to(device)
+model = VAE(segment_length, n_units, latent_dim, lstm_hidden_size).to(device) # add lstm_hidden_size
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Some dummy variables to keep track of loss situation
