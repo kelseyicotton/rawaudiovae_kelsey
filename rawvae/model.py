@@ -51,16 +51,23 @@ class VAE(nn.Module):
   #     h3 = F.relu(self.fc3(z)) # OG model
   #     return F.relu_(self.fc4(h3)) # OG model #change to a ReLU activation function
  
+  # ORIGINAL  
   def decode(self, z):
-      h3 = F.relu(self.fc3(z))
+      h3 = F.relu(self.fc3(z))      
+      return F.tanh(self.fc4(h3)) 
+  
+  # SiLU ACTIVATION
+  # def decode(self, z):
+      # h3 = F.relu(self.fc3(z))
       # return F.silu(self.fc4(h3)) # Apply SiLU activation to the last layer 
-      
-      # h3 = F.relu(self.fc3(z)) #lstm_layers_model 
-      # h3 = h3.unsqueeze(1) #lstm_layers_model  # Add time dimension for LSTM #kelsey addition
-      # h3, _ = self.lstm_decoder(h3) #lstm_layers_model  #kelsey addition
-      # h3 = h3.squeeze(1) #lstm_layers_model  #kelsey addition
-      
-      return F.tanh(self.fc4(h3)) #og/lstm_layers_model 
+
+  # LSTM LAYERS
+  # def decode(self, z):     
+      # h3 = F.relu(self.fc3(z)) 
+      # h3 = h3.unsqueeze(1) # Add time dimension for LSTM 
+      # h3, _ = self.lstm_decoder(h3) #lstm_layers_model  
+      # h3 = h3.squeeze(1) #lstm_layers_model  
+      # return F.tanh(self.fc4(h3)) 
 
   def forward(self, x):
       mu, logvar = self.encode(x.view(-1, self.segment_length))
