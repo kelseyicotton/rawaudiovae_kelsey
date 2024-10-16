@@ -2,7 +2,7 @@ import os
 import torch
 from torch.utils.data import Dataset, TensorDataset, DataLoader
 
-from spectralaudiovae.spectralvae.dataset import TestDataset, ToTensor #kelsey change to link to file
+from rawvae.dataset import TestDataset, ToTensor 
 from rawvae.model import VAE # import new VAE class with the LSTM additions
 
 import numpy as np
@@ -45,5 +45,3 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
   
   sf.write(audio_log_dir.joinpath('test_original.wav'), test_dataset_audio, sampling_rate)
   return test_dataset, audio_log_dir
-
-# New function to test 
