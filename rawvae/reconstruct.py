@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Load our audio file 
-audio_file_path = r"D:\kelse\03_Repositories\rawaudiovae_kelsey\spectralaudiovae\spectralvae\01-1_burps_ah-200106_1520-008.wav"
+audio_file_path = r"D:\kelse\03_Repositories\rawaudiovae_kelsey\rawvae\01-1_burps_ah-200106_1520-008.wav"
 audio_np, sampling_rate = librosa.load(audio_file_path, sr=None)
 
 # Define segment and hop size
@@ -36,7 +36,7 @@ segment_lengths = [512, 1024, 2048, 4096, 8192] # Previously tested values [512,
 hop_sizes = [100, 200, 300, 600, 512, 1024, 2048] # Previously tested values [100, 200, 300, 600, 512, 1024, 2048] 
 
 # Create a directory to save spectrogram plots
-plot_dir = r"D:\kelse\03_Repositories\rawaudiovae_kelsey\spectralaudiovae\spectralvae\reconstructed_audio_plots"
+plot_dir = r"D:\kelse\03_Repositories\rawaudiovae_kelsey\rawvae\reconstructions\plots"
 os.makedirs(plot_dir, exist_ok=True)
 
 results = {} # 
@@ -104,7 +104,7 @@ for segment_length in segment_lengths:
         results[(segment_length, hop_size)] = reconstructed_audio
         
         # Save the reconstructed audio for listening
-        output_file_path = f"D:\\kelse\\03_Repositories\\rawaudiovae_kelsey\\spectralaudiovae\\spectralvae\\reconstructions\\reconstructed_audio_{segment_length}_{hop_size}.wav"
+        output_file_path = f"D:\kelse\03_Repositories\rawaudiovae_kelsey\rawvae\reconstructions\audio{segment_length}_{hop_size}.wav"
         sf.write(output_file_path, reconstructed_audio, sampling_rate)
         print(f"Reconstructed audio saved to {output_file_path} with segment length {segment_length} and hop size {hop_size}.")
 
