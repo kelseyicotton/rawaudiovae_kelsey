@@ -112,6 +112,9 @@ config['dataset']['workspace'] = str(workdir.resolve())
 
 print("Workspace: {}".format(workdir))
 
+from torch.utils.tensorboard import SummaryWriter
+writer = SummaryWriter(workdir / "tensorboard-logging") #🪵 Make directory to save tensorboard goodies in
+
 # Create the dataset
 print('creating the dataset...')
 training_array = []
@@ -158,7 +161,7 @@ if generate_test:
 
 # Neural Network
 
-model = VAE(segment_length, n_units, latent_dim, lstm_hidden_size).to(device) # add lstm_hidden_size
+model = VAE(segment_length, n_units, latent_dim).to(device) # add lstm_hidden_size
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Some dummy variables to keep track of loss situation
@@ -182,12 +185,30 @@ for epoch in range(epochs):
     optimizer.zero_grad()
     recon_batch, mu, logvar = model(data)
     loss = loss_function(recon_batch, data, mu, logvar, kl_beta, segment_length)
+
+    # Log batch loss
+    writer.add_scalar('Loss/Batch', loss.item(), epoch * len(training_dataloader) + i)  #🪵 Log batch loss
+
     loss.backward()
     train_loss += loss.item()
+
     optimizer.step()
+
+    # Log learning rate
+    writer.add_scalar('Learning Rate', optimizer.param_groups[0]['lr'], epoch * len(training_dataloader) + i)  #🪵 Log learning rate
   
+  average_loss = train_loss / len(training_dataset) # Calculate average loss
   print('====> Epoch: {} - Total loss: {} - Average loss: {:.9f}'.format(
-          epoch, train_loss, train_loss / len(training_dataset)))
+          epoch, train_loss, average_loss))
+  
+  writer.add_scalar('Loss/train', average_loss, epoch) # 🪵Log the average loss 
+
+
+  # # 🪵Log the weights and gradients
+  # for name, param in model.named_parameters():
+  #   writer.add_histogram(f"Weights/{name}", param.data, epoch)
+  #   if param.grad is not None:
+  #     writer.add_histogram(f"Gradients/{name}", param.grad.data, epoch)       
   
   # TensorBoard_TrainingLoss #kelsey/addition
   writer.add_scalar('Loss/training', train_loss / len(training_dataset), epoch)
