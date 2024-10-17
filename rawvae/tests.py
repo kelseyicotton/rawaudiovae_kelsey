@@ -40,7 +40,7 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
   hop_length = config['audio'].getint('hop_length')
   
   # Create a dataloader for test dataset
-  test_dataset = TestDataset(test_dataset_audio, segment_length = segment_length, sampling_rate = sampling_rate, transform=ToTensor(), hop_length= hop_length)
+  test_dataset = TestDataset(test_dataset_audio, segment_length = segment_length, sampling_rate = sampling_rate, transform=ToTensor())
 
   
   sf.write(audio_log_dir.joinpath('test_original.wav'), test_dataset_audio, sampling_rate)
