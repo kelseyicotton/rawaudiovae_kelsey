@@ -24,7 +24,7 @@ class VAE(nn.Module):
     self.fc4 = nn.Linear(n_units, segment_length) 
 
 # LSTM LAYERS
-""" THIS NEEDS CHECKING KELSEY"""
+# THIS NEEDS CHECKING KELSEY"""
 
 # class VAE(nn.Module):
 #   def __init__(self, segment_length, n_units, latent_dim, lstm_hidden_size): 

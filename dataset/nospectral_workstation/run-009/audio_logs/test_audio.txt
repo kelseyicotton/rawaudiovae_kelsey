@@ -1,0 +1,34 @@
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\27-tongue_teeth clicks -190516_2002-glued-004.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\27-tongue_teeth clicks -190516_2002-glued-005.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\27-tongue_teeth clicks -190516_2002-glued-006.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\27-tongue_teeth clicks -190516_2002-glued-007.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\27-tongue_teeth clicks -190516_2002-glued-008.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\28-A_spoken-190430_1514-001-001.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\28-A_spoken-190430_1514-001-002.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\28-A_spoken-190430_1514-001-003.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\28-A_spoken-190430_1514-001-004.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\28-A_spoken-190430_1514-001-005.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\28-A_spoken-190430_1514-002-001.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\72-190430_1636-004-007.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\72-190430_1636-004-008.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-001.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-002.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-003.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-004.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-005.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-006.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-001-007.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-001.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-002.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-003.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-004.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-005.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-006.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-007.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-008.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\76-q_spoken-190430_1639-002-009.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\77-r_spoken_gain@8-190430_1644-01-001-001.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\77-r_spoken_gain@8-190430_1644-01-001-002.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\77-r_spoken_gain@8-190430_1644-01-001-003.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\77-r_spoken_gain@8-190430_1644-01-001-004.wav
+D:\kelse\03_Repositories\rawaudiovae_kelsey\dataset\test_audio\77-r_spoken_gain@8-190430_1644-01-001-005.wav
