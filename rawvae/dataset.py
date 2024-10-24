@@ -24,7 +24,7 @@ class AudioDataset(torch.utils.data.Dataset):
             num_zeros = hop_size - (len(audio_np) % hop_size)
             audio_np = np.pad(audio_np, (0, num_zeros), 'constant', constant_values=(0,0))
 
-        self.audio_np = audio_np
+        self.audio_np = audio_np # store padded audio
         
     def __getitem__(self, index):
         
