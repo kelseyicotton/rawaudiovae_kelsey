@@ -32,7 +32,7 @@ def init_test_audio(workdir, test_audio, my_test_audio, sampling_rate, segment_l
       test_dataset_audio = audio_full
       init = False
     else:
-      test_dataset_audio = np.concatenate((test_dataset_audio, audio_full ),axis=0)
+      test_dataset_audio = np.concatenate((test_dataset_audio, audio_full ), axis=0)
   
   config_path = './default.ini'
   config = configparser.ConfigParser(allow_no_value=True)
