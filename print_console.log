@@ -1,0 +1,2717 @@
+2025-04-10 13:13:57,681 - Workspace: /mimer/NOBACKUP/groups/x_kelco_musai_2024/FSD50K/FSD50K_MASTER/20250410_BaselineRun_FSD50KLib_workstation/run-000
+2025-04-10 13:13:57,691 - Creating the dataset...
+2025-04-10 13:14:08,216 - Found 36350 audio files.
+2025-04-10 13:14:40,064 - Initialized dataset with 36350 files
+2025-04-10 13:14:40,065 - Starting training with AudioIterableDataset...
+2025-04-10 13:15:07,389 - Estimated total segments: 87275916 (based on file sizes)
+2025-04-10 13:15:07,390 - Total segments available: 87275916
+2025-04-10 13:15:07,390 - Segment length: 1024
+2025-04-10 13:15:07,390 - Hop size: 128
+2025-04-10 13:15:07,390 - Saving initial configs...
+2025-04-10 18:59:15,664 - Number of parameters: 5772800
+2025-04-10 18:59:15,665 - Epoch 0/199
+2025-04-10 18:59:15,665 - ----------
+2025-04-10 18:59:15,665 - Using default batch limit of 20,000 for epoch 0
+2025-04-10 19:03:23,618 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:03:23,619 - First batch device before transfer: cpu
+2025-04-10 19:03:23,676 - Batch range: [-0.053, 0.053]
+2025-04-10 19:03:23,677 - First batch device after transfer: cuda:0
+2025-04-10 19:03:23,677 - Model device: cuda:0
+2025-04-10 19:03:24,259 - Test computation result: 2593.974 on cuda:0
+2025-04-10 19:03:24,260 - Current GPU memory after first batch: 24.02 MB
+2025-04-10 19:03:27,801 - Batch 0, Loss: 0.051228
+2025-04-10 19:03:27,802 - 
+Processing Time Statistics:
+2025-04-10 19:03:27,802 - Total files processed: 1
+2025-04-10 19:03:27,802 - Total segments processed: 3,440
+2025-04-10 19:03:27,802 - Total processing time: 40.09s
+2025-04-10 19:03:27,802 - Average time per file: 40.091s
+2025-04-10 19:03:27,802 - Average time per segment: 11.65ms
+2025-04-10 19:03:27,802 - Throughput: 85.8 segments/s (0.02 files/s)
+2025-04-10 19:03:42,395 - Batch 1000, Loss: 0.001214
+2025-04-10 19:03:42,395 - 
+Processing Time Statistics:
+2025-04-10 19:03:42,395 - Total files processed: 236
+2025-04-10 19:03:42,396 - Total segments processed: 516,188
+2025-04-10 19:03:42,396 - Total processing time: 43.93s
+2025-04-10 19:03:42,396 - Average time per file: 0.186s
+2025-04-10 19:03:42,396 - Average time per segment: 0.09ms
+2025-04-10 19:03:42,396 - Throughput: 11750.1 segments/s (5.37 files/s)
+2025-04-10 19:03:54,069 - Batch 2000, Loss: 0.000344
+2025-04-10 19:03:54,069 - 
+Processing Time Statistics:
+2025-04-10 19:03:54,069 - Total files processed: 417
+2025-04-10 19:03:54,069 - Total segments processed: 1,024,564
+2025-04-10 19:03:54,069 - Total processing time: 47.26s
+2025-04-10 19:03:54,069 - Average time per file: 0.113s
+2025-04-10 19:03:54,069 - Average time per segment: 0.05ms
+2025-04-10 19:03:54,069 - Throughput: 21679.1 segments/s (8.82 files/s)
+2025-04-10 19:04:05,803 - Batch 3000, Loss: 0.001444
+2025-04-10 19:04:05,803 - 
+Processing Time Statistics:
+2025-04-10 19:04:05,803 - Total files processed: 601
+2025-04-10 19:04:05,803 - Total segments processed: 1,536,601
+2025-04-10 19:04:05,803 - Total processing time: 50.57s
+2025-04-10 19:04:05,803 - Average time per file: 0.084s
+2025-04-10 19:04:05,803 - Average time per segment: 0.03ms
+2025-04-10 19:04:05,803 - Throughput: 30385.3 segments/s (11.88 files/s)
+2025-04-10 19:04:17,559 - Batch 4000, Loss: 0.000136
+2025-04-10 19:04:17,559 - 
+Processing Time Statistics:
+2025-04-10 19:04:17,559 - Total files processed: 814
+2025-04-10 19:04:17,559 - Total segments processed: 2,048,990
+2025-04-10 19:04:17,559 - Total processing time: 54.24s
+2025-04-10 19:04:17,559 - Average time per file: 0.067s
+2025-04-10 19:04:17,559 - Average time per segment: 0.03ms
+2025-04-10 19:04:17,559 - Throughput: 37774.6 segments/s (15.01 files/s)
+2025-04-10 19:04:29,425 - Batch 5000, Loss: 0.000154
+2025-04-10 19:04:29,426 - 
+Processing Time Statistics:
+2025-04-10 19:04:29,426 - Total files processed: 1,021
+2025-04-10 19:04:29,426 - Total segments processed: 2,562,564
+2025-04-10 19:04:29,426 - Total processing time: 57.87s
+2025-04-10 19:04:29,426 - Average time per file: 0.057s
+2025-04-10 19:04:29,426 - Average time per segment: 0.02ms
+2025-04-10 19:04:29,426 - Throughput: 44281.3 segments/s (17.64 files/s)
+2025-04-10 19:04:41,370 - Batch 6000, Loss: 0.003579
+2025-04-10 19:04:41,370 - 
+Processing Time Statistics:
+2025-04-10 19:04:41,370 - Total files processed: 1,240
+2025-04-10 19:04:41,370 - Total segments processed: 3,074,976
+2025-04-10 19:04:41,370 - Total processing time: 61.71s
+2025-04-10 19:04:41,370 - Average time per file: 0.050s
+2025-04-10 19:04:41,370 - Average time per segment: 0.02ms
+2025-04-10 19:04:41,370 - Throughput: 49831.4 segments/s (20.09 files/s)
+2025-04-10 19:04:53,544 - Batch 7000, Loss: 0.000182
+2025-04-10 19:04:53,544 - 
+Processing Time Statistics:
+2025-04-10 19:04:53,544 - Total files processed: 1,464
+2025-04-10 19:04:53,544 - Total segments processed: 3,589,044
+2025-04-10 19:04:53,545 - Total processing time: 65.63s
+2025-04-10 19:04:53,545 - Average time per file: 0.045s
+2025-04-10 19:04:53,545 - Average time per segment: 0.02ms
+2025-04-10 19:04:53,545 - Throughput: 54684.1 segments/s (22.31 files/s)
+2025-04-10 19:05:05,306 - Batch 8000, Loss: 0.000164
+2025-04-10 19:05:05,307 - 
+Processing Time Statistics:
+2025-04-10 19:05:05,307 - Total files processed: 1,677
+2025-04-10 19:05:05,307 - Total segments processed: 4,101,366
+2025-04-10 19:05:05,307 - Total processing time: 69.31s
+2025-04-10 19:05:05,307 - Average time per file: 0.041s
+2025-04-10 19:05:05,307 - Average time per segment: 0.02ms
+2025-04-10 19:05:05,307 - Throughput: 59174.8 segments/s (24.20 files/s)
+2025-04-10 19:05:17,017 - Batch 9000, Loss: 0.000551
+2025-04-10 19:05:17,017 - 
+Processing Time Statistics:
+2025-04-10 19:05:17,017 - Total files processed: 1,878
+2025-04-10 19:05:17,017 - Total segments processed: 4,610,456
+2025-04-10 19:05:17,017 - Total processing time: 72.82s
+2025-04-10 19:05:17,017 - Average time per file: 0.039s
+2025-04-10 19:05:17,017 - Average time per segment: 0.02ms
+2025-04-10 19:05:17,017 - Throughput: 63309.6 segments/s (25.79 files/s)
+2025-04-10 19:05:28,755 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:05:28,755 - Processed 20001 batches in epoch 0
+2025-04-10 19:05:28,755 - ====> Epoch: 0 - Total loss: 60.22040971782917 - Average loss: 0.003010870
+2025-04-10 19:05:28,843 - Epoch 1/199
+2025-04-10 19:05:28,843 - ----------
+2025-04-10 19:05:28,857 - Reset coverage statistics for new epoch
+2025-04-10 19:05:28,857 - Using default batch limit of 20,000 for epoch 1
+2025-04-10 19:05:28,893 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:05:28,893 - First batch device before transfer: cpu
+2025-04-10 19:05:28,894 - Batch range: [-0.353, 0.381]
+2025-04-10 19:05:28,894 - First batch device after transfer: cuda:0
+2025-04-10 19:05:28,894 - Model device: cuda:0
+2025-04-10 19:05:28,894 - Test computation result: 9387.189 on cuda:0
+2025-04-10 19:05:28,894 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:05:28,895 - Batch 0, Loss: 0.002323
+2025-04-10 19:05:28,895 - 
+Processing Time Statistics:
+2025-04-10 19:05:28,895 - Total files processed: 1
+2025-04-10 19:05:28,895 - Total segments processed: 665
+2025-04-10 19:05:28,895 - Total processing time: 0.01s
+2025-04-10 19:05:28,895 - Average time per file: 0.015s
+2025-04-10 19:05:28,896 - Average time per segment: 0.02ms
+2025-04-10 19:05:28,896 - Throughput: 45433.6 segments/s (68.32 files/s)
+2025-04-10 19:05:40,574 - Batch 1000, Loss: 0.000287
+2025-04-10 19:05:40,574 - 
+Processing Time Statistics:
+2025-04-10 19:05:40,574 - Total files processed: 215
+2025-04-10 19:05:40,574 - Total segments processed: 512,526
+2025-04-10 19:05:40,574 - Total processing time: 3.67s
+2025-04-10 19:05:40,574 - Average time per file: 0.017s
+2025-04-10 19:05:40,574 - Average time per segment: 0.01ms
+2025-04-10 19:05:40,574 - Throughput: 139776.3 segments/s (58.63 files/s)
+2025-04-10 19:05:52,690 - Batch 2000, Loss: 0.000555
+2025-04-10 19:05:52,690 - 
+Processing Time Statistics:
+2025-04-10 19:05:52,690 - Total files processed: 462
+2025-04-10 19:05:52,690 - Total segments processed: 1,025,215
+2025-04-10 19:05:52,690 - Total processing time: 7.74s
+2025-04-10 19:05:52,690 - Average time per file: 0.017s
+2025-04-10 19:05:52,690 - Average time per segment: 0.01ms
+2025-04-10 19:05:52,691 - Throughput: 132513.6 segments/s (59.72 files/s)
+2025-04-10 19:06:04,385 - Batch 3000, Loss: 0.025315
+2025-04-10 19:06:04,385 - 
+Processing Time Statistics:
+2025-04-10 19:06:04,385 - Total files processed: 664
+2025-04-10 19:06:04,385 - Total segments processed: 1,537,178
+2025-04-10 19:06:04,385 - Total processing time: 11.24s
+2025-04-10 19:06:04,385 - Average time per file: 0.017s
+2025-04-10 19:06:04,385 - Average time per segment: 0.01ms
+2025-04-10 19:06:04,385 - Throughput: 136768.1 segments/s (59.08 files/s)
+2025-04-10 19:06:15,970 - Batch 4000, Loss: 0.000175
+2025-04-10 19:06:15,971 - 
+Processing Time Statistics:
+2025-04-10 19:06:15,971 - Total files processed: 860
+2025-04-10 19:06:15,971 - Total segments processed: 2,052,335
+2025-04-10 19:06:15,971 - Total processing time: 14.74s
+2025-04-10 19:06:15,971 - Average time per file: 0.017s
+2025-04-10 19:06:15,971 - Average time per segment: 0.01ms
+2025-04-10 19:06:15,971 - Throughput: 139244.8 segments/s (58.35 files/s)
+2025-04-10 19:06:27,526 - Batch 5000, Loss: 0.000834
+2025-04-10 19:06:27,526 - 
+Processing Time Statistics:
+2025-04-10 19:06:27,526 - Total files processed: 1,048
+2025-04-10 19:06:27,526 - Total segments processed: 2,560,733
+2025-04-10 19:06:27,526 - Total processing time: 18.07s
+2025-04-10 19:06:27,526 - Average time per file: 0.017s
+2025-04-10 19:06:27,526 - Average time per segment: 0.01ms
+2025-04-10 19:06:27,526 - Throughput: 141704.2 segments/s (57.99 files/s)
+2025-04-10 19:06:39,132 - Batch 6000, Loss: 0.000252
+2025-04-10 19:06:39,132 - 
+Processing Time Statistics:
+2025-04-10 19:06:39,132 - Total files processed: 1,261
+2025-04-10 19:06:39,132 - Total segments processed: 3,073,069
+2025-04-10 19:06:39,132 - Total processing time: 21.61s
+2025-04-10 19:06:39,132 - Average time per file: 0.017s
+2025-04-10 19:06:39,132 - Average time per segment: 0.01ms
+2025-04-10 19:06:39,132 - Throughput: 142235.6 segments/s (58.36 files/s)
+2025-04-10 19:06:51,144 - Batch 7000, Loss: 0.001116
+2025-04-10 19:06:51,144 - 
+Processing Time Statistics:
+2025-04-10 19:06:51,145 - Total files processed: 1,463
+2025-04-10 19:06:51,145 - Total segments processed: 3,610,867
+2025-04-10 19:06:51,145 - Total processing time: 25.17s
+2025-04-10 19:06:51,145 - Average time per file: 0.017s
+2025-04-10 19:06:51,145 - Average time per segment: 0.01ms
+2025-04-10 19:06:51,145 - Throughput: 143463.3 segments/s (58.13 files/s)
+2025-04-10 19:07:02,627 - Batch 8000, Loss: 0.001271
+2025-04-10 19:07:02,627 - 
+Processing Time Statistics:
+2025-04-10 19:07:02,627 - Total files processed: 1,665
+2025-04-10 19:07:02,627 - Total segments processed: 4,102,238
+2025-04-10 19:07:02,627 - Total processing time: 28.69s
+2025-04-10 19:07:02,627 - Average time per file: 0.017s
+2025-04-10 19:07:02,627 - Average time per segment: 0.01ms
+2025-04-10 19:07:02,627 - Throughput: 143008.9 segments/s (58.04 files/s)
+2025-04-10 19:07:14,148 - Batch 9000, Loss: 0.001435
+2025-04-10 19:07:14,148 - 
+Processing Time Statistics:
+2025-04-10 19:07:14,148 - Total files processed: 1,862
+2025-04-10 19:07:14,148 - Total segments processed: 4,609,384
+2025-04-10 19:07:14,148 - Total processing time: 32.06s
+2025-04-10 19:07:14,148 - Average time per file: 0.017s
+2025-04-10 19:07:14,148 - Average time per segment: 0.01ms
+2025-04-10 19:07:14,148 - Throughput: 143751.7 segments/s (58.07 files/s)
+2025-04-10 19:07:25,814 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:07:25,814 - Processed 20001 batches in epoch 1
+2025-04-10 19:07:25,814 - ====> Epoch: 1 - Total loss: 32.39032263372974 - Average loss: 0.001619435
+2025-04-10 19:07:25,891 - Epoch 2/199
+2025-04-10 19:07:25,891 - ----------
+2025-04-10 19:07:25,905 - Reset coverage statistics for new epoch
+2025-04-10 19:07:25,905 - Using default batch limit of 20,000 for epoch 2
+2025-04-10 19:07:25,976 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:07:25,976 - First batch device before transfer: cpu
+2025-04-10 19:07:25,976 - Batch range: [-0.012, 0.013]
+2025-04-10 19:07:25,977 - First batch device after transfer: cuda:0
+2025-04-10 19:07:25,977 - Model device: cuda:0
+2025-04-10 19:07:25,977 - Test computation result: 274.699 on cuda:0
+2025-04-10 19:07:25,977 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:07:25,978 - Batch 0, Loss: 0.000050
+2025-04-10 19:07:25,978 - 
+Processing Time Statistics:
+2025-04-10 19:07:25,979 - Total files processed: 1
+2025-04-10 19:07:25,979 - Total segments processed: 4,025
+2025-04-10 19:07:25,979 - Total processing time: 0.02s
+2025-04-10 19:07:25,979 - Average time per file: 0.022s
+2025-04-10 19:07:25,979 - Average time per segment: 0.01ms
+2025-04-10 19:07:25,979 - Throughput: 180196.5 segments/s (44.77 files/s)
+2025-04-10 19:07:37,773 - Batch 1000, Loss: 0.000136
+2025-04-10 19:07:37,773 - 
+Processing Time Statistics:
+2025-04-10 19:07:37,773 - Total files processed: 232
+2025-04-10 19:07:37,773 - Total segments processed: 515,801
+2025-04-10 19:07:37,773 - Total processing time: 3.76s
+2025-04-10 19:07:37,773 - Average time per file: 0.016s
+2025-04-10 19:07:37,773 - Average time per segment: 0.01ms
+2025-04-10 19:07:37,773 - Throughput: 137029.6 segments/s (61.63 files/s)
+2025-04-10 19:07:49,352 - Batch 2000, Loss: 0.001758
+2025-04-10 19:07:49,353 - 
+Processing Time Statistics:
+2025-04-10 19:07:49,353 - Total files processed: 438
+2025-04-10 19:07:49,353 - Total segments processed: 1,024,550
+2025-04-10 19:07:49,353 - Total processing time: 7.19s
+2025-04-10 19:07:49,353 - Average time per file: 0.016s
+2025-04-10 19:07:49,353 - Average time per segment: 0.01ms
+2025-04-10 19:07:49,353 - Throughput: 142442.0 segments/s (60.89 files/s)
+2025-04-10 19:08:01,199 - Batch 3000, Loss: 0.000062
+2025-04-10 19:08:01,200 - 
+Processing Time Statistics:
+2025-04-10 19:08:01,200 - Total files processed: 650
+2025-04-10 19:08:01,200 - Total segments processed: 1,540,478
+2025-04-10 19:08:01,200 - Total processing time: 10.81s
+2025-04-10 19:08:01,200 - Average time per file: 0.017s
+2025-04-10 19:08:01,200 - Average time per segment: 0.01ms
+2025-04-10 19:08:01,200 - Throughput: 142548.9 segments/s (60.15 files/s)
+2025-04-10 19:08:13,260 - Batch 4000, Loss: 0.011972
+2025-04-10 19:08:13,260 - 
+Processing Time Statistics:
+2025-04-10 19:08:13,260 - Total files processed: 892
+2025-04-10 19:08:13,260 - Total segments processed: 2,051,145
+2025-04-10 19:08:13,260 - Total processing time: 14.83s
+2025-04-10 19:08:13,260 - Average time per file: 0.017s
+2025-04-10 19:08:13,260 - Average time per segment: 0.01ms
+2025-04-10 19:08:13,260 - Throughput: 138266.0 segments/s (60.13 files/s)
+2025-04-10 19:08:24,998 - Batch 5000, Loss: 0.000094
+2025-04-10 19:08:24,998 - 
+Processing Time Statistics:
+2025-04-10 19:08:24,998 - Total files processed: 1,113
+2025-04-10 19:08:24,998 - Total segments processed: 2,561,012
+2025-04-10 19:08:24,998 - Total processing time: 18.54s
+2025-04-10 19:08:24,998 - Average time per file: 0.017s
+2025-04-10 19:08:24,998 - Average time per segment: 0.01ms
+2025-04-10 19:08:24,998 - Throughput: 138112.5 segments/s (60.02 files/s)
+2025-04-10 19:08:36,819 - Batch 6000, Loss: 0.000350
+2025-04-10 19:08:36,819 - 
+Processing Time Statistics:
+2025-04-10 19:08:36,819 - Total files processed: 1,345
+2025-04-10 19:08:36,819 - Total segments processed: 3,074,771
+2025-04-10 19:08:36,819 - Total processing time: 22.30s
+2025-04-10 19:08:36,819 - Average time per file: 0.017s
+2025-04-10 19:08:36,819 - Average time per segment: 0.01ms
+2025-04-10 19:08:36,819 - Throughput: 137859.1 segments/s (60.30 files/s)
+2025-04-10 19:08:48,683 - Batch 7000, Loss: 0.000053
+2025-04-10 19:08:48,683 - 
+Processing Time Statistics:
+2025-04-10 19:08:48,684 - Total files processed: 1,565
+2025-04-10 19:08:48,684 - Total segments processed: 3,587,272
+2025-04-10 19:08:48,684 - Total processing time: 26.00s
+2025-04-10 19:08:48,684 - Average time per file: 0.017s
+2025-04-10 19:08:48,684 - Average time per segment: 0.01ms
+2025-04-10 19:08:48,684 - Throughput: 137979.5 segments/s (60.20 files/s)
+2025-04-10 19:09:00,290 - Batch 8000, Loss: 0.000504
+2025-04-10 19:09:00,290 - 
+Processing Time Statistics:
+2025-04-10 19:09:00,290 - Total files processed: 1,780
+2025-04-10 19:09:00,290 - Total segments processed: 4,101,383
+2025-04-10 19:09:00,290 - Total processing time: 29.55s
+2025-04-10 19:09:00,290 - Average time per file: 0.017s
+2025-04-10 19:09:00,290 - Average time per segment: 0.01ms
+2025-04-10 19:09:00,290 - Throughput: 138816.5 segments/s (60.25 files/s)
+2025-04-10 19:09:12,035 - Batch 9000, Loss: 0.002088
+2025-04-10 19:09:12,035 - 
+Processing Time Statistics:
+2025-04-10 19:09:12,035 - Total files processed: 2,000
+2025-04-10 19:09:12,035 - Total segments processed: 4,608,660
+2025-04-10 19:09:12,035 - Total processing time: 33.16s
+2025-04-10 19:09:12,035 - Average time per file: 0.017s
+2025-04-10 19:09:12,035 - Average time per segment: 0.01ms
+2025-04-10 19:09:12,035 - Throughput: 138997.6 segments/s (60.32 files/s)
+2025-04-10 19:09:23,817 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:09:23,817 - Processed 20001 batches in epoch 2
+2025-04-10 19:09:23,817 - ====> Epoch: 2 - Total loss: 29.9667473399968 - Average loss: 0.001498262
+2025-04-10 19:09:23,893 - Epoch 3/199
+2025-04-10 19:09:23,893 - ----------
+2025-04-10 19:09:23,907 - Reset coverage statistics for new epoch
+2025-04-10 19:09:23,907 - Using default batch limit of 20,000 for epoch 3
+2025-04-10 19:09:23,963 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:09:23,963 - First batch device before transfer: cpu
+2025-04-10 19:09:23,963 - Batch range: [-0.552, 0.561]
+2025-04-10 19:09:23,963 - First batch device after transfer: cuda:0
+2025-04-10 19:09:23,963 - Model device: cuda:0
+2025-04-10 19:09:23,964 - Test computation result: 15703.898 on cuda:0
+2025-04-10 19:09:23,964 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:09:23,965 - Batch 0, Loss: 0.006636
+2025-04-10 19:09:23,965 - 
+Processing Time Statistics:
+2025-04-10 19:09:23,965 - Total files processed: 1
+2025-04-10 19:09:23,965 - Total segments processed: 2,386
+2025-04-10 19:09:23,965 - Total processing time: 0.02s
+2025-04-10 19:09:23,965 - Average time per file: 0.019s
+2025-04-10 19:09:23,965 - Average time per segment: 0.01ms
+2025-04-10 19:09:23,965 - Throughput: 122791.2 segments/s (51.46 files/s)
+2025-04-10 19:09:35,575 - Batch 1000, Loss: 0.000192
+2025-04-10 19:09:35,575 - 
+Processing Time Statistics:
+2025-04-10 19:09:35,575 - Total files processed: 205
+2025-04-10 19:09:35,575 - Total segments processed: 513,380
+2025-04-10 19:09:35,575 - Total processing time: 3.54s
+2025-04-10 19:09:35,575 - Average time per file: 0.017s
+2025-04-10 19:09:35,575 - Average time per segment: 0.01ms
+2025-04-10 19:09:35,575 - Throughput: 144886.7 segments/s (57.86 files/s)
+2025-04-10 19:09:47,143 - Batch 2000, Loss: 0.002622
+2025-04-10 19:09:47,143 - 
+Processing Time Statistics:
+2025-04-10 19:09:47,143 - Total files processed: 403
+2025-04-10 19:09:47,143 - Total segments processed: 1,026,003
+2025-04-10 19:09:47,143 - Total processing time: 6.93s
+2025-04-10 19:09:47,143 - Average time per file: 0.017s
+2025-04-10 19:09:47,143 - Average time per segment: 0.01ms
+2025-04-10 19:09:47,143 - Throughput: 148058.8 segments/s (58.16 files/s)
+2025-04-10 19:09:58,815 - Batch 3000, Loss: 0.000109
+2025-04-10 19:09:58,815 - 
+Processing Time Statistics:
+2025-04-10 19:09:58,815 - Total files processed: 601
+2025-04-10 19:09:58,815 - Total segments processed: 1,545,241
+2025-04-10 19:09:58,815 - Total processing time: 10.37s
+2025-04-10 19:09:58,815 - Average time per file: 0.017s
+2025-04-10 19:09:58,816 - Average time per segment: 0.01ms
+2025-04-10 19:09:58,816 - Throughput: 148984.5 segments/s (57.95 files/s)
+2025-04-10 19:10:10,449 - Batch 4000, Loss: 0.000533
+2025-04-10 19:10:10,450 - 
+Processing Time Statistics:
+2025-04-10 19:10:10,450 - Total files processed: 810
+2025-04-10 19:10:10,450 - Total segments processed: 2,050,815
+2025-04-10 19:10:10,450 - Total processing time: 13.89s
+2025-04-10 19:10:10,450 - Average time per file: 0.017s
+2025-04-10 19:10:10,450 - Average time per segment: 0.01ms
+2025-04-10 19:10:10,450 - Throughput: 147624.7 segments/s (58.31 files/s)
+2025-04-10 19:10:21,989 - Batch 5000, Loss: 0.001142
+2025-04-10 19:10:21,989 - 
+Processing Time Statistics:
+2025-04-10 19:10:21,989 - Total files processed: 1,015
+2025-04-10 19:10:21,989 - Total segments processed: 2,560,967
+2025-04-10 19:10:21,989 - Total processing time: 17.31s
+2025-04-10 19:10:21,989 - Average time per file: 0.017s
+2025-04-10 19:10:21,989 - Average time per segment: 0.01ms
+2025-04-10 19:10:21,989 - Throughput: 147933.3 segments/s (58.63 files/s)
+2025-04-10 19:10:33,782 - Batch 6000, Loss: 0.000437
+2025-04-10 19:10:33,782 - 
+Processing Time Statistics:
+2025-04-10 19:10:33,782 - Total files processed: 1,219
+2025-04-10 19:10:33,782 - Total segments processed: 3,075,583
+2025-04-10 19:10:33,782 - Total processing time: 20.82s
+2025-04-10 19:10:33,782 - Average time per file: 0.017s
+2025-04-10 19:10:33,782 - Average time per segment: 0.01ms
+2025-04-10 19:10:33,782 - Throughput: 147755.1 segments/s (58.56 files/s)
+2025-04-10 19:10:45,401 - Batch 7000, Loss: 0.003871
+2025-04-10 19:10:45,401 - 
+Processing Time Statistics:
+2025-04-10 19:10:45,401 - Total files processed: 1,417
+2025-04-10 19:10:45,401 - Total segments processed: 3,587,668
+2025-04-10 19:10:45,401 - Total processing time: 24.31s
+2025-04-10 19:10:45,401 - Average time per file: 0.017s
+2025-04-10 19:10:45,401 - Average time per segment: 0.01ms
+2025-04-10 19:10:45,401 - Throughput: 147555.4 segments/s (58.28 files/s)
+2025-04-10 19:10:56,940 - Batch 8000, Loss: 0.002941
+2025-04-10 19:10:56,940 - 
+Processing Time Statistics:
+2025-04-10 19:10:56,940 - Total files processed: 1,572
+2025-04-10 19:10:56,940 - Total segments processed: 4,098,604
+2025-04-10 19:10:56,940 - Total processing time: 27.20s
+2025-04-10 19:10:56,940 - Average time per file: 0.017s
+2025-04-10 19:10:56,940 - Average time per segment: 0.01ms
+2025-04-10 19:10:56,941 - Throughput: 150681.4 segments/s (57.79 files/s)
+2025-04-10 19:11:08,713 - Batch 9000, Loss: 0.000375
+2025-04-10 19:11:08,713 - 
+Processing Time Statistics:
+2025-04-10 19:11:08,713 - Total files processed: 1,793
+2025-04-10 19:11:08,713 - Total segments processed: 4,608,738
+2025-04-10 19:11:08,713 - Total processing time: 30.76s
+2025-04-10 19:11:08,714 - Average time per file: 0.017s
+2025-04-10 19:11:08,714 - Average time per segment: 0.01ms
+2025-04-10 19:11:08,714 - Throughput: 149831.4 segments/s (58.29 files/s)
+2025-04-10 19:11:20,122 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:11:20,122 - Processed 20001 batches in epoch 3
+2025-04-10 19:11:20,122 - ====> Epoch: 3 - Total loss: 24.008619882955827 - Average loss: 0.001200371
+2025-04-10 19:11:20,198 - Epoch 4/199
+2025-04-10 19:11:20,198 - ----------
+2025-04-10 19:11:20,212 - Reset coverage statistics for new epoch
+2025-04-10 19:11:20,212 - Using default batch limit of 20,000 for epoch 4
+2025-04-10 19:11:20,260 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:11:20,260 - First batch device before transfer: cpu
+2025-04-10 19:11:20,261 - Batch range: [-0.810, 0.863]
+2025-04-10 19:11:20,261 - First batch device after transfer: cuda:0
+2025-04-10 19:11:20,261 - Model device: cuda:0
+2025-04-10 19:11:20,261 - Test computation result: 7113.671 on cuda:0
+2025-04-10 19:11:20,261 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:11:20,263 - Batch 0, Loss: 0.000824
+2025-04-10 19:11:20,263 - 
+Processing Time Statistics:
+2025-04-10 19:11:20,263 - Total files processed: 1
+2025-04-10 19:11:20,263 - Total segments processed: 1,148
+2025-04-10 19:11:20,263 - Total processing time: 0.02s
+2025-04-10 19:11:20,263 - Average time per file: 0.016s
+2025-04-10 19:11:20,263 - Average time per segment: 0.01ms
+2025-04-10 19:11:20,263 - Throughput: 72650.6 segments/s (63.28 files/s)
+2025-04-10 19:11:32,176 - Batch 1000, Loss: 0.000100
+2025-04-10 19:11:32,176 - 
+Processing Time Statistics:
+2025-04-10 19:11:32,176 - Total files processed: 225
+2025-04-10 19:11:32,176 - Total segments processed: 515,603
+2025-04-10 19:11:32,176 - Total processing time: 3.64s
+2025-04-10 19:11:32,176 - Average time per file: 0.016s
+2025-04-10 19:11:32,176 - Average time per segment: 0.01ms
+2025-04-10 19:11:32,176 - Throughput: 141475.4 segments/s (61.74 files/s)
+2025-04-10 19:11:43,912 - Batch 2000, Loss: 0.000070
+2025-04-10 19:11:43,912 - 
+Processing Time Statistics:
+2025-04-10 19:11:43,912 - Total files processed: 440
+2025-04-10 19:11:43,912 - Total segments processed: 1,025,949
+2025-04-10 19:11:43,912 - Total processing time: 7.28s
+2025-04-10 19:11:43,912 - Average time per file: 0.017s
+2025-04-10 19:11:43,912 - Average time per segment: 0.01ms
+2025-04-10 19:11:43,912 - Throughput: 140911.6 segments/s (60.43 files/s)
+2025-04-10 19:11:55,569 - Batch 3000, Loss: 0.000326
+2025-04-10 19:11:55,569 - 
+Processing Time Statistics:
+2025-04-10 19:11:55,569 - Total files processed: 662
+2025-04-10 19:11:55,569 - Total segments processed: 1,537,559
+2025-04-10 19:11:55,569 - Total processing time: 10.87s
+2025-04-10 19:11:55,569 - Average time per file: 0.016s
+2025-04-10 19:11:55,569 - Average time per segment: 0.01ms
+2025-04-10 19:11:55,569 - Throughput: 141446.1 segments/s (60.90 files/s)
+2025-04-10 19:12:07,246 - Batch 4000, Loss: 0.000382
+2025-04-10 19:12:07,247 - 
+Processing Time Statistics:
+2025-04-10 19:12:07,247 - Total files processed: 863
+2025-04-10 19:12:07,247 - Total segments processed: 2,050,000
+2025-04-10 19:12:07,247 - Total processing time: 14.30s
+2025-04-10 19:12:07,247 - Average time per file: 0.017s
+2025-04-10 19:12:07,247 - Average time per segment: 0.01ms
+2025-04-10 19:12:07,247 - Throughput: 143353.4 segments/s (60.35 files/s)
+2025-04-10 19:12:18,986 - Batch 5000, Loss: 0.000407
+2025-04-10 19:12:18,987 - 
+Processing Time Statistics:
+2025-04-10 19:12:18,987 - Total files processed: 1,087
+2025-04-10 19:12:18,987 - Total segments processed: 2,565,171
+2025-04-10 19:12:18,987 - Total processing time: 17.97s
+2025-04-10 19:12:18,987 - Average time per file: 0.017s
+2025-04-10 19:12:18,987 - Average time per segment: 0.01ms
+2025-04-10 19:12:18,987 - Throughput: 142745.4 segments/s (60.49 files/s)
+2025-04-10 19:12:30,778 - Batch 6000, Loss: 0.000921
+2025-04-10 19:12:30,778 - 
+Processing Time Statistics:
+2025-04-10 19:12:30,778 - Total files processed: 1,319
+2025-04-10 19:12:30,778 - Total segments processed: 3,075,976
+2025-04-10 19:12:30,778 - Total processing time: 21.71s
+2025-04-10 19:12:30,778 - Average time per file: 0.016s
+2025-04-10 19:12:30,778 - Average time per segment: 0.01ms
+2025-04-10 19:12:30,778 - Throughput: 141677.7 segments/s (60.75 files/s)
+2025-04-10 19:12:42,341 - Batch 7000, Loss: 0.000910
+2025-04-10 19:12:42,341 - 
+Processing Time Statistics:
+2025-04-10 19:12:42,341 - Total files processed: 1,542
+2025-04-10 19:12:42,341 - Total segments processed: 3,585,793
+2025-04-10 19:12:42,341 - Total processing time: 25.16s
+2025-04-10 19:12:42,341 - Average time per file: 0.016s
+2025-04-10 19:12:42,341 - Average time per segment: 0.01ms
+2025-04-10 19:12:42,341 - Throughput: 142509.6 segments/s (61.28 files/s)
+2025-04-10 19:12:53,673 - Batch 8000, Loss: 0.005532
+2025-04-10 19:12:53,673 - 
+Processing Time Statistics:
+2025-04-10 19:12:53,674 - Total files processed: 1,747
+2025-04-10 19:12:53,674 - Total segments processed: 4,098,063
+2025-04-10 19:12:53,674 - Total processing time: 28.44s
+2025-04-10 19:12:53,674 - Average time per file: 0.016s
+2025-04-10 19:12:53,674 - Average time per segment: 0.01ms
+2025-04-10 19:12:53,674 - Throughput: 144091.3 segments/s (61.43 files/s)
+2025-04-10 19:13:05,422 - Batch 9000, Loss: 0.001267
+2025-04-10 19:13:05,422 - 
+Processing Time Statistics:
+2025-04-10 19:13:05,422 - Total files processed: 1,981
+2025-04-10 19:13:05,422 - Total segments processed: 4,609,528
+2025-04-10 19:13:05,422 - Total processing time: 31.99s
+2025-04-10 19:13:05,422 - Average time per file: 0.016s
+2025-04-10 19:13:05,422 - Average time per segment: 0.01ms
+2025-04-10 19:13:05,422 - Throughput: 144088.9 segments/s (61.92 files/s)
+2025-04-10 19:13:16,839 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:13:16,840 - Processed 20001 batches in epoch 4
+2025-04-10 19:13:16,840 - ====> Epoch: 4 - Total loss: 25.83523526492354 - Average loss: 0.001291697
+2025-04-10 19:13:16,917 - Epoch 5/199
+2025-04-10 19:13:16,917 - ----------
+2025-04-10 19:13:16,930 - Reset coverage statistics for new epoch
+2025-04-10 19:13:16,931 - Using default batch limit of 20,000 for epoch 5
+2025-04-10 19:13:16,982 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:13:16,983 - First batch device before transfer: cpu
+2025-04-10 19:13:16,983 - Batch range: [-0.016, 0.017]
+2025-04-10 19:13:16,983 - First batch device after transfer: cuda:0
+2025-04-10 19:13:16,983 - Model device: cuda:0
+2025-04-10 19:13:16,984 - Test computation result: 675.341 on cuda:0
+2025-04-10 19:13:16,984 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:13:16,985 - Batch 0, Loss: 0.000079
+2025-04-10 19:13:16,985 - 
+Processing Time Statistics:
+2025-04-10 19:13:16,985 - Total files processed: 1
+2025-04-10 19:13:16,985 - Total segments processed: 2,310
+2025-04-10 19:13:16,985 - Total processing time: 0.02s
+2025-04-10 19:13:16,985 - Average time per file: 0.017s
+2025-04-10 19:13:16,985 - Average time per segment: 0.01ms
+2025-04-10 19:13:16,985 - Throughput: 136794.0 segments/s (59.22 files/s)
+2025-04-10 19:13:28,728 - Batch 1000, Loss: 0.000166
+2025-04-10 19:13:28,728 - 
+Processing Time Statistics:
+2025-04-10 19:13:28,728 - Total files processed: 216
+2025-04-10 19:13:28,728 - Total segments processed: 514,248
+2025-04-10 19:13:28,728 - Total processing time: 3.56s
+2025-04-10 19:13:28,728 - Average time per file: 0.016s
+2025-04-10 19:13:28,728 - Average time per segment: 0.01ms
+2025-04-10 19:13:28,728 - Throughput: 144629.1 segments/s (60.75 files/s)
+2025-04-10 19:13:39,964 - Batch 2000, Loss: 0.000245
+2025-04-10 19:13:39,965 - 
+Processing Time Statistics:
+2025-04-10 19:13:39,965 - Total files processed: 424
+2025-04-10 19:13:39,965 - Total segments processed: 1,025,954
+2025-04-10 19:13:39,965 - Total processing time: 6.79s
+2025-04-10 19:13:39,965 - Average time per file: 0.016s
+2025-04-10 19:13:39,965 - Average time per segment: 0.01ms
+2025-04-10 19:13:39,965 - Throughput: 151188.9 segments/s (62.48 files/s)
+2025-04-10 19:13:51,550 - Batch 3000, Loss: 0.005348
+2025-04-10 19:13:51,550 - 
+Processing Time Statistics:
+2025-04-10 19:13:51,550 - Total files processed: 644
+2025-04-10 19:13:51,550 - Total segments processed: 1,536,766
+2025-04-10 19:13:51,550 - Total processing time: 10.19s
+2025-04-10 19:13:51,550 - Average time per file: 0.016s
+2025-04-10 19:13:51,551 - Average time per segment: 0.01ms
+2025-04-10 19:13:51,551 - Throughput: 150765.4 segments/s (63.18 files/s)
+2025-04-10 19:14:03,035 - Batch 4000, Loss: 0.000089
+2025-04-10 19:14:03,036 - 
+Processing Time Statistics:
+2025-04-10 19:14:03,036 - Total files processed: 858
+2025-04-10 19:14:03,036 - Total segments processed: 2,049,469
+2025-04-10 19:14:03,036 - Total processing time: 13.60s
+2025-04-10 19:14:03,036 - Average time per file: 0.016s
+2025-04-10 19:14:03,036 - Average time per segment: 0.01ms
+2025-04-10 19:14:03,036 - Throughput: 150734.8 segments/s (63.10 files/s)
+2025-04-10 19:14:14,581 - Batch 5000, Loss: 0.000149
+2025-04-10 19:14:14,582 - 
+Processing Time Statistics:
+2025-04-10 19:14:14,582 - Total files processed: 1,051
+2025-04-10 19:14:14,582 - Total segments processed: 2,566,111
+2025-04-10 19:14:14,582 - Total processing time: 16.90s
+2025-04-10 19:14:14,582 - Average time per file: 0.016s
+2025-04-10 19:14:14,582 - Average time per segment: 0.01ms
+2025-04-10 19:14:14,582 - Throughput: 151801.1 segments/s (62.17 files/s)
+2025-04-10 19:14:26,028 - Batch 6000, Loss: 0.003426
+2025-04-10 19:14:26,028 - 
+Processing Time Statistics:
+2025-04-10 19:14:26,028 - Total files processed: 1,239
+2025-04-10 19:14:26,028 - Total segments processed: 3,073,509
+2025-04-10 19:14:26,028 - Total processing time: 20.15s
+2025-04-10 19:14:26,028 - Average time per file: 0.016s
+2025-04-10 19:14:26,028 - Average time per segment: 0.01ms
+2025-04-10 19:14:26,028 - Throughput: 152495.1 segments/s (61.47 files/s)
+2025-04-10 19:14:37,718 - Batch 7000, Loss: 0.002922
+2025-04-10 19:14:37,718 - 
+Processing Time Statistics:
+2025-04-10 19:14:37,718 - Total files processed: 1,451
+2025-04-10 19:14:37,718 - Total segments processed: 3,585,220
+2025-04-10 19:14:37,718 - Total processing time: 23.63s
+2025-04-10 19:14:37,718 - Average time per file: 0.016s
+2025-04-10 19:14:37,718 - Average time per segment: 0.01ms
+2025-04-10 19:14:37,718 - Throughput: 151692.5 segments/s (61.39 files/s)
+2025-04-10 19:14:49,305 - Batch 8000, Loss: 0.000062
+2025-04-10 19:14:49,306 - 
+Processing Time Statistics:
+2025-04-10 19:14:49,306 - Total files processed: 1,675
+2025-04-10 19:14:49,306 - Total segments processed: 4,096,661
+2025-04-10 19:14:49,306 - Total processing time: 27.17s
+2025-04-10 19:14:49,306 - Average time per file: 0.016s
+2025-04-10 19:14:49,306 - Average time per segment: 0.01ms
+2025-04-10 19:14:49,306 - Throughput: 150784.3 segments/s (61.65 files/s)
+2025-04-10 19:15:00,721 - Batch 9000, Loss: 0.000280
+2025-04-10 19:15:00,721 - 
+Processing Time Statistics:
+2025-04-10 19:15:00,721 - Total files processed: 1,878
+2025-04-10 19:15:00,721 - Total segments processed: 4,608,821
+2025-04-10 19:15:00,721 - Total processing time: 30.49s
+2025-04-10 19:15:00,721 - Average time per file: 0.016s
+2025-04-10 19:15:00,721 - Average time per segment: 0.01ms
+2025-04-10 19:15:00,721 - Throughput: 151166.4 segments/s (61.60 files/s)
+2025-04-10 19:15:12,451 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:15:12,451 - Processed 20001 batches in epoch 5
+2025-04-10 19:15:12,451 - ====> Epoch: 5 - Total loss: 22.119341559715394 - Average loss: 0.001105912
+2025-04-10 19:15:12,529 - Epoch 6/199
+2025-04-10 19:15:12,529 - ----------
+2025-04-10 19:15:12,543 - Reset coverage statistics for new epoch
+2025-04-10 19:15:12,545 - Using default batch limit of 20,000 for epoch 6
+2025-04-10 19:15:12,653 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:15:12,654 - First batch device before transfer: cpu
+2025-04-10 19:15:12,654 - Batch range: [-0.495, 0.505]
+2025-04-10 19:15:12,654 - First batch device after transfer: cuda:0
+2025-04-10 19:15:12,654 - Model device: cuda:0
+2025-04-10 19:15:12,654 - Test computation result: 8206.521 on cuda:0
+2025-04-10 19:15:12,655 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:15:12,656 - Batch 0, Loss: 0.000863
+2025-04-10 19:15:12,656 - 
+Processing Time Statistics:
+2025-04-10 19:15:12,656 - Total files processed: 1
+2025-04-10 19:15:12,656 - Total segments processed: 7,387
+2025-04-10 19:15:12,656 - Total processing time: 0.03s
+2025-04-10 19:15:12,656 - Average time per file: 0.028s
+2025-04-10 19:15:12,656 - Average time per segment: 0.00ms
+2025-04-10 19:15:12,656 - Throughput: 260401.3 segments/s (35.25 files/s)
+2025-04-10 19:15:24,111 - Batch 1000, Loss: 0.000858
+2025-04-10 19:15:24,111 - 
+Processing Time Statistics:
+2025-04-10 19:15:24,111 - Total files processed: 207
+2025-04-10 19:15:24,111 - Total segments processed: 517,754
+2025-04-10 19:15:24,111 - Total processing time: 3.39s
+2025-04-10 19:15:24,111 - Average time per file: 0.016s
+2025-04-10 19:15:24,111 - Average time per segment: 0.01ms
+2025-04-10 19:15:24,111 - Throughput: 152743.7 segments/s (61.07 files/s)
+2025-04-10 19:15:35,637 - Batch 2000, Loss: 0.001333
+2025-04-10 19:15:35,637 - 
+Processing Time Statistics:
+2025-04-10 19:15:35,637 - Total files processed: 414
+2025-04-10 19:15:35,637 - Total segments processed: 1,025,839
+2025-04-10 19:15:35,637 - Total processing time: 6.73s
+2025-04-10 19:15:35,637 - Average time per file: 0.016s
+2025-04-10 19:15:35,637 - Average time per segment: 0.01ms
+2025-04-10 19:15:35,637 - Throughput: 152519.2 segments/s (61.55 files/s)
+2025-04-10 19:15:47,345 - Batch 3000, Loss: 0.000098
+2025-04-10 19:15:47,345 - 
+Processing Time Statistics:
+2025-04-10 19:15:47,345 - Total files processed: 639
+2025-04-10 19:15:47,345 - Total segments processed: 1,537,668
+2025-04-10 19:15:47,345 - Total processing time: 10.36s
+2025-04-10 19:15:47,345 - Average time per file: 0.016s
+2025-04-10 19:15:47,345 - Average time per segment: 0.01ms
+2025-04-10 19:15:47,345 - Throughput: 148445.1 segments/s (61.69 files/s)
+2025-04-10 19:15:58,949 - Batch 4000, Loss: 0.005659
+2025-04-10 19:15:58,949 - 
+Processing Time Statistics:
+2025-04-10 19:15:58,949 - Total files processed: 846
+2025-04-10 19:15:58,949 - Total segments processed: 2,052,293
+2025-04-10 19:15:58,949 - Total processing time: 13.70s
+2025-04-10 19:15:58,949 - Average time per file: 0.016s
+2025-04-10 19:15:58,949 - Average time per segment: 0.01ms
+2025-04-10 19:15:58,950 - Throughput: 149789.8 segments/s (61.75 files/s)
+2025-04-10 19:16:10,248 - Batch 5000, Loss: 0.001177
+2025-04-10 19:16:10,248 - 
+Processing Time Statistics:
+2025-04-10 19:16:10,248 - Total files processed: 1,047
+2025-04-10 19:16:10,248 - Total segments processed: 2,564,671
+2025-04-10 19:16:10,248 - Total processing time: 16.92s
+2025-04-10 19:16:10,248 - Average time per file: 0.016s
+2025-04-10 19:16:10,248 - Average time per segment: 0.01ms
+2025-04-10 19:16:10,248 - Throughput: 151562.0 segments/s (61.87 files/s)
+2025-04-10 19:16:21,881 - Batch 6000, Loss: 0.001084
+2025-04-10 19:16:21,881 - 
+Processing Time Statistics:
+2025-04-10 19:16:21,881 - Total files processed: 1,270
+2025-04-10 19:16:21,881 - Total segments processed: 3,073,424
+2025-04-10 19:16:21,881 - Total processing time: 20.50s
+2025-04-10 19:16:21,881 - Average time per file: 0.016s
+2025-04-10 19:16:21,881 - Average time per segment: 0.01ms
+2025-04-10 19:16:21,881 - Throughput: 149910.0 segments/s (61.95 files/s)
+2025-04-10 19:16:33,421 - Batch 7000, Loss: 0.002071
+2025-04-10 19:16:33,421 - 
+Processing Time Statistics:
+2025-04-10 19:16:33,421 - Total files processed: 1,479
+2025-04-10 19:16:33,421 - Total segments processed: 3,586,556
+2025-04-10 19:16:33,421 - Total processing time: 23.90s
+2025-04-10 19:16:33,421 - Average time per file: 0.016s
+2025-04-10 19:16:33,421 - Average time per segment: 0.01ms
+2025-04-10 19:16:33,421 - Throughput: 150040.5 segments/s (61.87 files/s)
+2025-04-10 19:16:45,083 - Batch 8000, Loss: 0.000115
+2025-04-10 19:16:45,083 - 
+Processing Time Statistics:
+2025-04-10 19:16:45,083 - Total files processed: 1,696
+2025-04-10 19:16:45,083 - Total segments processed: 4,103,522
+2025-04-10 19:16:45,083 - Total processing time: 27.47s
+2025-04-10 19:16:45,083 - Average time per file: 0.016s
+2025-04-10 19:16:45,083 - Average time per segment: 0.01ms
+2025-04-10 19:16:45,083 - Throughput: 149375.2 segments/s (61.74 files/s)
+2025-04-10 19:16:56,675 - Batch 9000, Loss: 0.000144
+2025-04-10 19:16:56,675 - 
+Processing Time Statistics:
+2025-04-10 19:16:56,675 - Total files processed: 1,912
+2025-04-10 19:16:56,676 - Total segments processed: 4,610,198
+2025-04-10 19:16:56,676 - Total processing time: 30.89s
+2025-04-10 19:16:56,676 - Average time per file: 0.016s
+2025-04-10 19:16:56,676 - Average time per segment: 0.01ms
+2025-04-10 19:16:56,676 - Throughput: 149269.6 segments/s (61.91 files/s)
+2025-04-10 19:17:07,871 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:17:07,871 - Processed 20001 batches in epoch 6
+2025-04-10 19:17:07,871 - ====> Epoch: 6 - Total loss: 24.61542825410652 - Average loss: 0.001230710
+2025-04-10 19:17:07,950 - Epoch 7/199
+2025-04-10 19:17:07,951 - ----------
+2025-04-10 19:17:07,965 - Reset coverage statistics for new epoch
+2025-04-10 19:17:07,965 - Using default batch limit of 20,000 for epoch 7
+2025-04-10 19:17:08,026 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:17:08,027 - First batch device before transfer: cpu
+2025-04-10 19:17:08,027 - Batch range: [-0.033, 0.029]
+2025-04-10 19:17:08,027 - First batch device after transfer: cuda:0
+2025-04-10 19:17:08,027 - Model device: cuda:0
+2025-04-10 19:17:08,028 - Test computation result: 1529.993 on cuda:0
+2025-04-10 19:17:08,028 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:17:08,029 - Batch 0, Loss: 0.000140
+2025-04-10 19:17:08,029 - 
+Processing Time Statistics:
+2025-04-10 19:17:08,029 - Total files processed: 1
+2025-04-10 19:17:08,029 - Total segments processed: 2,855
+2025-04-10 19:17:08,029 - Total processing time: 0.02s
+2025-04-10 19:17:08,029 - Average time per file: 0.021s
+2025-04-10 19:17:08,029 - Average time per segment: 0.01ms
+2025-04-10 19:17:08,029 - Throughput: 138797.3 segments/s (48.62 files/s)
+2025-04-10 19:17:19,581 - Batch 1000, Loss: 0.002016
+2025-04-10 19:17:19,581 - 
+Processing Time Statistics:
+2025-04-10 19:17:19,581 - Total files processed: 214
+2025-04-10 19:17:19,581 - Total segments processed: 514,480
+2025-04-10 19:17:19,581 - Total processing time: 3.35s
+2025-04-10 19:17:19,581 - Average time per file: 0.016s
+2025-04-10 19:17:19,581 - Average time per segment: 0.01ms
+2025-04-10 19:17:19,581 - Throughput: 153458.5 segments/s (63.83 files/s)
+2025-04-10 19:17:31,262 - Batch 2000, Loss: 0.002206
+2025-04-10 19:17:31,262 - 
+Processing Time Statistics:
+2025-04-10 19:17:31,262 - Total files processed: 432
+2025-04-10 19:17:31,262 - Total segments processed: 1,027,214
+2025-04-10 19:17:31,262 - Total processing time: 6.85s
+2025-04-10 19:17:31,262 - Average time per file: 0.016s
+2025-04-10 19:17:31,262 - Average time per segment: 0.01ms
+2025-04-10 19:17:31,262 - Throughput: 150020.2 segments/s (63.09 files/s)
+2025-04-10 19:17:42,529 - Batch 3000, Loss: 0.002027
+2025-04-10 19:17:42,529 - 
+Processing Time Statistics:
+2025-04-10 19:17:42,529 - Total files processed: 631
+2025-04-10 19:17:42,529 - Total segments processed: 1,537,783
+2025-04-10 19:17:42,529 - Total processing time: 10.07s
+2025-04-10 19:17:42,529 - Average time per file: 0.016s
+2025-04-10 19:17:42,529 - Average time per segment: 0.01ms
+2025-04-10 19:17:42,529 - Throughput: 152719.5 segments/s (62.67 files/s)
+2025-04-10 19:17:53,910 - Batch 4000, Loss: 0.007382
+2025-04-10 19:17:53,910 - 
+Processing Time Statistics:
+2025-04-10 19:17:53,910 - Total files processed: 838
+2025-04-10 19:17:53,910 - Total segments processed: 2,049,019
+2025-04-10 19:17:53,910 - Total processing time: 13.38s
+2025-04-10 19:17:53,910 - Average time per file: 0.016s
+2025-04-10 19:17:53,910 - Average time per segment: 0.01ms
+2025-04-10 19:17:53,910 - Throughput: 153158.0 segments/s (62.64 files/s)
+2025-04-10 19:18:05,630 - Batch 5000, Loss: 0.000250
+2025-04-10 19:18:05,630 - 
+Processing Time Statistics:
+2025-04-10 19:18:05,631 - Total files processed: 1,066
+2025-04-10 19:18:05,631 - Total segments processed: 2,562,802
+2025-04-10 19:18:05,631 - Total processing time: 16.89s
+2025-04-10 19:18:05,631 - Average time per file: 0.016s
+2025-04-10 19:18:05,631 - Average time per segment: 0.01ms
+2025-04-10 19:18:05,631 - Throughput: 151738.2 segments/s (63.12 files/s)
+2025-04-10 19:18:16,985 - Batch 6000, Loss: 0.001175
+2025-04-10 19:18:16,985 - 
+Processing Time Statistics:
+2025-04-10 19:18:16,985 - Total files processed: 1,266
+2025-04-10 19:18:16,985 - Total segments processed: 3,073,353
+2025-04-10 19:18:16,985 - Total processing time: 20.09s
+2025-04-10 19:18:16,985 - Average time per file: 0.016s
+2025-04-10 19:18:16,985 - Average time per segment: 0.01ms
+2025-04-10 19:18:16,985 - Throughput: 152957.2 segments/s (63.01 files/s)
+2025-04-10 19:18:28,613 - Batch 7000, Loss: 0.001391
+2025-04-10 19:18:28,613 - 
+Processing Time Statistics:
+2025-04-10 19:18:28,613 - Total files processed: 1,480
+2025-04-10 19:18:28,613 - Total segments processed: 3,585,249
+2025-04-10 19:18:28,613 - Total processing time: 23.48s
+2025-04-10 19:18:28,613 - Average time per file: 0.016s
+2025-04-10 19:18:28,613 - Average time per segment: 0.01ms
+2025-04-10 19:18:28,613 - Throughput: 152712.9 segments/s (63.04 files/s)
+2025-04-10 19:18:40,391 - Batch 8000, Loss: 0.000289
+2025-04-10 19:18:40,391 - 
+Processing Time Statistics:
+2025-04-10 19:18:40,391 - Total files processed: 1,718
+2025-04-10 19:18:40,391 - Total segments processed: 4,097,035
+2025-04-10 19:18:40,391 - Total processing time: 27.14s
+2025-04-10 19:18:40,391 - Average time per file: 0.016s
+2025-04-10 19:18:40,391 - Average time per segment: 0.01ms
+2025-04-10 19:18:40,391 - Throughput: 150953.8 segments/s (63.30 files/s)
+2025-04-10 19:18:52,082 - Batch 9000, Loss: 0.005044
+2025-04-10 19:18:52,082 - 
+Processing Time Statistics:
+2025-04-10 19:18:52,082 - Total files processed: 1,937
+2025-04-10 19:18:52,082 - Total segments processed: 4,609,129
+2025-04-10 19:18:52,082 - Total processing time: 30.56s
+2025-04-10 19:18:52,082 - Average time per file: 0.016s
+2025-04-10 19:18:52,082 - Average time per segment: 0.01ms
+2025-04-10 19:18:52,082 - Throughput: 150809.4 segments/s (63.38 files/s)
+2025-04-10 19:19:03,436 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:19:03,436 - Processed 20001 batches in epoch 7
+2025-04-10 19:19:03,436 - ====> Epoch: 7 - Total loss: 20.05200937234622 - Average loss: 0.001002550
+2025-04-10 19:19:03,514 - Epoch 8/199
+2025-04-10 19:19:03,514 - ----------
+2025-04-10 19:19:03,528 - Reset coverage statistics for new epoch
+2025-04-10 19:19:03,528 - Using default batch limit of 20,000 for epoch 8
+2025-04-10 19:19:03,589 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:19:03,589 - First batch device before transfer: cpu
+2025-04-10 19:19:03,590 - Batch range: [-0.802, 0.702]
+2025-04-10 19:19:03,590 - First batch device after transfer: cuda:0
+2025-04-10 19:19:03,590 - Model device: cuda:0
+2025-04-10 19:19:03,590 - Test computation result: 21659.084 on cuda:0
+2025-04-10 19:19:03,591 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:19:03,592 - Batch 0, Loss: 0.003736
+2025-04-10 19:19:03,592 - 
+Processing Time Statistics:
+2025-04-10 19:19:03,592 - Total files processed: 1
+2025-04-10 19:19:03,592 - Total segments processed: 2,756
+2025-04-10 19:19:03,592 - Total processing time: 0.02s
+2025-04-10 19:19:03,592 - Average time per file: 0.021s
+2025-04-10 19:19:03,592 - Average time per segment: 0.01ms
+2025-04-10 19:19:03,592 - Throughput: 130879.1 segments/s (47.49 files/s)
+2025-04-10 19:19:15,193 - Batch 1000, Loss: 0.000141
+2025-04-10 19:19:15,194 - 
+Processing Time Statistics:
+2025-04-10 19:19:15,194 - Total files processed: 216
+2025-04-10 19:19:15,194 - Total segments processed: 515,841
+2025-04-10 19:19:15,194 - Total processing time: 3.47s
+2025-04-10 19:19:15,194 - Average time per file: 0.016s
+2025-04-10 19:19:15,194 - Average time per segment: 0.01ms
+2025-04-10 19:19:15,194 - Throughput: 148567.9 segments/s (62.21 files/s)
+2025-04-10 19:19:26,489 - Batch 2000, Loss: 0.000113
+2025-04-10 19:19:26,489 - 
+Processing Time Statistics:
+2025-04-10 19:19:26,489 - Total files processed: 408
+2025-04-10 19:19:26,489 - Total segments processed: 1,025,217
+2025-04-10 19:19:26,489 - Total processing time: 6.53s
+2025-04-10 19:19:26,489 - Average time per file: 0.016s
+2025-04-10 19:19:26,489 - Average time per segment: 0.01ms
+2025-04-10 19:19:26,489 - Throughput: 156943.8 segments/s (62.46 files/s)
+2025-04-10 19:19:38,042 - Batch 3000, Loss: 0.000421
+2025-04-10 19:19:38,042 - 
+Processing Time Statistics:
+2025-04-10 19:19:38,042 - Total files processed: 635
+2025-04-10 19:19:38,042 - Total segments processed: 1,538,677
+2025-04-10 19:19:38,042 - Total processing time: 9.95s
+2025-04-10 19:19:38,042 - Average time per file: 0.016s
+2025-04-10 19:19:38,042 - Average time per segment: 0.01ms
+2025-04-10 19:19:38,042 - Throughput: 154625.5 segments/s (63.81 files/s)
+2025-04-10 19:19:49,591 - Batch 4000, Loss: 0.000284
+2025-04-10 19:19:49,591 - 
+Processing Time Statistics:
+2025-04-10 19:19:49,591 - Total files processed: 852
+2025-04-10 19:19:49,591 - Total segments processed: 2,049,662
+2025-04-10 19:19:49,591 - Total processing time: 13.43s
+2025-04-10 19:19:49,591 - Average time per file: 0.016s
+2025-04-10 19:19:49,591 - Average time per segment: 0.01ms
+2025-04-10 19:19:49,591 - Throughput: 152619.0 segments/s (63.44 files/s)
+2025-04-10 19:20:01,074 - Batch 5000, Loss: 0.001979
+2025-04-10 19:20:01,074 - 
+Processing Time Statistics:
+2025-04-10 19:20:01,074 - Total files processed: 1,074
+2025-04-10 19:20:01,074 - Total segments processed: 2,561,670
+2025-04-10 19:20:01,074 - Total processing time: 16.75s
+2025-04-10 19:20:01,074 - Average time per file: 0.016s
+2025-04-10 19:20:01,074 - Average time per segment: 0.01ms
+2025-04-10 19:20:01,074 - Throughput: 152909.0 segments/s (64.11 files/s)
+2025-04-10 19:20:12,365 - Batch 6000, Loss: 0.000865
+2025-04-10 19:20:12,365 - 
+Processing Time Statistics:
+2025-04-10 19:20:12,365 - Total files processed: 1,258
+2025-04-10 19:20:12,365 - Total segments processed: 3,073,801
+2025-04-10 19:20:12,365 - Total processing time: 19.82s
+2025-04-10 19:20:12,365 - Average time per file: 0.016s
+2025-04-10 19:20:12,365 - Average time per segment: 0.01ms
+2025-04-10 19:20:12,365 - Throughput: 155084.1 segments/s (63.47 files/s)
+2025-04-10 19:20:23,623 - Batch 7000, Loss: 0.000127
+2025-04-10 19:20:23,623 - 
+Processing Time Statistics:
+2025-04-10 19:20:23,623 - Total files processed: 1,462
+2025-04-10 19:20:23,623 - Total segments processed: 3,591,280
+2025-04-10 19:20:23,623 - Total processing time: 22.98s
+2025-04-10 19:20:23,623 - Average time per file: 0.016s
+2025-04-10 19:20:23,623 - Average time per segment: 0.01ms
+2025-04-10 19:20:23,623 - Throughput: 156304.1 segments/s (63.63 files/s)
+2025-04-10 19:20:35,118 - Batch 8000, Loss: 0.003026
+2025-04-10 19:20:35,118 - 
+Processing Time Statistics:
+2025-04-10 19:20:35,118 - Total files processed: 1,673
+2025-04-10 19:20:35,118 - Total segments processed: 4,096,872
+2025-04-10 19:20:35,118 - Total processing time: 26.36s
+2025-04-10 19:20:35,118 - Average time per file: 0.016s
+2025-04-10 19:20:35,118 - Average time per segment: 0.01ms
+2025-04-10 19:20:35,118 - Throughput: 155417.2 segments/s (63.47 files/s)
+2025-04-10 19:20:46,807 - Batch 9000, Loss: 0.000386
+2025-04-10 19:20:46,808 - 
+Processing Time Statistics:
+2025-04-10 19:20:46,808 - Total files processed: 1,893
+2025-04-10 19:20:46,808 - Total segments processed: 4,610,858
+2025-04-10 19:20:46,808 - Total processing time: 29.82s
+2025-04-10 19:20:46,808 - Average time per file: 0.016s
+2025-04-10 19:20:46,808 - Average time per segment: 0.01ms
+2025-04-10 19:20:46,808 - Throughput: 154645.5 segments/s (63.49 files/s)
+2025-04-10 19:20:58,125 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:20:58,126 - Processed 20001 batches in epoch 8
+2025-04-10 19:20:58,126 - ====> Epoch: 8 - Total loss: 19.426852845106623 - Average loss: 0.000971294
+2025-04-10 19:20:58,203 - Epoch 9/199
+2025-04-10 19:20:58,203 - ----------
+2025-04-10 19:20:58,217 - Reset coverage statistics for new epoch
+2025-04-10 19:20:58,217 - Using default batch limit of 20,000 for epoch 9
+2025-04-10 19:20:58,259 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:20:58,259 - First batch device before transfer: cpu
+2025-04-10 19:20:58,260 - Batch range: [-0.123, 0.204]
+2025-04-10 19:20:58,260 - First batch device after transfer: cuda:0
+2025-04-10 19:20:58,260 - Model device: cuda:0
+2025-04-10 19:20:58,260 - Test computation result: 3704.211 on cuda:0
+2025-04-10 19:20:58,260 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:20:58,262 - Batch 0, Loss: 0.000455
+2025-04-10 19:20:58,262 - 
+Processing Time Statistics:
+2025-04-10 19:20:58,262 - Total files processed: 1
+2025-04-10 19:20:58,262 - Total segments processed: 1,257
+2025-04-10 19:20:58,262 - Total processing time: 0.01s
+2025-04-10 19:20:58,262 - Average time per file: 0.011s
+2025-04-10 19:20:58,262 - Average time per segment: 0.01ms
+2025-04-10 19:20:58,262 - Throughput: 111546.4 segments/s (88.74 files/s)
+2025-04-10 19:21:09,850 - Batch 1000, Loss: 0.000249
+2025-04-10 19:21:09,850 - 
+Processing Time Statistics:
+2025-04-10 19:21:09,850 - Total files processed: 235
+2025-04-10 19:21:09,850 - Total segments processed: 514,943
+2025-04-10 19:21:09,850 - Total processing time: 3.55s
+2025-04-10 19:21:09,850 - Average time per file: 0.015s
+2025-04-10 19:21:09,850 - Average time per segment: 0.01ms
+2025-04-10 19:21:09,850 - Throughput: 145171.1 segments/s (66.25 files/s)
+2025-04-10 19:21:21,068 - Batch 2000, Loss: 0.017319
+2025-04-10 19:21:21,068 - 
+Processing Time Statistics:
+2025-04-10 19:21:21,068 - Total files processed: 441
+2025-04-10 19:21:21,068 - Total segments processed: 1,026,952
+2025-04-10 19:21:21,068 - Total processing time: 6.74s
+2025-04-10 19:21:21,068 - Average time per file: 0.015s
+2025-04-10 19:21:21,068 - Average time per segment: 0.01ms
+2025-04-10 19:21:21,068 - Throughput: 152296.5 segments/s (65.40 files/s)
+2025-04-10 19:21:32,918 - Batch 3000, Loss: 0.000684
+2025-04-10 19:21:32,918 - 
+Processing Time Statistics:
+2025-04-10 19:21:32,918 - Total files processed: 679
+2025-04-10 19:21:32,918 - Total segments processed: 1,543,040
+2025-04-10 19:21:32,918 - Total processing time: 10.38s
+2025-04-10 19:21:32,918 - Average time per file: 0.015s
+2025-04-10 19:21:32,918 - Average time per segment: 0.01ms
+2025-04-10 19:21:32,918 - Throughput: 148682.4 segments/s (65.43 files/s)
+2025-04-10 19:21:44,315 - Batch 4000, Loss: 0.001695
+2025-04-10 19:21:44,316 - 
+Processing Time Statistics:
+2025-04-10 19:21:44,316 - Total files processed: 893
+2025-04-10 19:21:44,316 - Total segments processed: 2,052,180
+2025-04-10 19:21:44,316 - Total processing time: 13.72s
+2025-04-10 19:21:44,316 - Average time per file: 0.015s
+2025-04-10 19:21:44,316 - Average time per segment: 0.01ms
+2025-04-10 19:21:44,316 - Throughput: 149533.3 segments/s (65.07 files/s)
+2025-04-10 19:21:55,460 - Batch 5000, Loss: 0.000396
+2025-04-10 19:21:55,460 - 
+Processing Time Statistics:
+2025-04-10 19:21:55,460 - Total files processed: 1,092
+2025-04-10 19:21:55,460 - Total segments processed: 2,561,554
+2025-04-10 19:21:55,460 - Total processing time: 16.86s
+2025-04-10 19:21:55,460 - Average time per file: 0.015s
+2025-04-10 19:21:55,461 - Average time per segment: 0.01ms
+2025-04-10 19:21:55,461 - Throughput: 151915.4 segments/s (64.76 files/s)
+2025-04-10 19:22:06,835 - Batch 6000, Loss: 0.009832
+2025-04-10 19:22:06,835 - 
+Processing Time Statistics:
+2025-04-10 19:22:06,835 - Total files processed: 1,314
+2025-04-10 19:22:06,835 - Total segments processed: 3,079,081
+2025-04-10 19:22:06,835 - Total processing time: 20.20s
+2025-04-10 19:22:06,835 - Average time per file: 0.015s
+2025-04-10 19:22:06,835 - Average time per segment: 0.01ms
+2025-04-10 19:22:06,835 - Throughput: 152432.5 segments/s (65.05 files/s)
+2025-04-10 19:22:18,084 - Batch 7000, Loss: 0.002509
+2025-04-10 19:22:18,084 - 
+Processing Time Statistics:
+2025-04-10 19:22:18,084 - Total files processed: 1,510
+2025-04-10 19:22:18,084 - Total segments processed: 3,592,415
+2025-04-10 19:22:18,084 - Total processing time: 23.24s
+2025-04-10 19:22:18,084 - Average time per file: 0.015s
+2025-04-10 19:22:18,084 - Average time per segment: 0.01ms
+2025-04-10 19:22:18,084 - Throughput: 154574.1 segments/s (64.97 files/s)
+2025-04-10 19:22:29,162 - Batch 8000, Loss: 0.000285
+2025-04-10 19:22:29,162 - 
+Processing Time Statistics:
+2025-04-10 19:22:29,162 - Total files processed: 1,705
+2025-04-10 19:22:29,162 - Total segments processed: 4,105,430
+2025-04-10 19:22:29,162 - Total processing time: 26.23s
+2025-04-10 19:22:29,162 - Average time per file: 0.015s
+2025-04-10 19:22:29,162 - Average time per segment: 0.01ms
+2025-04-10 19:22:29,162 - Throughput: 156520.4 segments/s (65.00 files/s)
+2025-04-10 19:22:40,349 - Batch 9000, Loss: 0.001621
+2025-04-10 19:22:40,349 - 
+Processing Time Statistics:
+2025-04-10 19:22:40,349 - Total files processed: 1,897
+2025-04-10 19:22:40,349 - Total segments processed: 4,613,135
+2025-04-10 19:22:40,349 - Total processing time: 29.26s
+2025-04-10 19:22:40,349 - Average time per file: 0.015s
+2025-04-10 19:22:40,349 - Average time per segment: 0.01ms
+2025-04-10 19:22:40,349 - Throughput: 157647.7 segments/s (64.83 files/s)
+2025-04-10 19:22:51,485 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:22:51,485 - Processed 20001 batches in epoch 9
+2025-04-10 19:22:51,485 - ====> Epoch: 9 - Total loss: 20.272768154813093 - Average loss: 0.001013588
+2025-04-10 19:22:51,562 - Epoch 10/199
+2025-04-10 19:22:51,562 - ----------
+2025-04-10 19:22:51,576 - Reset coverage statistics for new epoch
+2025-04-10 19:22:51,576 - Using default batch limit of 20,000 for epoch 10
+2025-04-10 19:22:51,626 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:22:51,626 - First batch device before transfer: cpu
+2025-04-10 19:22:51,627 - Batch range: [-0.724, 0.878]
+2025-04-10 19:22:51,627 - First batch device after transfer: cuda:0
+2025-04-10 19:22:51,627 - Model device: cuda:0
+2025-04-10 19:22:51,627 - Test computation result: 59524.070 on cuda:0
+2025-04-10 19:22:51,627 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:22:51,628 - Batch 0, Loss: 0.006813
+2025-04-10 19:22:51,628 - 
+Processing Time Statistics:
+2025-04-10 19:22:51,629 - Total files processed: 1
+2025-04-10 19:22:51,629 - Total segments processed: 1,262
+2025-04-10 19:22:51,629 - Total processing time: 0.02s
+2025-04-10 19:22:51,629 - Average time per file: 0.016s
+2025-04-10 19:22:51,629 - Average time per segment: 0.01ms
+2025-04-10 19:22:51,629 - Throughput: 78680.2 segments/s (62.35 files/s)
+2025-04-10 19:23:02,821 - Batch 1000, Loss: 0.000231
+2025-04-10 19:23:02,822 - 
+Processing Time Statistics:
+2025-04-10 19:23:02,822 - Total files processed: 214
+2025-04-10 19:23:02,822 - Total segments processed: 514,225
+2025-04-10 19:23:02,822 - Total processing time: 3.20s
+2025-04-10 19:23:02,822 - Average time per file: 0.015s
+2025-04-10 19:23:02,822 - Average time per segment: 0.01ms
+2025-04-10 19:23:02,822 - Throughput: 160862.5 segments/s (66.94 files/s)
+2025-04-10 19:23:14,152 - Batch 2000, Loss: 0.000217
+2025-04-10 19:23:14,153 - 
+Processing Time Statistics:
+2025-04-10 19:23:14,153 - Total files processed: 437
+2025-04-10 19:23:14,153 - Total segments processed: 1,025,557
+2025-04-10 19:23:14,153 - Total processing time: 6.42s
+2025-04-10 19:23:14,153 - Average time per file: 0.015s
+2025-04-10 19:23:14,153 - Average time per segment: 0.01ms
+2025-04-10 19:23:14,153 - Throughput: 159637.7 segments/s (68.02 files/s)
+2025-04-10 19:23:25,504 - Batch 3000, Loss: 0.001534
+2025-04-10 19:23:25,504 - 
+Processing Time Statistics:
+2025-04-10 19:23:25,504 - Total files processed: 648
+2025-04-10 19:23:25,504 - Total segments processed: 1,537,194
+2025-04-10 19:23:25,504 - Total processing time: 9.68s
+2025-04-10 19:23:25,504 - Average time per file: 0.015s
+2025-04-10 19:23:25,504 - Average time per segment: 0.01ms
+2025-04-10 19:23:25,504 - Throughput: 158864.9 segments/s (66.97 files/s)
+2025-04-10 19:23:36,705 - Batch 4000, Loss: 0.000295
+2025-04-10 19:23:36,705 - 
+Processing Time Statistics:
+2025-04-10 19:23:36,705 - Total files processed: 860
+2025-04-10 19:23:36,705 - Total segments processed: 2,050,660
+2025-04-10 19:23:36,705 - Total processing time: 12.86s
+2025-04-10 19:23:36,705 - Average time per file: 0.015s
+2025-04-10 19:23:36,705 - Average time per segment: 0.01ms
+2025-04-10 19:23:36,705 - Throughput: 159509.6 segments/s (66.89 files/s)
+2025-04-10 19:23:48,171 - Batch 5000, Loss: 0.000315
+2025-04-10 19:23:48,171 - 
+Processing Time Statistics:
+2025-04-10 19:23:48,171 - Total files processed: 1,085
+2025-04-10 19:23:48,171 - Total segments processed: 2,564,270
+2025-04-10 19:23:48,171 - Total processing time: 16.28s
+2025-04-10 19:23:48,171 - Average time per file: 0.015s
+2025-04-10 19:23:48,171 - Average time per segment: 0.01ms
+2025-04-10 19:23:48,171 - Throughput: 157557.0 segments/s (66.67 files/s)
+2025-04-10 19:23:59,588 - Batch 6000, Loss: 0.000231
+2025-04-10 19:23:59,588 - 
+Processing Time Statistics:
+2025-04-10 19:23:59,588 - Total files processed: 1,303
+2025-04-10 19:23:59,588 - Total segments processed: 3,078,555
+2025-04-10 19:23:59,588 - Total processing time: 19.51s
+2025-04-10 19:23:59,588 - Average time per file: 0.015s
+2025-04-10 19:23:59,589 - Average time per segment: 0.01ms
+2025-04-10 19:23:59,589 - Throughput: 157827.7 segments/s (66.80 files/s)
+2025-04-10 19:24:10,771 - Batch 7000, Loss: 0.000264
+2025-04-10 19:24:10,771 - 
+Processing Time Statistics:
+2025-04-10 19:24:10,771 - Total files processed: 1,508
+2025-04-10 19:24:10,771 - Total segments processed: 3,585,676
+2025-04-10 19:24:10,771 - Total processing time: 22.69s
+2025-04-10 19:24:10,771 - Average time per file: 0.015s
+2025-04-10 19:24:10,771 - Average time per segment: 0.01ms
+2025-04-10 19:24:10,771 - Throughput: 158058.7 segments/s (66.47 files/s)
+2025-04-10 19:24:22,154 - Batch 8000, Loss: 0.000620
+2025-04-10 19:24:22,154 - 
+Processing Time Statistics:
+2025-04-10 19:24:22,154 - Total files processed: 1,720
+2025-04-10 19:24:22,154 - Total segments processed: 4,104,631
+2025-04-10 19:24:22,154 - Total processing time: 25.92s
+2025-04-10 19:24:22,154 - Average time per file: 0.015s
+2025-04-10 19:24:22,154 - Average time per segment: 0.01ms
+2025-04-10 19:24:22,154 - Throughput: 158335.9 segments/s (66.35 files/s)
+2025-04-10 19:24:33,128 - Batch 9000, Loss: 0.002101
+2025-04-10 19:24:33,128 - 
+Processing Time Statistics:
+2025-04-10 19:24:33,128 - Total files processed: 1,926
+2025-04-10 19:24:33,128 - Total segments processed: 4,609,180
+2025-04-10 19:24:33,128 - Total processing time: 28.97s
+2025-04-10 19:24:33,128 - Average time per file: 0.015s
+2025-04-10 19:24:33,128 - Average time per segment: 0.01ms
+2025-04-10 19:24:33,128 - Throughput: 159108.7 segments/s (66.49 files/s)
+2025-04-10 19:24:44,191 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:24:44,191 - Processed 20001 batches in epoch 10
+2025-04-10 19:24:44,191 - ====> Epoch: 10 - Total loss: 20.62117002972809 - Average loss: 0.001031007
+2025-04-10 19:24:44,268 - Epoch 11/199
+2025-04-10 19:24:44,268 - ----------
+2025-04-10 19:24:44,282 - Reset coverage statistics for new epoch
+2025-04-10 19:24:44,282 - Using default batch limit of 20,000 for epoch 11
+2025-04-10 19:24:44,385 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:24:44,385 - First batch device before transfer: cpu
+2025-04-10 19:24:44,385 - Batch range: [-0.628, 0.704]
+2025-04-10 19:24:44,386 - First batch device after transfer: cuda:0
+2025-04-10 19:24:44,386 - Model device: cuda:0
+2025-04-10 19:24:44,386 - Test computation result: 9652.381 on cuda:0
+2025-04-10 19:24:44,386 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:24:44,387 - Batch 0, Loss: 0.002351
+2025-04-10 19:24:44,388 - 
+Processing Time Statistics:
+2025-04-10 19:24:44,388 - Total files processed: 1
+2025-04-10 19:24:44,388 - Total segments processed: 7,089
+2025-04-10 19:24:44,388 - Total processing time: 0.03s
+2025-04-10 19:24:44,388 - Average time per file: 0.030s
+2025-04-10 19:24:44,388 - Average time per segment: 0.00ms
+2025-04-10 19:24:44,388 - Throughput: 239320.5 segments/s (33.76 files/s)
+2025-04-10 19:24:55,984 - Batch 1000, Loss: 0.000283
+2025-04-10 19:24:55,984 - 
+Processing Time Statistics:
+2025-04-10 19:24:55,984 - Total files processed: 246
+2025-04-10 19:24:55,984 - Total segments processed: 515,460
+2025-04-10 19:24:55,984 - Total processing time: 3.59s
+2025-04-10 19:24:55,984 - Average time per file: 0.015s
+2025-04-10 19:24:55,984 - Average time per segment: 0.01ms
+2025-04-10 19:24:55,984 - Throughput: 143604.5 segments/s (68.53 files/s)
+2025-04-10 19:25:07,122 - Batch 2000, Loss: 0.010728
+2025-04-10 19:25:07,122 - 
+Processing Time Statistics:
+2025-04-10 19:25:07,122 - Total files processed: 445
+2025-04-10 19:25:07,122 - Total segments processed: 1,026,568
+2025-04-10 19:25:07,123 - Total processing time: 6.57s
+2025-04-10 19:25:07,123 - Average time per file: 0.015s
+2025-04-10 19:25:07,123 - Average time per segment: 0.01ms
+2025-04-10 19:25:07,123 - Throughput: 156328.1 segments/s (67.77 files/s)
+2025-04-10 19:25:18,343 - Batch 3000, Loss: 0.000286
+2025-04-10 19:25:18,344 - 
+Processing Time Statistics:
+2025-04-10 19:25:18,344 - Total files processed: 669
+2025-04-10 19:25:18,344 - Total segments processed: 1,536,830
+2025-04-10 19:25:18,344 - Total processing time: 9.81s
+2025-04-10 19:25:18,344 - Average time per file: 0.015s
+2025-04-10 19:25:18,344 - Average time per segment: 0.01ms
+2025-04-10 19:25:18,344 - Throughput: 156628.8 segments/s (68.18 files/s)
+2025-04-10 19:25:29,976 - Batch 4000, Loss: 0.000592
+2025-04-10 19:25:29,976 - 
+Processing Time Statistics:
+2025-04-10 19:25:29,976 - Total files processed: 902
+2025-04-10 19:25:29,976 - Total segments processed: 2,049,538
+2025-04-10 19:25:29,976 - Total processing time: 13.25s
+2025-04-10 19:25:29,976 - Average time per file: 0.015s
+2025-04-10 19:25:29,976 - Average time per segment: 0.01ms
+2025-04-10 19:25:29,976 - Throughput: 154734.9 segments/s (68.10 files/s)
+2025-04-10 19:25:41,093 - Batch 5000, Loss: 0.040200
+2025-04-10 19:25:41,093 - 
+Processing Time Statistics:
+2025-04-10 19:25:41,093 - Total files processed: 1,101
+2025-04-10 19:25:41,093 - Total segments processed: 2,562,550
+2025-04-10 19:25:41,093 - Total processing time: 16.28s
+2025-04-10 19:25:41,093 - Average time per file: 0.015s
+2025-04-10 19:25:41,093 - Average time per segment: 0.01ms
+2025-04-10 19:25:41,093 - Throughput: 157382.8 segments/s (67.62 files/s)
+2025-04-10 19:25:52,511 - Batch 6000, Loss: 0.000236
+2025-04-10 19:25:52,511 - 
+Processing Time Statistics:
+2025-04-10 19:25:52,511 - Total files processed: 1,338
+2025-04-10 19:25:52,511 - Total segments processed: 3,073,677
+2025-04-10 19:25:52,512 - Total processing time: 19.66s
+2025-04-10 19:25:52,512 - Average time per file: 0.015s
+2025-04-10 19:25:52,512 - Average time per segment: 0.01ms
+2025-04-10 19:25:52,512 - Throughput: 156328.0 segments/s (68.05 files/s)
+2025-04-10 19:26:03,909 - Batch 7000, Loss: 0.001746
+2025-04-10 19:26:03,909 - 
+Processing Time Statistics:
+2025-04-10 19:26:03,909 - Total files processed: 1,560
+2025-04-10 19:26:03,909 - Total segments processed: 3,588,529
+2025-04-10 19:26:03,909 - Total processing time: 23.00s
+2025-04-10 19:26:03,909 - Average time per file: 0.015s
+2025-04-10 19:26:03,909 - Average time per segment: 0.01ms
+2025-04-10 19:26:03,909 - Throughput: 156037.8 segments/s (67.83 files/s)
+2025-04-10 19:26:15,210 - Batch 8000, Loss: 0.000254
+2025-04-10 19:26:15,211 - 
+Processing Time Statistics:
+2025-04-10 19:26:15,211 - Total files processed: 1,783
+2025-04-10 19:26:15,211 - Total segments processed: 4,098,953
+2025-04-10 19:26:15,211 - Total processing time: 26.23s
+2025-04-10 19:26:15,211 - Average time per file: 0.015s
+2025-04-10 19:26:15,211 - Average time per segment: 0.01ms
+2025-04-10 19:26:15,211 - Throughput: 156296.2 segments/s (67.99 files/s)
+2025-04-10 19:26:26,485 - Batch 9000, Loss: 0.000246
+2025-04-10 19:26:26,486 - 
+Processing Time Statistics:
+2025-04-10 19:26:26,486 - Total files processed: 1,999
+2025-04-10 19:26:26,486 - Total segments processed: 4,609,502
+2025-04-10 19:26:26,486 - Total processing time: 29.45s
+2025-04-10 19:26:26,486 - Average time per file: 0.015s
+2025-04-10 19:26:26,486 - Average time per segment: 0.01ms
+2025-04-10 19:26:26,486 - Throughput: 156499.3 segments/s (67.87 files/s)
+2025-04-10 19:26:37,731 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:26:37,731 - Processed 20001 batches in epoch 11
+2025-04-10 19:26:37,732 - ====> Epoch: 11 - Total loss: 22.363207598013105 - Average loss: 0.001118104
+2025-04-10 19:26:37,808 - Epoch 12/199
+2025-04-10 19:26:37,808 - ----------
+2025-04-10 19:26:37,822 - Reset coverage statistics for new epoch
+2025-04-10 19:26:37,822 - Using default batch limit of 20,000 for epoch 12
+2025-04-10 19:26:37,897 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:26:37,897 - First batch device before transfer: cpu
+2025-04-10 19:26:37,897 - Batch range: [-0.746, 0.677]
+2025-04-10 19:26:37,898 - First batch device after transfer: cuda:0
+2025-04-10 19:26:37,898 - Model device: cuda:0
+2025-04-10 19:26:37,898 - Test computation result: 19353.273 on cuda:0
+2025-04-10 19:26:37,898 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:26:37,900 - Batch 0, Loss: 0.000724
+2025-04-10 19:26:37,900 - 
+Processing Time Statistics:
+2025-04-10 19:26:37,900 - Total files processed: 1
+2025-04-10 19:26:37,900 - Total segments processed: 4,798
+2025-04-10 19:26:37,900 - Total processing time: 0.02s
+2025-04-10 19:26:37,900 - Average time per file: 0.020s
+2025-04-10 19:26:37,900 - Average time per segment: 0.00ms
+2025-04-10 19:26:37,900 - Throughput: 237746.3 segments/s (49.55 files/s)
+2025-04-10 19:26:49,066 - Batch 1000, Loss: 0.000609
+2025-04-10 19:26:49,066 - 
+Processing Time Statistics:
+2025-04-10 19:26:49,066 - Total files processed: 208
+2025-04-10 19:26:49,066 - Total segments processed: 512,705
+2025-04-10 19:26:49,066 - Total processing time: 3.15s
+2025-04-10 19:26:49,066 - Average time per file: 0.015s
+2025-04-10 19:26:49,066 - Average time per segment: 0.01ms
+2025-04-10 19:26:49,066 - Throughput: 162906.6 segments/s (66.09 files/s)
+2025-04-10 19:27:00,273 - Batch 2000, Loss: 0.000237
+2025-04-10 19:27:00,273 - 
+Processing Time Statistics:
+2025-04-10 19:27:00,273 - Total files processed: 401
+2025-04-10 19:27:00,273 - Total segments processed: 1,026,233
+2025-04-10 19:27:00,273 - Total processing time: 6.13s
+2025-04-10 19:27:00,273 - Average time per file: 0.015s
+2025-04-10 19:27:00,273 - Average time per segment: 0.01ms
+2025-04-10 19:27:00,273 - Throughput: 167533.0 segments/s (65.46 files/s)
+2025-04-10 19:27:11,488 - Batch 3000, Loss: 0.000228
+2025-04-10 19:27:11,489 - 
+Processing Time Statistics:
+2025-04-10 19:27:11,489 - Total files processed: 612
+2025-04-10 19:27:11,489 - Total segments processed: 1,541,425
+2025-04-10 19:27:11,489 - Total processing time: 9.30s
+2025-04-10 19:27:11,489 - Average time per file: 0.015s
+2025-04-10 19:27:11,489 - Average time per segment: 0.01ms
+2025-04-10 19:27:11,489 - Throughput: 165718.1 segments/s (65.80 files/s)
+2025-04-10 19:27:22,718 - Batch 4000, Loss: 0.000218
+2025-04-10 19:27:22,718 - 
+Processing Time Statistics:
+2025-04-10 19:27:22,718 - Total files processed: 827
+2025-04-10 19:27:22,718 - Total segments processed: 2,050,788
+2025-04-10 19:27:22,718 - Total processing time: 12.52s
+2025-04-10 19:27:22,718 - Average time per file: 0.015s
+2025-04-10 19:27:22,718 - Average time per segment: 0.01ms
+2025-04-10 19:27:22,718 - Throughput: 163860.8 segments/s (66.08 files/s)
+2025-04-10 19:27:34,275 - Batch 5000, Loss: 0.000558
+2025-04-10 19:27:34,275 - 
+Processing Time Statistics:
+2025-04-10 19:27:34,275 - Total files processed: 1,064
+2025-04-10 19:27:34,275 - Total segments processed: 2,561,383
+2025-04-10 19:27:34,275 - Total processing time: 15.94s
+2025-04-10 19:27:34,275 - Average time per file: 0.015s
+2025-04-10 19:27:34,275 - Average time per segment: 0.01ms
+2025-04-10 19:27:34,275 - Throughput: 160695.9 segments/s (66.75 files/s)
+2025-04-10 19:27:45,198 - Batch 6000, Loss: 0.002410
+2025-04-10 19:27:45,199 - 
+Processing Time Statistics:
+2025-04-10 19:27:45,199 - Total files processed: 1,262
+2025-04-10 19:27:45,199 - Total segments processed: 3,072,569
+2025-04-10 19:27:45,199 - Total processing time: 18.86s
+2025-04-10 19:27:45,199 - Average time per file: 0.015s
+2025-04-10 19:27:45,199 - Average time per segment: 0.01ms
+2025-04-10 19:27:45,199 - Throughput: 162921.0 segments/s (66.92 files/s)
+2025-04-10 19:27:56,536 - Batch 7000, Loss: 0.002253
+2025-04-10 19:27:56,536 - 
+Processing Time Statistics:
+2025-04-10 19:27:56,536 - Total files processed: 1,485
+2025-04-10 19:27:56,536 - Total segments processed: 3,586,123
+2025-04-10 19:27:56,536 - Total processing time: 22.08s
+2025-04-10 19:27:56,536 - Average time per file: 0.015s
+2025-04-10 19:27:56,536 - Average time per segment: 0.01ms
+2025-04-10 19:27:56,536 - Throughput: 162406.1 segments/s (67.25 files/s)
+2025-04-10 19:28:07,768 - Batch 8000, Loss: 0.000372
+2025-04-10 19:28:07,768 - 
+Processing Time Statistics:
+2025-04-10 19:28:07,768 - Total files processed: 1,711
+2025-04-10 19:28:07,768 - Total segments processed: 4,106,166
+2025-04-10 19:28:07,768 - Total processing time: 25.32s
+2025-04-10 19:28:07,768 - Average time per file: 0.015s
+2025-04-10 19:28:07,768 - Average time per segment: 0.01ms
+2025-04-10 19:28:07,768 - Throughput: 162171.8 segments/s (67.58 files/s)
+2025-04-10 19:28:19,145 - Batch 9000, Loss: 0.001368
+2025-04-10 19:28:19,145 - 
+Processing Time Statistics:
+2025-04-10 19:28:19,145 - Total files processed: 1,934
+2025-04-10 19:28:19,145 - Total segments processed: 4,611,121
+2025-04-10 19:28:19,145 - Total processing time: 28.62s
+2025-04-10 19:28:19,145 - Average time per file: 0.015s
+2025-04-10 19:28:19,145 - Average time per segment: 0.01ms
+2025-04-10 19:28:19,145 - Throughput: 161093.8 segments/s (67.57 files/s)
+2025-04-10 19:28:30,685 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:28:30,685 - Processed 20001 batches in epoch 12
+2025-04-10 19:28:30,685 - ====> Epoch: 12 - Total loss: 19.438130396447377 - Average loss: 0.000971858
+2025-04-10 19:28:30,763 - Epoch 13/199
+2025-04-10 19:28:30,763 - ----------
+2025-04-10 19:28:30,777 - Reset coverage statistics for new epoch
+2025-04-10 19:28:30,777 - Using default batch limit of 20,000 for epoch 13
+2025-04-10 19:28:30,816 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:28:30,816 - First batch device before transfer: cpu
+2025-04-10 19:28:30,816 - Batch range: [-0.942, 0.945]
+2025-04-10 19:28:30,817 - First batch device after transfer: cuda:0
+2025-04-10 19:28:30,817 - Model device: cuda:0
+2025-04-10 19:28:30,817 - Test computation result: 4146.686 on cuda:0
+2025-04-10 19:28:30,817 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:28:30,818 - Batch 0, Loss: 0.000541
+2025-04-10 19:28:30,818 - 
+Processing Time Statistics:
+2025-04-10 19:28:30,818 - Total files processed: 1
+2025-04-10 19:28:30,818 - Total segments processed: 702
+2025-04-10 19:28:30,818 - Total processing time: 0.02s
+2025-04-10 19:28:30,818 - Average time per file: 0.015s
+2025-04-10 19:28:30,818 - Average time per segment: 0.02ms
+2025-04-10 19:28:30,818 - Throughput: 46019.2 segments/s (65.55 files/s)
+2025-04-10 19:28:42,236 - Batch 1000, Loss: 0.000354
+2025-04-10 19:28:42,236 - 
+Processing Time Statistics:
+2025-04-10 19:28:42,236 - Total files processed: 215
+2025-04-10 19:28:42,236 - Total segments processed: 512,639
+2025-04-10 19:28:42,236 - Total processing time: 3.22s
+2025-04-10 19:28:42,236 - Average time per file: 0.015s
+2025-04-10 19:28:42,236 - Average time per segment: 0.01ms
+2025-04-10 19:28:42,236 - Throughput: 158996.6 segments/s (66.68 files/s)
+2025-04-10 19:28:53,463 - Batch 2000, Loss: 0.000322
+2025-04-10 19:28:53,463 - 
+Processing Time Statistics:
+2025-04-10 19:28:53,463 - Total files processed: 435
+2025-04-10 19:28:53,463 - Total segments processed: 1,024,872
+2025-04-10 19:28:53,463 - Total processing time: 6.39s
+2025-04-10 19:28:53,464 - Average time per file: 0.015s
+2025-04-10 19:28:53,464 - Average time per segment: 0.01ms
+2025-04-10 19:28:53,464 - Throughput: 160441.4 segments/s (68.10 files/s)
+2025-04-10 19:29:05,009 - Batch 3000, Loss: 0.000227
+2025-04-10 19:29:05,009 - 
+Processing Time Statistics:
+2025-04-10 19:29:05,009 - Total files processed: 653
+2025-04-10 19:29:05,009 - Total segments processed: 1,539,066
+2025-04-10 19:29:05,009 - Total processing time: 9.69s
+2025-04-10 19:29:05,009 - Average time per file: 0.015s
+2025-04-10 19:29:05,009 - Average time per segment: 0.01ms
+2025-04-10 19:29:05,009 - Throughput: 158814.6 segments/s (67.38 files/s)
+2025-04-10 19:29:16,188 - Batch 4000, Loss: 0.000264
+2025-04-10 19:29:16,188 - 
+Processing Time Statistics:
+2025-04-10 19:29:16,188 - Total files processed: 853
+2025-04-10 19:29:16,188 - Total segments processed: 2,051,375
+2025-04-10 19:29:16,188 - Total processing time: 12.75s
+2025-04-10 19:29:16,188 - Average time per file: 0.015s
+2025-04-10 19:29:16,188 - Average time per segment: 0.01ms
+2025-04-10 19:29:16,188 - Throughput: 160852.0 segments/s (66.89 files/s)
+2025-04-10 19:29:27,737 - Batch 5000, Loss: 0.000330
+2025-04-10 19:29:27,737 - 
+Processing Time Statistics:
+2025-04-10 19:29:27,737 - Total files processed: 1,096
+2025-04-10 19:29:27,737 - Total segments processed: 2,561,757
+2025-04-10 19:29:27,737 - Total processing time: 16.25s
+2025-04-10 19:29:27,737 - Average time per file: 0.015s
+2025-04-10 19:29:27,737 - Average time per segment: 0.01ms
+2025-04-10 19:29:27,737 - Throughput: 157683.7 segments/s (67.46 files/s)
+2025-04-10 19:29:39,169 - Batch 6000, Loss: 0.000431
+2025-04-10 19:29:39,169 - 
+Processing Time Statistics:
+2025-04-10 19:29:39,169 - Total files processed: 1,309
+2025-04-10 19:29:39,169 - Total segments processed: 3,074,411
+2025-04-10 19:29:39,169 - Total processing time: 19.47s
+2025-04-10 19:29:39,169 - Average time per file: 0.015s
+2025-04-10 19:29:39,169 - Average time per segment: 0.01ms
+2025-04-10 19:29:39,169 - Throughput: 157889.8 segments/s (67.23 files/s)
+2025-04-10 19:29:50,309 - Batch 7000, Loss: 0.000268
+2025-04-10 19:29:50,309 - 
+Processing Time Statistics:
+2025-04-10 19:29:50,309 - Total files processed: 1,501
+2025-04-10 19:29:50,309 - Total segments processed: 3,591,535
+2025-04-10 19:29:50,309 - Total processing time: 22.34s
+2025-04-10 19:29:50,309 - Average time per file: 0.015s
+2025-04-10 19:29:50,309 - Average time per segment: 0.01ms
+2025-04-10 19:29:50,309 - Throughput: 160732.4 segments/s (67.17 files/s)
+2025-04-10 19:30:01,422 - Batch 8000, Loss: 0.001632
+2025-04-10 19:30:01,422 - 
+Processing Time Statistics:
+2025-04-10 19:30:01,422 - Total files processed: 1,711
+2025-04-10 19:30:01,422 - Total segments processed: 4,097,491
+2025-04-10 19:30:01,422 - Total processing time: 25.46s
+2025-04-10 19:30:01,422 - Average time per file: 0.015s
+2025-04-10 19:30:01,422 - Average time per segment: 0.01ms
+2025-04-10 19:30:01,422 - Throughput: 160913.0 segments/s (67.19 files/s)
+2025-04-10 19:30:12,717 - Batch 9000, Loss: 0.000542
+2025-04-10 19:30:12,718 - 
+Processing Time Statistics:
+2025-04-10 19:30:12,718 - Total files processed: 1,921
+2025-04-10 19:30:12,718 - Total segments processed: 4,609,065
+2025-04-10 19:30:12,718 - Total processing time: 28.57s
+2025-04-10 19:30:12,718 - Average time per file: 0.015s
+2025-04-10 19:30:12,718 - Average time per segment: 0.01ms
+2025-04-10 19:30:12,718 - Throughput: 161339.9 segments/s (67.24 files/s)
+2025-04-10 19:30:24,119 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:30:24,119 - Processed 20001 batches in epoch 13
+2025-04-10 19:30:24,119 - ====> Epoch: 13 - Total loss: 16.846468050411204 - Average loss: 0.000842281
+2025-04-10 19:30:24,198 - Epoch 14/199
+2025-04-10 19:30:24,198 - ----------
+2025-04-10 19:30:24,212 - Reset coverage statistics for new epoch
+2025-04-10 19:30:24,212 - Using default batch limit of 20,000 for epoch 14
+2025-04-10 19:30:24,248 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:30:24,248 - First batch device before transfer: cpu
+2025-04-10 19:30:24,248 - Batch range: [-0.246, 0.266]
+2025-04-10 19:30:24,249 - First batch device after transfer: cuda:0
+2025-04-10 19:30:24,249 - Model device: cuda:0
+2025-04-10 19:30:24,249 - Test computation result: 6554.481 on cuda:0
+2025-04-10 19:30:24,249 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:30:24,250 - Batch 0, Loss: 0.000640
+2025-04-10 19:30:24,250 - 
+Processing Time Statistics:
+2025-04-10 19:30:24,250 - Total files processed: 1
+2025-04-10 19:30:24,250 - Total segments processed: 920
+2025-04-10 19:30:24,250 - Total processing time: 0.01s
+2025-04-10 19:30:24,250 - Average time per file: 0.012s
+2025-04-10 19:30:24,250 - Average time per segment: 0.01ms
+2025-04-10 19:30:24,250 - Throughput: 78607.4 segments/s (85.44 files/s)
+2025-04-10 19:30:35,450 - Batch 1000, Loss: 0.000272
+2025-04-10 19:30:35,450 - 
+Processing Time Statistics:
+2025-04-10 19:30:35,450 - Total files processed: 220
+2025-04-10 19:30:35,450 - Total segments processed: 512,755
+2025-04-10 19:30:35,450 - Total processing time: 3.16s
+2025-04-10 19:30:35,450 - Average time per file: 0.014s
+2025-04-10 19:30:35,450 - Average time per segment: 0.01ms
+2025-04-10 19:30:35,450 - Throughput: 162217.7 segments/s (69.60 files/s)
+2025-04-10 19:30:46,817 - Batch 2000, Loss: 0.000521
+2025-04-10 19:30:46,817 - 
+Processing Time Statistics:
+2025-04-10 19:30:46,817 - Total files processed: 427
+2025-04-10 19:30:46,817 - Total segments processed: 1,026,837
+2025-04-10 19:30:46,817 - Total processing time: 6.30s
+2025-04-10 19:30:46,817 - Average time per file: 0.015s
+2025-04-10 19:30:46,817 - Average time per segment: 0.01ms
+2025-04-10 19:30:46,817 - Throughput: 163098.2 segments/s (67.82 files/s)
+2025-04-10 19:30:57,993 - Batch 3000, Loss: 0.000235
+2025-04-10 19:30:57,993 - 
+Processing Time Statistics:
+2025-04-10 19:30:57,993 - Total files processed: 638
+2025-04-10 19:30:57,993 - Total segments processed: 1,536,890
+2025-04-10 19:30:57,993 - Total processing time: 9.42s
+2025-04-10 19:30:57,993 - Average time per file: 0.015s
+2025-04-10 19:30:57,993 - Average time per segment: 0.01ms
+2025-04-10 19:30:57,993 - Throughput: 163118.5 segments/s (67.71 files/s)
+2025-04-10 19:31:09,271 - Batch 4000, Loss: 0.000253
+2025-04-10 19:31:09,271 - 
+Processing Time Statistics:
+2025-04-10 19:31:09,271 - Total files processed: 848
+2025-04-10 19:31:09,271 - Total segments processed: 2,050,335
+2025-04-10 19:31:09,271 - Total processing time: 12.47s
+2025-04-10 19:31:09,271 - Average time per file: 0.015s
+2025-04-10 19:31:09,271 - Average time per segment: 0.01ms
+2025-04-10 19:31:09,271 - Throughput: 164396.0 segments/s (67.99 files/s)
+2025-04-10 19:31:20,423 - Batch 5000, Loss: 0.000306
+2025-04-10 19:31:20,423 - 
+Processing Time Statistics:
+2025-04-10 19:31:20,423 - Total files processed: 1,046
+2025-04-10 19:31:20,423 - Total segments processed: 2,564,416
+2025-04-10 19:31:20,423 - Total processing time: 15.51s
+2025-04-10 19:31:20,423 - Average time per file: 0.015s
+2025-04-10 19:31:20,423 - Average time per segment: 0.01ms
+2025-04-10 19:31:20,423 - Throughput: 165360.7 segments/s (67.45 files/s)
+2025-04-10 19:31:31,953 - Batch 6000, Loss: 0.000513
+2025-04-10 19:31:31,953 - 
+Processing Time Statistics:
+2025-04-10 19:31:31,953 - Total files processed: 1,273
+2025-04-10 19:31:31,953 - Total segments processed: 3,077,812
+2025-04-10 19:31:31,953 - Total processing time: 18.82s
+2025-04-10 19:31:31,953 - Average time per file: 0.015s
+2025-04-10 19:31:31,953 - Average time per segment: 0.01ms
+2025-04-10 19:31:31,953 - Throughput: 163504.3 segments/s (67.63 files/s)
+2025-04-10 19:31:42,879 - Batch 7000, Loss: 0.003501
+2025-04-10 19:31:42,879 - 
+Processing Time Statistics:
+2025-04-10 19:31:42,879 - Total files processed: 1,453
+2025-04-10 19:31:42,879 - Total segments processed: 3,585,077
+2025-04-10 19:31:42,879 - Total processing time: 21.57s
+2025-04-10 19:31:42,879 - Average time per file: 0.015s
+2025-04-10 19:31:42,879 - Average time per segment: 0.01ms
+2025-04-10 19:31:42,879 - Throughput: 166192.9 segments/s (67.36 files/s)
+2025-04-10 19:31:54,035 - Batch 8000, Loss: 0.000507
+2025-04-10 19:31:54,036 - 
+Processing Time Statistics:
+2025-04-10 19:31:54,036 - Total files processed: 1,683
+2025-04-10 19:31:54,036 - Total segments processed: 4,096,656
+2025-04-10 19:31:54,036 - Total processing time: 24.80s
+2025-04-10 19:31:54,036 - Average time per file: 0.015s
+2025-04-10 19:31:54,036 - Average time per segment: 0.01ms
+2025-04-10 19:31:54,036 - Throughput: 165158.7 segments/s (67.85 files/s)
+2025-04-10 19:32:04,940 - Batch 9000, Loss: 0.001903
+2025-04-10 19:32:04,941 - 
+Processing Time Statistics:
+2025-04-10 19:32:04,941 - Total files processed: 1,886
+2025-04-10 19:32:04,941 - Total segments processed: 4,611,406
+2025-04-10 19:32:04,941 - Total processing time: 27.73s
+2025-04-10 19:32:04,941 - Average time per file: 0.015s
+2025-04-10 19:32:04,941 - Average time per segment: 0.01ms
+2025-04-10 19:32:04,941 - Throughput: 166277.0 segments/s (68.00 files/s)
+2025-04-10 19:32:16,247 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:32:16,247 - Processed 20001 batches in epoch 14
+2025-04-10 19:32:16,247 - ====> Epoch: 14 - Total loss: 18.67054167378228 - Average loss: 0.000933480
+2025-04-10 19:32:16,324 - Epoch 15/199
+2025-04-10 19:32:16,326 - ----------
+2025-04-10 19:32:16,339 - Reset coverage statistics for new epoch
+2025-04-10 19:32:16,339 - Using default batch limit of 20,000 for epoch 15
+2025-04-10 19:32:16,421 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:32:16,422 - First batch device before transfer: cpu
+2025-04-10 19:32:16,422 - Batch range: [-0.030, 0.027]
+2025-04-10 19:32:16,422 - First batch device after transfer: cuda:0
+2025-04-10 19:32:16,422 - Model device: cuda:0
+2025-04-10 19:32:16,422 - Test computation result: 506.893 on cuda:0
+2025-04-10 19:32:16,423 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:32:16,424 - Batch 0, Loss: 0.000207
+2025-04-10 19:32:16,424 - 
+Processing Time Statistics:
+2025-04-10 19:32:16,424 - Total files processed: 1
+2025-04-10 19:32:16,424 - Total segments processed: 4,870
+2025-04-10 19:32:16,424 - Total processing time: 0.03s
+2025-04-10 19:32:16,424 - Average time per file: 0.025s
+2025-04-10 19:32:16,424 - Average time per segment: 0.01ms
+2025-04-10 19:32:16,424 - Throughput: 194697.1 segments/s (39.98 files/s)
+2025-04-10 19:32:27,481 - Batch 1000, Loss: 0.000426
+2025-04-10 19:32:27,481 - 
+Processing Time Statistics:
+2025-04-10 19:32:27,481 - Total files processed: 220
+2025-04-10 19:32:27,481 - Total segments processed: 514,003
+2025-04-10 19:32:27,481 - Total processing time: 3.16s
+2025-04-10 19:32:27,481 - Average time per file: 0.014s
+2025-04-10 19:32:27,481 - Average time per segment: 0.01ms
+2025-04-10 19:32:27,481 - Throughput: 162740.5 segments/s (69.66 files/s)
+2025-04-10 19:32:38,507 - Batch 2000, Loss: 0.007943
+2025-04-10 19:32:38,507 - 
+Processing Time Statistics:
+2025-04-10 19:32:38,507 - Total files processed: 440
+2025-04-10 19:32:38,507 - Total segments processed: 1,026,210
+2025-04-10 19:32:38,507 - Total processing time: 6.25s
+2025-04-10 19:32:38,507 - Average time per file: 0.014s
+2025-04-10 19:32:38,507 - Average time per segment: 0.01ms
+2025-04-10 19:32:38,507 - Throughput: 164253.5 segments/s (70.43 files/s)
+2025-04-10 19:32:49,611 - Batch 3000, Loss: 0.005591
+2025-04-10 19:32:49,611 - 
+Processing Time Statistics:
+2025-04-10 19:32:49,611 - Total files processed: 659
+2025-04-10 19:32:49,612 - Total segments processed: 1,537,720
+2025-04-10 19:32:49,612 - Total processing time: 9.26s
+2025-04-10 19:32:49,612 - Average time per file: 0.014s
+2025-04-10 19:32:49,612 - Average time per segment: 0.01ms
+2025-04-10 19:32:49,612 - Throughput: 166145.1 segments/s (71.20 files/s)
+2025-04-10 19:33:00,652 - Batch 4000, Loss: 0.000220
+2025-04-10 19:33:00,652 - 
+Processing Time Statistics:
+2025-04-10 19:33:00,652 - Total files processed: 861
+2025-04-10 19:33:00,652 - Total segments processed: 2,051,356
+2025-04-10 19:33:00,652 - Total processing time: 12.23s
+2025-04-10 19:33:00,652 - Average time per file: 0.014s
+2025-04-10 19:33:00,652 - Average time per segment: 0.01ms
+2025-04-10 19:33:00,652 - Throughput: 167742.4 segments/s (70.41 files/s)
+2025-04-10 19:33:11,858 - Batch 5000, Loss: 0.000310
+2025-04-10 19:33:11,858 - 
+Processing Time Statistics:
+2025-04-10 19:33:11,858 - Total files processed: 1,062
+2025-04-10 19:33:11,858 - Total segments processed: 2,563,706
+2025-04-10 19:33:11,858 - Total processing time: 15.21s
+2025-04-10 19:33:11,858 - Average time per file: 0.014s
+2025-04-10 19:33:11,858 - Average time per segment: 0.01ms
+2025-04-10 19:33:11,858 - Throughput: 168524.1 segments/s (69.81 files/s)
+2025-04-10 19:33:22,954 - Batch 6000, Loss: 0.001052
+2025-04-10 19:33:22,954 - 
+Processing Time Statistics:
+2025-04-10 19:33:22,954 - Total files processed: 1,268
+2025-04-10 19:33:22,954 - Total segments processed: 3,074,217
+2025-04-10 19:33:22,954 - Total processing time: 18.27s
+2025-04-10 19:33:22,954 - Average time per file: 0.014s
+2025-04-10 19:33:22,954 - Average time per segment: 0.01ms
+2025-04-10 19:33:22,954 - Throughput: 168287.1 segments/s (69.41 files/s)
+2025-04-10 19:33:34,119 - Batch 7000, Loss: 0.013505
+2025-04-10 19:33:34,119 - 
+Processing Time Statistics:
+2025-04-10 19:33:34,119 - Total files processed: 1,466
+2025-04-10 19:33:34,120 - Total segments processed: 3,585,401
+2025-04-10 19:33:34,120 - Total processing time: 21.24s
+2025-04-10 19:33:34,120 - Average time per file: 0.014s
+2025-04-10 19:33:34,120 - Average time per segment: 0.01ms
+2025-04-10 19:33:34,120 - Throughput: 168789.4 segments/s (69.01 files/s)
+2025-04-10 19:33:45,189 - Batch 8000, Loss: 0.000481
+2025-04-10 19:33:45,190 - 
+Processing Time Statistics:
+2025-04-10 19:33:45,190 - Total files processed: 1,671
+2025-04-10 19:33:45,190 - Total segments processed: 4,097,115
+2025-04-10 19:33:45,190 - Total processing time: 24.25s
+2025-04-10 19:33:45,190 - Average time per file: 0.015s
+2025-04-10 19:33:45,190 - Average time per segment: 0.01ms
+2025-04-10 19:33:45,190 - Throughput: 168962.9 segments/s (68.91 files/s)
+2025-04-10 19:33:56,629 - Batch 9000, Loss: 0.000273
+2025-04-10 19:33:56,629 - 
+Processing Time Statistics:
+2025-04-10 19:33:56,629 - Total files processed: 1,916
+2025-04-10 19:33:56,629 - Total segments processed: 4,608,970
+2025-04-10 19:33:56,629 - Total processing time: 27.65s
+2025-04-10 19:33:56,629 - Average time per file: 0.014s
+2025-04-10 19:33:56,629 - Average time per segment: 0.01ms
+2025-04-10 19:33:56,629 - Throughput: 166701.7 segments/s (69.30 files/s)
+2025-04-10 19:34:07,943 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:34:07,943 - Processed 20001 batches in epoch 15
+2025-04-10 19:34:07,943 - ====> Epoch: 15 - Total loss: 21.489571546466323 - Average loss: 0.001074425
+2025-04-10 19:34:08,023 - Epoch 16/199
+2025-04-10 19:34:08,023 - ----------
+2025-04-10 19:34:08,037 - Reset coverage statistics for new epoch
+2025-04-10 19:34:08,037 - Using default batch limit of 20,000 for epoch 16
+2025-04-10 19:34:08,085 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:34:08,085 - First batch device before transfer: cpu
+2025-04-10 19:34:08,085 - Batch range: [-0.049, 0.061]
+2025-04-10 19:34:08,085 - First batch device after transfer: cuda:0
+2025-04-10 19:34:08,085 - Model device: cuda:0
+2025-04-10 19:34:08,086 - Test computation result: 3768.647 on cuda:0
+2025-04-10 19:34:08,086 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:34:08,087 - Batch 0, Loss: 0.000232
+2025-04-10 19:34:08,087 - 
+Processing Time Statistics:
+2025-04-10 19:34:08,087 - Total files processed: 1
+2025-04-10 19:34:08,087 - Total segments processed: 1,626
+2025-04-10 19:34:08,087 - Total processing time: 0.01s
+2025-04-10 19:34:08,087 - Average time per file: 0.012s
+2025-04-10 19:34:08,087 - Average time per segment: 0.01ms
+2025-04-10 19:34:08,087 - Throughput: 130283.3 segments/s (80.13 files/s)
+2025-04-10 19:34:19,210 - Batch 1000, Loss: 0.008261
+2025-04-10 19:34:19,210 - 
+Processing Time Statistics:
+2025-04-10 19:34:19,210 - Total files processed: 207
+2025-04-10 19:34:19,210 - Total segments processed: 518,681
+2025-04-10 19:34:19,210 - Total processing time: 2.96s
+2025-04-10 19:34:19,210 - Average time per file: 0.014s
+2025-04-10 19:34:19,210 - Average time per segment: 0.01ms
+2025-04-10 19:34:19,210 - Throughput: 175240.8 segments/s (69.94 files/s)
+2025-04-10 19:34:30,170 - Batch 2000, Loss: 0.000217
+2025-04-10 19:34:30,170 - 
+Processing Time Statistics:
+2025-04-10 19:34:30,170 - Total files processed: 407
+2025-04-10 19:34:30,170 - Total segments processed: 1,025,086
+2025-04-10 19:34:30,170 - Total processing time: 5.91s
+2025-04-10 19:34:30,170 - Average time per file: 0.015s
+2025-04-10 19:34:30,170 - Average time per segment: 0.01ms
+2025-04-10 19:34:30,170 - Throughput: 173576.4 segments/s (68.92 files/s)
+2025-04-10 19:34:41,710 - Batch 3000, Loss: 0.000249
+2025-04-10 19:34:41,710 - 
+Processing Time Statistics:
+2025-04-10 19:34:41,710 - Total files processed: 643
+2025-04-10 19:34:41,710 - Total segments processed: 1,542,914
+2025-04-10 19:34:41,710 - Total processing time: 9.26s
+2025-04-10 19:34:41,710 - Average time per file: 0.014s
+2025-04-10 19:34:41,710 - Average time per segment: 0.01ms
+2025-04-10 19:34:41,710 - Throughput: 166686.3 segments/s (69.47 files/s)
+2025-04-10 19:34:52,725 - Batch 4000, Loss: 0.000210
+2025-04-10 19:34:52,725 - 
+Processing Time Statistics:
+2025-04-10 19:34:52,725 - Total files processed: 857
+2025-04-10 19:34:52,725 - Total segments processed: 2,048,531
+2025-04-10 19:34:52,725 - Total processing time: 12.31s
+2025-04-10 19:34:52,725 - Average time per file: 0.014s
+2025-04-10 19:34:52,725 - Average time per segment: 0.01ms
+2025-04-10 19:34:52,725 - Throughput: 166412.3 segments/s (69.62 files/s)
+2025-04-10 19:35:03,901 - Batch 5000, Loss: 0.004349
+2025-04-10 19:35:03,901 - 
+Processing Time Statistics:
+2025-04-10 19:35:03,901 - Total files processed: 1,059
+2025-04-10 19:35:03,901 - Total segments processed: 2,561,703
+2025-04-10 19:35:03,901 - Total processing time: 15.27s
+2025-04-10 19:35:03,901 - Average time per file: 0.014s
+2025-04-10 19:35:03,901 - Average time per segment: 0.01ms
+2025-04-10 19:35:03,901 - Throughput: 167758.5 segments/s (69.35 files/s)
+2025-04-10 19:35:15,293 - Batch 6000, Loss: 0.000229
+2025-04-10 19:35:15,293 - 
+Processing Time Statistics:
+2025-04-10 19:35:15,293 - Total files processed: 1,291
+2025-04-10 19:35:15,293 - Total segments processed: 3,081,578
+2025-04-10 19:35:15,293 - Total processing time: 18.58s
+2025-04-10 19:35:15,293 - Average time per file: 0.014s
+2025-04-10 19:35:15,293 - Average time per segment: 0.01ms
+2025-04-10 19:35:15,293 - Throughput: 165829.1 segments/s (69.47 files/s)
+2025-04-10 19:35:26,558 - Batch 7000, Loss: 0.000294
+2025-04-10 19:35:26,558 - 
+Processing Time Statistics:
+2025-04-10 19:35:26,558 - Total files processed: 1,520
+2025-04-10 19:35:26,558 - Total segments processed: 3,588,280
+2025-04-10 19:35:26,558 - Total processing time: 21.84s
+2025-04-10 19:35:26,558 - Average time per file: 0.014s
+2025-04-10 19:35:26,558 - Average time per segment: 0.01ms
+2025-04-10 19:35:26,558 - Throughput: 164311.6 segments/s (69.60 files/s)
+2025-04-10 19:35:37,729 - Batch 8000, Loss: 0.000747
+2025-04-10 19:35:37,729 - 
+Processing Time Statistics:
+2025-04-10 19:35:37,729 - Total files processed: 1,745
+2025-04-10 19:35:37,729 - Total segments processed: 4,097,705
+2025-04-10 19:35:37,729 - Total processing time: 24.99s
+2025-04-10 19:35:37,729 - Average time per file: 0.014s
+2025-04-10 19:35:37,729 - Average time per segment: 0.01ms
+2025-04-10 19:35:37,729 - Throughput: 164002.4 segments/s (69.84 files/s)
+2025-04-10 19:35:48,966 - Batch 9000, Loss: 0.000230
+2025-04-10 19:35:48,966 - 
+Processing Time Statistics:
+2025-04-10 19:35:48,966 - Total files processed: 1,961
+2025-04-10 19:35:48,966 - Total segments processed: 4,609,551
+2025-04-10 19:35:48,966 - Total processing time: 28.03s
+2025-04-10 19:35:48,966 - Average time per file: 0.014s
+2025-04-10 19:35:48,966 - Average time per segment: 0.01ms
+2025-04-10 19:35:48,966 - Throughput: 164425.6 segments/s (69.95 files/s)
+2025-04-10 19:36:00,173 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:36:00,173 - Processed 20001 batches in epoch 16
+2025-04-10 19:36:00,173 - ====> Epoch: 16 - Total loss: 18.618996458273614 - Average loss: 0.000930903
+2025-04-10 19:36:00,252 - Epoch 17/199
+2025-04-10 19:36:00,252 - ----------
+2025-04-10 19:36:00,266 - Reset coverage statistics for new epoch
+2025-04-10 19:36:00,266 - Using default batch limit of 20,000 for epoch 17
+2025-04-10 19:36:00,307 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:36:00,307 - First batch device before transfer: cpu
+2025-04-10 19:36:00,308 - Batch range: [-0.811, 0.859]
+2025-04-10 19:36:00,308 - First batch device after transfer: cuda:0
+2025-04-10 19:36:00,308 - Model device: cuda:0
+2025-04-10 19:36:00,308 - Test computation result: 4732.188 on cuda:0
+2025-04-10 19:36:00,309 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:36:00,310 - Batch 0, Loss: 0.000574
+2025-04-10 19:36:00,310 - 
+Processing Time Statistics:
+2025-04-10 19:36:00,310 - Total files processed: 1
+2025-04-10 19:36:00,310 - Total segments processed: 1,649
+2025-04-10 19:36:00,310 - Total processing time: 0.01s
+2025-04-10 19:36:00,310 - Average time per file: 0.012s
+2025-04-10 19:36:00,310 - Average time per segment: 0.01ms
+2025-04-10 19:36:00,310 - Throughput: 137249.4 segments/s (83.23 files/s)
+2025-04-10 19:36:11,417 - Batch 1000, Loss: 0.001250
+2025-04-10 19:36:11,417 - 
+Processing Time Statistics:
+2025-04-10 19:36:11,417 - Total files processed: 206
+2025-04-10 19:36:11,417 - Total segments processed: 514,005
+2025-04-10 19:36:11,417 - Total processing time: 2.98s
+2025-04-10 19:36:11,417 - Average time per file: 0.014s
+2025-04-10 19:36:11,417 - Average time per segment: 0.01ms
+2025-04-10 19:36:11,417 - Throughput: 172509.4 segments/s (69.14 files/s)
+2025-04-10 19:36:22,681 - Batch 2000, Loss: 0.002549
+2025-04-10 19:36:22,681 - 
+Processing Time Statistics:
+2025-04-10 19:36:22,681 - Total files processed: 423
+2025-04-10 19:36:22,681 - Total segments processed: 1,025,343
+2025-04-10 19:36:22,681 - Total processing time: 6.18s
+2025-04-10 19:36:22,681 - Average time per file: 0.015s
+2025-04-10 19:36:22,681 - Average time per segment: 0.01ms
+2025-04-10 19:36:22,681 - Throughput: 165867.7 segments/s (68.43 files/s)
+2025-04-10 19:36:33,691 - Batch 3000, Loss: 0.016492
+2025-04-10 19:36:33,691 - 
+Processing Time Statistics:
+2025-04-10 19:36:33,691 - Total files processed: 620
+2025-04-10 19:36:33,691 - Total segments processed: 1,538,013
+2025-04-10 19:36:33,691 - Total processing time: 9.14s
+2025-04-10 19:36:33,691 - Average time per file: 0.015s
+2025-04-10 19:36:33,691 - Average time per segment: 0.01ms
+2025-04-10 19:36:33,691 - Throughput: 168213.8 segments/s (67.81 files/s)
+2025-04-10 19:36:44,910 - Batch 4000, Loss: 0.000890
+2025-04-10 19:36:44,910 - 
+Processing Time Statistics:
+2025-04-10 19:36:44,910 - Total files processed: 830
+2025-04-10 19:36:44,910 - Total segments processed: 2,048,862
+2025-04-10 19:36:44,910 - Total processing time: 12.16s
+2025-04-10 19:36:44,910 - Average time per file: 0.015s
+2025-04-10 19:36:44,910 - Average time per segment: 0.01ms
+2025-04-10 19:36:44,910 - Throughput: 168439.9 segments/s (68.24 files/s)
+2025-04-10 19:36:56,039 - Batch 5000, Loss: 0.000227
+2025-04-10 19:36:56,040 - 
+Processing Time Statistics:
+2025-04-10 19:36:56,040 - Total files processed: 1,026
+2025-04-10 19:36:56,040 - Total segments processed: 2,560,588
+2025-04-10 19:36:56,040 - Total processing time: 15.05s
+2025-04-10 19:36:56,040 - Average time per file: 0.015s
+2025-04-10 19:36:56,040 - Average time per segment: 0.01ms
+2025-04-10 19:36:56,040 - Throughput: 170101.8 segments/s (68.16 files/s)
+2025-04-10 19:37:07,071 - Batch 6000, Loss: 0.002310
+2025-04-10 19:37:07,071 - 
+Processing Time Statistics:
+2025-04-10 19:37:07,071 - Total files processed: 1,225
+2025-04-10 19:37:07,071 - Total segments processed: 3,073,244
+2025-04-10 19:37:07,071 - Total processing time: 17.88s
+2025-04-10 19:37:07,071 - Average time per file: 0.015s
+2025-04-10 19:37:07,071 - Average time per segment: 0.01ms
+2025-04-10 19:37:07,071 - Throughput: 171904.6 segments/s (68.52 files/s)
+2025-04-10 19:37:18,045 - Batch 7000, Loss: 0.008066
+2025-04-10 19:37:18,045 - 
+Processing Time Statistics:
+2025-04-10 19:37:18,045 - Total files processed: 1,422
+2025-04-10 19:37:18,045 - Total segments processed: 3,591,196
+2025-04-10 19:37:18,045 - Total processing time: 20.74s
+2025-04-10 19:37:18,045 - Average time per file: 0.015s
+2025-04-10 19:37:18,045 - Average time per segment: 0.01ms
+2025-04-10 19:37:18,045 - Throughput: 173175.0 segments/s (68.57 files/s)
+2025-04-10 19:37:29,243 - Batch 8000, Loss: 0.000341
+2025-04-10 19:37:29,243 - 
+Processing Time Statistics:
+2025-04-10 19:37:29,243 - Total files processed: 1,629
+2025-04-10 19:37:29,243 - Total segments processed: 4,097,174
+2025-04-10 19:37:29,243 - Total processing time: 23.78s
+2025-04-10 19:37:29,243 - Average time per file: 0.015s
+2025-04-10 19:37:29,243 - Average time per segment: 0.01ms
+2025-04-10 19:37:29,243 - Throughput: 172271.4 segments/s (68.49 files/s)
+2025-04-10 19:37:40,574 - Batch 9000, Loss: 0.000641
+2025-04-10 19:37:40,575 - 
+Processing Time Statistics:
+2025-04-10 19:37:40,575 - Total files processed: 1,861
+2025-04-10 19:37:40,575 - Total segments processed: 4,612,188
+2025-04-10 19:37:40,575 - Total processing time: 27.04s
+2025-04-10 19:37:40,575 - Average time per file: 0.015s
+2025-04-10 19:37:40,575 - Average time per segment: 0.01ms
+2025-04-10 19:37:40,575 - Throughput: 170567.7 segments/s (68.82 files/s)
+2025-04-10 19:37:51,597 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:37:51,597 - Processed 20001 batches in epoch 17
+2025-04-10 19:37:51,597 - ====> Epoch: 17 - Total loss: 18.360280496737687 - Average loss: 0.000917968
+2025-04-10 19:37:51,675 - Epoch 18/199
+2025-04-10 19:37:51,675 - ----------
+2025-04-10 19:37:51,689 - Reset coverage statistics for new epoch
+2025-04-10 19:37:51,689 - Using default batch limit of 20,000 for epoch 18
+2025-04-10 19:37:51,747 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:37:51,748 - First batch device before transfer: cpu
+2025-04-10 19:37:51,748 - Batch range: [-0.776, 0.922]
+2025-04-10 19:37:51,748 - First batch device after transfer: cuda:0
+2025-04-10 19:37:51,748 - Model device: cuda:0
+2025-04-10 19:37:51,749 - Test computation result: 7398.052 on cuda:0
+2025-04-10 19:37:51,749 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:37:51,750 - Batch 0, Loss: 0.001574
+2025-04-10 19:37:51,750 - 
+Processing Time Statistics:
+2025-04-10 19:37:51,750 - Total files processed: 3
+2025-04-10 19:37:51,750 - Total segments processed: 719
+2025-04-10 19:37:51,750 - Total processing time: 0.03s
+2025-04-10 19:37:51,750 - Average time per file: 0.010s
+2025-04-10 19:37:51,750 - Average time per segment: 0.04ms
+2025-04-10 19:37:51,750 - Throughput: 22913.9 segments/s (95.61 files/s)
+2025-04-10 19:38:02,677 - Batch 1000, Loss: 0.000232
+2025-04-10 19:38:02,678 - 
+Processing Time Statistics:
+2025-04-10 19:38:02,678 - Total files processed: 199
+2025-04-10 19:38:02,678 - Total segments processed: 512,695
+2025-04-10 19:38:02,678 - Total processing time: 2.89s
+2025-04-10 19:38:02,678 - Average time per file: 0.015s
+2025-04-10 19:38:02,678 - Average time per segment: 0.01ms
+2025-04-10 19:38:02,678 - Throughput: 177261.9 segments/s (68.80 files/s)
+2025-04-10 19:38:13,877 - Batch 2000, Loss: 0.003142
+2025-04-10 19:38:13,878 - 
+Processing Time Statistics:
+2025-04-10 19:38:13,878 - Total files processed: 405
+2025-04-10 19:38:13,878 - Total segments processed: 1,024,551
+2025-04-10 19:38:13,878 - Total processing time: 5.91s
+2025-04-10 19:38:13,878 - Average time per file: 0.015s
+2025-04-10 19:38:13,878 - Average time per segment: 0.01ms
+2025-04-10 19:38:13,878 - Throughput: 173416.9 segments/s (68.55 files/s)
+2025-04-10 19:38:24,933 - Batch 3000, Loss: 0.000231
+2025-04-10 19:38:24,933 - 
+Processing Time Statistics:
+2025-04-10 19:38:24,933 - Total files processed: 612
+2025-04-10 19:38:24,933 - Total segments processed: 1,536,818
+2025-04-10 19:38:24,933 - Total processing time: 8.89s
+2025-04-10 19:38:24,933 - Average time per file: 0.015s
+2025-04-10 19:38:24,933 - Average time per segment: 0.01ms
+2025-04-10 19:38:24,933 - Throughput: 172965.2 segments/s (68.88 files/s)
+2025-04-10 19:38:36,256 - Batch 4000, Loss: 0.000212
+2025-04-10 19:38:36,256 - 
+Processing Time Statistics:
+2025-04-10 19:38:36,256 - Total files processed: 833
+2025-04-10 19:38:36,256 - Total segments processed: 2,049,670
+2025-04-10 19:38:36,256 - Total processing time: 12.03s
+2025-04-10 19:38:36,256 - Average time per file: 0.014s
+2025-04-10 19:38:36,256 - Average time per segment: 0.01ms
+2025-04-10 19:38:36,256 - Throughput: 170446.1 segments/s (69.27 files/s)
+2025-04-10 19:38:47,313 - Batch 5000, Loss: 0.000372
+2025-04-10 19:38:47,313 - 
+Processing Time Statistics:
+2025-04-10 19:38:47,313 - Total files processed: 1,037
+2025-04-10 19:38:47,313 - Total segments processed: 2,562,608
+2025-04-10 19:38:47,313 - Total processing time: 14.95s
+2025-04-10 19:38:47,313 - Average time per file: 0.014s
+2025-04-10 19:38:47,313 - Average time per segment: 0.01ms
+2025-04-10 19:38:47,313 - Throughput: 171432.6 segments/s (69.37 files/s)
+2025-04-10 19:38:58,378 - Batch 6000, Loss: 0.000213
+2025-04-10 19:38:58,378 - 
+Processing Time Statistics:
+2025-04-10 19:38:58,378 - Total files processed: 1,244
+2025-04-10 19:38:58,378 - Total segments processed: 3,072,562
+2025-04-10 19:38:58,378 - Total processing time: 17.89s
+2025-04-10 19:38:58,378 - Average time per file: 0.014s
+2025-04-10 19:38:58,378 - Average time per segment: 0.01ms
+2025-04-10 19:38:58,378 - Throughput: 171787.6 segments/s (69.55 files/s)
+2025-04-10 19:39:09,322 - Batch 7000, Loss: 0.004083
+2025-04-10 19:39:09,322 - 
+Processing Time Statistics:
+2025-04-10 19:39:09,322 - Total files processed: 1,450
+2025-04-10 19:39:09,322 - Total segments processed: 3,585,346
+2025-04-10 19:39:09,322 - Total processing time: 20.79s
+2025-04-10 19:39:09,322 - Average time per file: 0.014s
+2025-04-10 19:39:09,322 - Average time per segment: 0.01ms
+2025-04-10 19:39:09,322 - Throughput: 172415.8 segments/s (69.73 files/s)
+2025-04-10 19:39:20,414 - Batch 8000, Loss: 0.001279
+2025-04-10 19:39:20,414 - 
+Processing Time Statistics:
+2025-04-10 19:39:20,414 - Total files processed: 1,649
+2025-04-10 19:39:20,414 - Total segments processed: 4,097,039
+2025-04-10 19:39:20,414 - Total processing time: 23.69s
+2025-04-10 19:39:20,414 - Average time per file: 0.014s
+2025-04-10 19:39:20,414 - Average time per segment: 0.01ms
+2025-04-10 19:39:20,414 - Throughput: 172935.8 segments/s (69.60 files/s)
+2025-04-10 19:39:31,616 - Batch 9000, Loss: 0.000241
+2025-04-10 19:39:31,616 - 
+Processing Time Statistics:
+2025-04-10 19:39:31,616 - Total files processed: 1,882
+2025-04-10 19:39:31,616 - Total segments processed: 4,614,293
+2025-04-10 19:39:31,616 - Total processing time: 26.86s
+2025-04-10 19:39:31,616 - Average time per file: 0.014s
+2025-04-10 19:39:31,616 - Average time per segment: 0.01ms
+2025-04-10 19:39:31,617 - Throughput: 171796.5 segments/s (70.07 files/s)
+2025-04-10 19:39:42,855 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:39:42,855 - Processed 20001 batches in epoch 18
+2025-04-10 19:39:42,855 - ====> Epoch: 18 - Total loss: 18.093175190500915 - Average loss: 0.000904614
+2025-04-10 19:39:42,933 - Epoch 19/199
+2025-04-10 19:39:42,933 - ----------
+2025-04-10 19:39:42,947 - Reset coverage statistics for new epoch
+2025-04-10 19:39:42,948 - Using default batch limit of 20,000 for epoch 19
+2025-04-10 19:39:42,992 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:39:42,992 - First batch device before transfer: cpu
+2025-04-10 19:39:42,993 - Batch range: [-0.792, 0.860]
+2025-04-10 19:39:42,993 - First batch device after transfer: cuda:0
+2025-04-10 19:39:42,993 - Model device: cuda:0
+2025-04-10 19:39:42,993 - Test computation result: 2336.065 on cuda:0
+2025-04-10 19:39:42,993 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:39:42,994 - Batch 0, Loss: 0.000542
+2025-04-10 19:39:42,995 - 
+Processing Time Statistics:
+2025-04-10 19:39:42,995 - Total files processed: 1
+2025-04-10 19:39:42,995 - Total segments processed: 1,429
+2025-04-10 19:39:42,995 - Total processing time: 0.01s
+2025-04-10 19:39:42,995 - Average time per file: 0.012s
+2025-04-10 19:39:42,995 - Average time per segment: 0.01ms
+2025-04-10 19:39:42,995 - Throughput: 121260.4 segments/s (84.86 files/s)
+2025-04-10 19:39:54,042 - Batch 1000, Loss: 0.001197
+2025-04-10 19:39:54,042 - 
+Processing Time Statistics:
+2025-04-10 19:39:54,042 - Total files processed: 192
+2025-04-10 19:39:54,042 - Total segments processed: 512,620
+2025-04-10 19:39:54,042 - Total processing time: 2.91s
+2025-04-10 19:39:54,042 - Average time per file: 0.015s
+2025-04-10 19:39:54,042 - Average time per segment: 0.01ms
+2025-04-10 19:39:54,042 - Throughput: 176358.3 segments/s (66.05 files/s)
+2025-04-10 19:40:05,214 - Batch 2000, Loss: 0.001483
+2025-04-10 19:40:05,214 - 
+Processing Time Statistics:
+2025-04-10 19:40:05,215 - Total files processed: 400
+2025-04-10 19:40:05,215 - Total segments processed: 1,031,788
+2025-04-10 19:40:05,215 - Total processing time: 5.90s
+2025-04-10 19:40:05,215 - Average time per file: 0.015s
+2025-04-10 19:40:05,215 - Average time per segment: 0.01ms
+2025-04-10 19:40:05,215 - Throughput: 174970.4 segments/s (67.83 files/s)
+2025-04-10 19:40:16,203 - Batch 3000, Loss: 0.004025
+2025-04-10 19:40:16,203 - 
+Processing Time Statistics:
+2025-04-10 19:40:16,203 - Total files processed: 588
+2025-04-10 19:40:16,203 - Total segments processed: 1,543,434
+2025-04-10 19:40:16,203 - Total processing time: 8.69s
+2025-04-10 19:40:16,203 - Average time per file: 0.015s
+2025-04-10 19:40:16,203 - Average time per segment: 0.01ms
+2025-04-10 19:40:16,203 - Throughput: 177529.8 segments/s (67.63 files/s)
+2025-04-10 19:40:27,279 - Batch 4000, Loss: 0.002568
+2025-04-10 19:40:27,279 - 
+Processing Time Statistics:
+2025-04-10 19:40:27,279 - Total files processed: 815
+2025-04-10 19:40:27,279 - Total segments processed: 2,049,369
+2025-04-10 19:40:27,279 - Total processing time: 11.79s
+2025-04-10 19:40:27,279 - Average time per file: 0.014s
+2025-04-10 19:40:27,279 - Average time per segment: 0.01ms
+2025-04-10 19:40:27,279 - Throughput: 173806.1 segments/s (69.12 files/s)
+2025-04-10 19:40:38,464 - Batch 5000, Loss: 0.008865
+2025-04-10 19:40:38,464 - 
+Processing Time Statistics:
+2025-04-10 19:40:38,464 - Total files processed: 1,034
+2025-04-10 19:40:38,464 - Total segments processed: 2,568,827
+2025-04-10 19:40:38,464 - Total processing time: 14.77s
+2025-04-10 19:40:38,465 - Average time per file: 0.014s
+2025-04-10 19:40:38,465 - Average time per segment: 0.01ms
+2025-04-10 19:40:38,465 - Throughput: 173975.3 segments/s (70.03 files/s)
+2025-04-10 19:40:49,461 - Batch 6000, Loss: 0.000254
+2025-04-10 19:40:49,461 - 
+Processing Time Statistics:
+2025-04-10 19:40:49,461 - Total files processed: 1,259
+2025-04-10 19:40:49,461 - Total segments processed: 3,073,267
+2025-04-10 19:40:49,461 - Total processing time: 17.83s
+2025-04-10 19:40:49,461 - Average time per file: 0.014s
+2025-04-10 19:40:49,461 - Average time per segment: 0.01ms
+2025-04-10 19:40:49,461 - Throughput: 172408.5 segments/s (70.63 files/s)
+2025-04-10 19:41:00,586 - Batch 7000, Loss: 0.000214
+2025-04-10 19:41:00,587 - 
+Processing Time Statistics:
+2025-04-10 19:41:00,587 - Total files processed: 1,471
+2025-04-10 19:41:00,587 - Total segments processed: 3,584,632
+2025-04-10 19:41:00,587 - Total processing time: 20.86s
+2025-04-10 19:41:00,587 - Average time per file: 0.014s
+2025-04-10 19:41:00,587 - Average time per segment: 0.01ms
+2025-04-10 19:41:00,587 - Throughput: 171803.9 segments/s (70.50 files/s)
+2025-04-10 19:41:11,650 - Batch 8000, Loss: 0.000235
+2025-04-10 19:41:11,650 - 
+Processing Time Statistics:
+2025-04-10 19:41:11,650 - Total files processed: 1,697
+2025-04-10 19:41:11,650 - Total segments processed: 4,104,239
+2025-04-10 19:41:11,650 - Total processing time: 23.87s
+2025-04-10 19:41:11,650 - Average time per file: 0.014s
+2025-04-10 19:41:11,650 - Average time per segment: 0.01ms
+2025-04-10 19:41:11,650 - Throughput: 171950.0 segments/s (71.10 files/s)
+2025-04-10 19:41:22,561 - Batch 9000, Loss: 0.010369
+2025-04-10 19:41:22,561 - 
+Processing Time Statistics:
+2025-04-10 19:41:22,561 - Total files processed: 1,899
+2025-04-10 19:41:22,561 - Total segments processed: 4,609,476
+2025-04-10 19:41:22,561 - Total processing time: 26.68s
+2025-04-10 19:41:22,561 - Average time per file: 0.014s
+2025-04-10 19:41:22,561 - Average time per segment: 0.01ms
+2025-04-10 19:41:22,561 - Throughput: 172760.0 segments/s (71.17 files/s)
+2025-04-10 19:41:33,702 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:41:33,702 - Processed 20001 batches in epoch 19
+2025-04-10 19:41:33,702 - ====> Epoch: 19 - Total loss: 18.900230171871954 - Average loss: 0.000944964
+2025-04-10 19:41:33,783 - Epoch 20/199
+2025-04-10 19:41:33,783 - ----------
+2025-04-10 19:41:33,797 - Reset coverage statistics for new epoch
+2025-04-10 19:41:33,798 - Using default batch limit of 20,000 for epoch 20
+2025-04-10 19:41:33,848 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:41:33,849 - First batch device before transfer: cpu
+2025-04-10 19:41:33,849 - Batch range: [-0.485, 0.333]
+2025-04-10 19:41:33,849 - First batch device after transfer: cuda:0
+2025-04-10 19:41:33,849 - Model device: cuda:0
+2025-04-10 19:41:33,849 - Test computation result: 12558.562 on cuda:0
+2025-04-10 19:41:33,850 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:41:33,851 - Batch 0, Loss: 0.001228
+2025-04-10 19:41:33,851 - 
+Processing Time Statistics:
+2025-04-10 19:41:33,851 - Total files processed: 1
+2025-04-10 19:41:33,851 - Total segments processed: 2,225
+2025-04-10 19:41:33,851 - Total processing time: 0.01s
+2025-04-10 19:41:33,851 - Average time per file: 0.014s
+2025-04-10 19:41:33,851 - Average time per segment: 0.01ms
+2025-04-10 19:41:33,851 - Throughput: 162657.8 segments/s (73.10 files/s)
+2025-04-10 19:41:44,920 - Batch 1000, Loss: 0.000251
+2025-04-10 19:41:44,920 - 
+Processing Time Statistics:
+2025-04-10 19:41:44,920 - Total files processed: 204
+2025-04-10 19:41:44,920 - Total segments processed: 519,078
+2025-04-10 19:41:44,920 - Total processing time: 2.90s
+2025-04-10 19:41:44,920 - Average time per file: 0.014s
+2025-04-10 19:41:44,920 - Average time per segment: 0.01ms
+2025-04-10 19:41:44,920 - Throughput: 178954.3 segments/s (70.33 files/s)
+2025-04-10 19:41:55,665 - Batch 2000, Loss: 0.000876
+2025-04-10 19:41:55,665 - 
+Processing Time Statistics:
+2025-04-10 19:41:55,665 - Total files processed: 389
+2025-04-10 19:41:55,665 - Total segments processed: 1,024,697
+2025-04-10 19:41:55,665 - Total processing time: 5.56s
+2025-04-10 19:41:55,665 - Average time per file: 0.014s
+2025-04-10 19:41:55,665 - Average time per segment: 0.01ms
+2025-04-10 19:41:55,665 - Throughput: 184311.6 segments/s (69.97 files/s)
+2025-04-10 19:42:06,670 - Batch 3000, Loss: 0.000269
+2025-04-10 19:42:06,670 - 
+Processing Time Statistics:
+2025-04-10 19:42:06,670 - Total files processed: 595
+2025-04-10 19:42:06,670 - Total segments processed: 1,543,854
+2025-04-10 19:42:06,670 - Total processing time: 8.40s
+2025-04-10 19:42:06,670 - Average time per file: 0.014s
+2025-04-10 19:42:06,670 - Average time per segment: 0.01ms
+2025-04-10 19:42:06,670 - Throughput: 183716.2 segments/s (70.80 files/s)
+2025-04-10 19:42:17,527 - Batch 4000, Loss: 0.000328
+2025-04-10 19:42:17,528 - 
+Processing Time Statistics:
+2025-04-10 19:42:17,528 - Total files processed: 805
+2025-04-10 19:42:17,528 - Total segments processed: 2,050,019
+2025-04-10 19:42:17,528 - Total processing time: 11.33s
+2025-04-10 19:42:17,528 - Average time per file: 0.014s
+2025-04-10 19:42:17,528 - Average time per segment: 0.01ms
+2025-04-10 19:42:17,528 - Throughput: 180990.1 segments/s (71.07 files/s)
+2025-04-10 19:42:28,613 - Batch 5000, Loss: 0.000570
+2025-04-10 19:42:28,613 - 
+Processing Time Statistics:
+2025-04-10 19:42:28,613 - Total files processed: 1,019
+2025-04-10 19:42:28,613 - Total segments processed: 2,562,118
+2025-04-10 19:42:28,613 - Total processing time: 14.37s
+2025-04-10 19:42:28,614 - Average time per file: 0.014s
+2025-04-10 19:42:28,614 - Average time per segment: 0.01ms
+2025-04-10 19:42:28,614 - Throughput: 178258.1 segments/s (70.90 files/s)
+2025-04-10 19:42:40,025 - Batch 6000, Loss: 0.000341
+2025-04-10 19:42:40,025 - 
+Processing Time Statistics:
+2025-04-10 19:42:40,025 - Total files processed: 1,257
+2025-04-10 19:42:40,025 - Total segments processed: 3,074,363
+2025-04-10 19:42:40,025 - Total processing time: 17.60s
+2025-04-10 19:42:40,025 - Average time per file: 0.014s
+2025-04-10 19:42:40,025 - Average time per segment: 0.01ms
+2025-04-10 19:42:40,025 - Throughput: 174685.0 segments/s (71.42 files/s)
+2025-04-10 19:42:51,034 - Batch 7000, Loss: 0.000713
+2025-04-10 19:42:51,034 - 
+Processing Time Statistics:
+2025-04-10 19:42:51,034 - Total files processed: 1,471
+2025-04-10 19:42:51,034 - Total segments processed: 3,590,401
+2025-04-10 19:42:51,034 - Total processing time: 20.54s
+2025-04-10 19:42:51,034 - Average time per file: 0.014s
+2025-04-10 19:42:51,034 - Average time per segment: 0.01ms
+2025-04-10 19:42:51,034 - Throughput: 174784.2 segments/s (71.61 files/s)
+2025-04-10 19:43:02,035 - Batch 8000, Loss: 0.000286
+2025-04-10 19:43:02,036 - 
+Processing Time Statistics:
+2025-04-10 19:43:02,036 - Total files processed: 1,674
+2025-04-10 19:43:02,036 - Total segments processed: 4,096,575
+2025-04-10 19:43:02,036 - Total processing time: 23.37s
+2025-04-10 19:43:02,036 - Average time per file: 0.014s
+2025-04-10 19:43:02,036 - Average time per segment: 0.01ms
+2025-04-10 19:43:02,036 - Throughput: 175302.5 segments/s (71.63 files/s)
+2025-04-10 19:43:13,020 - Batch 9000, Loss: 0.005750
+2025-04-10 19:43:13,020 - 
+Processing Time Statistics:
+2025-04-10 19:43:13,020 - Total files processed: 1,880
+2025-04-10 19:43:13,020 - Total segments processed: 4,612,036
+2025-04-10 19:43:13,020 - Total processing time: 26.25s
+2025-04-10 19:43:13,020 - Average time per file: 0.014s
+2025-04-10 19:43:13,020 - Average time per segment: 0.01ms
+2025-04-10 19:43:13,020 - Throughput: 175728.7 segments/s (71.63 files/s)
+2025-04-10 19:43:24,337 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:43:24,337 - Processed 20001 batches in epoch 20
+2025-04-10 19:43:24,337 - ====> Epoch: 20 - Total loss: 15.441822637876612 - Average loss: 0.000772053
+2025-04-10 19:43:24,415 - Epoch 21/199
+2025-04-10 19:43:24,415 - ----------
+2025-04-10 19:43:24,431 - Reset coverage statistics for new epoch
+2025-04-10 19:43:24,431 - Using default batch limit of 20,000 for epoch 21
+2025-04-10 19:43:24,473 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:43:24,473 - First batch device before transfer: cpu
+2025-04-10 19:43:24,474 - Batch range: [-0.575, 0.735]
+2025-04-10 19:43:24,474 - First batch device after transfer: cuda:0
+2025-04-10 19:43:24,474 - Model device: cuda:0
+2025-04-10 19:43:24,474 - Test computation result: 75105.398 on cuda:0
+2025-04-10 19:43:24,474 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:43:24,476 - Batch 0, Loss: 0.004577
+2025-04-10 19:43:24,476 - 
+Processing Time Statistics:
+2025-04-10 19:43:24,476 - Total files processed: 1
+2025-04-10 19:43:24,476 - Total segments processed: 1,283
+2025-04-10 19:43:24,476 - Total processing time: 0.01s
+2025-04-10 19:43:24,476 - Average time per file: 0.014s
+2025-04-10 19:43:24,476 - Average time per segment: 0.01ms
+2025-04-10 19:43:24,476 - Throughput: 89561.3 segments/s (69.81 files/s)
+2025-04-10 19:43:35,591 - Batch 1000, Loss: 0.000364
+2025-04-10 19:43:35,591 - 
+Processing Time Statistics:
+2025-04-10 19:43:35,591 - Total files processed: 219
+2025-04-10 19:43:35,591 - Total segments processed: 513,936
+2025-04-10 19:43:35,591 - Total processing time: 3.06s
+2025-04-10 19:43:35,591 - Average time per file: 0.014s
+2025-04-10 19:43:35,591 - Average time per segment: 0.01ms
+2025-04-10 19:43:35,591 - Throughput: 167790.1 segments/s (71.50 files/s)
+2025-04-10 19:43:46,782 - Batch 2000, Loss: 0.000245
+2025-04-10 19:43:46,782 - 
+Processing Time Statistics:
+2025-04-10 19:43:46,782 - Total files processed: 429
+2025-04-10 19:43:46,782 - Total segments processed: 1,026,130
+2025-04-10 19:43:46,782 - Total processing time: 6.08s
+2025-04-10 19:43:46,782 - Average time per file: 0.014s
+2025-04-10 19:43:46,782 - Average time per segment: 0.01ms
+2025-04-10 19:43:46,782 - Throughput: 168903.9 segments/s (70.61 files/s)
+2025-04-10 19:43:57,783 - Batch 3000, Loss: 0.000271
+2025-04-10 19:43:57,783 - 
+Processing Time Statistics:
+2025-04-10 19:43:57,783 - Total files processed: 641
+2025-04-10 19:43:57,783 - Total segments processed: 1,540,250
+2025-04-10 19:43:57,783 - Total processing time: 9.06s
+2025-04-10 19:43:57,783 - Average time per file: 0.014s
+2025-04-10 19:43:57,783 - Average time per segment: 0.01ms
+2025-04-10 19:43:57,783 - Throughput: 169987.6 segments/s (70.74 files/s)
+2025-04-10 19:44:08,832 - Batch 4000, Loss: 0.000613
+2025-04-10 19:44:08,832 - 
+Processing Time Statistics:
+2025-04-10 19:44:08,832 - Total files processed: 856
+2025-04-10 19:44:08,832 - Total segments processed: 2,049,773
+2025-04-10 19:44:08,832 - Total processing time: 12.09s
+2025-04-10 19:44:08,832 - Average time per file: 0.014s
+2025-04-10 19:44:08,832 - Average time per segment: 0.01ms
+2025-04-10 19:44:08,832 - Throughput: 169512.0 segments/s (70.79 files/s)
+2025-04-10 19:44:20,107 - Batch 5000, Loss: 0.000677
+2025-04-10 19:44:20,107 - 
+Processing Time Statistics:
+2025-04-10 19:44:20,107 - Total files processed: 1,073
+2025-04-10 19:44:20,107 - Total segments processed: 2,560,690
+2025-04-10 19:44:20,107 - Total processing time: 15.16s
+2025-04-10 19:44:20,107 - Average time per file: 0.014s
+2025-04-10 19:44:20,107 - Average time per segment: 0.01ms
+2025-04-10 19:44:20,107 - Throughput: 168911.8 segments/s (70.78 files/s)
+2025-04-10 19:44:31,348 - Batch 6000, Loss: 0.000237
+2025-04-10 19:44:31,348 - 
+Processing Time Statistics:
+2025-04-10 19:44:31,348 - Total files processed: 1,297
+2025-04-10 19:44:31,348 - Total segments processed: 3,072,899
+2025-04-10 19:44:31,348 - Total processing time: 18.30s
+2025-04-10 19:44:31,348 - Average time per file: 0.014s
+2025-04-10 19:44:31,348 - Average time per segment: 0.01ms
+2025-04-10 19:44:31,348 - Throughput: 167878.4 segments/s (70.86 files/s)
+2025-04-10 19:44:42,652 - Batch 7000, Loss: 0.000932
+2025-04-10 19:44:42,652 - 
+Processing Time Statistics:
+2025-04-10 19:44:42,652 - Total files processed: 1,509
+2025-04-10 19:44:42,652 - Total segments processed: 3,584,625
+2025-04-10 19:44:42,652 - Total processing time: 21.37s
+2025-04-10 19:44:42,652 - Average time per file: 0.014s
+2025-04-10 19:44:42,652 - Average time per segment: 0.01ms
+2025-04-10 19:44:42,652 - Throughput: 167770.5 segments/s (70.63 files/s)
+2025-04-10 19:44:53,734 - Batch 8000, Loss: 0.002027
+2025-04-10 19:44:53,734 - 
+Processing Time Statistics:
+2025-04-10 19:44:53,734 - Total files processed: 1,714
+2025-04-10 19:44:53,734 - Total segments processed: 4,102,472
+2025-04-10 19:44:53,734 - Total processing time: 24.30s
+2025-04-10 19:44:53,734 - Average time per file: 0.014s
+2025-04-10 19:44:53,734 - Average time per segment: 0.01ms
+2025-04-10 19:44:53,734 - Throughput: 168815.3 segments/s (70.53 files/s)
+2025-04-10 19:45:04,715 - Batch 9000, Loss: 0.088904
+2025-04-10 19:45:04,715 - 
+Processing Time Statistics:
+2025-04-10 19:45:04,715 - Total files processed: 1,922
+2025-04-10 19:45:04,716 - Total segments processed: 4,609,035
+2025-04-10 19:45:04,716 - Total processing time: 27.25s
+2025-04-10 19:45:04,716 - Average time per file: 0.014s
+2025-04-10 19:45:04,716 - Average time per segment: 0.01ms
+2025-04-10 19:45:04,716 - Throughput: 169144.5 segments/s (70.53 files/s)
+2025-04-10 19:45:16,013 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:45:16,014 - Processed 20001 batches in epoch 21
+2025-04-10 19:45:16,014 - ====> Epoch: 21 - Total loss: 16.881405466847355 - Average loss: 0.000844028
+2025-04-10 19:45:16,092 - Epoch 22/199
+2025-04-10 19:45:16,092 - ----------
+2025-04-10 19:45:16,106 - Reset coverage statistics for new epoch
+2025-04-10 19:45:16,106 - Using default batch limit of 20,000 for epoch 22
+2025-04-10 19:45:16,159 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:45:16,160 - First batch device before transfer: cpu
+2025-04-10 19:45:16,160 - Batch range: [-0.993, 0.871]
+2025-04-10 19:45:16,160 - First batch device after transfer: cuda:0
+2025-04-10 19:45:16,160 - Model device: cuda:0
+2025-04-10 19:45:16,160 - Test computation result: 19832.914 on cuda:0
+2025-04-10 19:45:16,161 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:45:16,162 - Batch 0, Loss: 0.000897
+2025-04-10 19:45:16,162 - 
+Processing Time Statistics:
+2025-04-10 19:45:16,162 - Total files processed: 1
+2025-04-10 19:45:16,162 - Total segments processed: 3,009
+2025-04-10 19:45:16,162 - Total processing time: 0.01s
+2025-04-10 19:45:16,162 - Average time per file: 0.014s
+2025-04-10 19:45:16,162 - Average time per segment: 0.00ms
+2025-04-10 19:45:16,162 - Throughput: 218192.0 segments/s (72.51 files/s)
+2025-04-10 19:45:27,250 - Batch 1000, Loss: 0.000384
+2025-04-10 19:45:27,251 - 
+Processing Time Statistics:
+2025-04-10 19:45:27,251 - Total files processed: 225
+2025-04-10 19:45:27,251 - Total segments processed: 513,437
+2025-04-10 19:45:27,251 - Total processing time: 3.03s
+2025-04-10 19:45:27,251 - Average time per file: 0.013s
+2025-04-10 19:45:27,251 - Average time per segment: 0.01ms
+2025-04-10 19:45:27,251 - Throughput: 169463.5 segments/s (74.26 files/s)
+2025-04-10 19:45:38,211 - Batch 2000, Loss: 0.000248
+2025-04-10 19:45:38,211 - 
+Processing Time Statistics:
+2025-04-10 19:45:38,211 - Total files processed: 424
+2025-04-10 19:45:38,211 - Total segments processed: 1,026,347
+2025-04-10 19:45:38,211 - Total processing time: 5.83s
+2025-04-10 19:45:38,211 - Average time per file: 0.014s
+2025-04-10 19:45:38,211 - Average time per segment: 0.01ms
+2025-04-10 19:45:38,211 - Throughput: 175923.0 segments/s (72.68 files/s)
+2025-04-10 19:45:49,222 - Batch 3000, Loss: 0.004562
+2025-04-10 19:45:49,222 - 
+Processing Time Statistics:
+2025-04-10 19:45:49,222 - Total files processed: 635
+2025-04-10 19:45:49,222 - Total segments processed: 1,540,499
+2025-04-10 19:45:49,222 - Total processing time: 8.81s
+2025-04-10 19:45:49,222 - Average time per file: 0.014s
+2025-04-10 19:45:49,222 - Average time per segment: 0.01ms
+2025-04-10 19:45:49,222 - Throughput: 174956.8 segments/s (72.12 files/s)
+2025-04-10 19:46:00,364 - Batch 4000, Loss: 0.000286
+2025-04-10 19:46:00,364 - 
+Processing Time Statistics:
+2025-04-10 19:46:00,364 - Total files processed: 862
+2025-04-10 19:46:00,364 - Total segments processed: 2,048,732
+2025-04-10 19:46:00,364 - Total processing time: 11.95s
+2025-04-10 19:46:00,364 - Average time per file: 0.014s
+2025-04-10 19:46:00,364 - Average time per segment: 0.01ms
+2025-04-10 19:46:00,364 - Throughput: 171373.8 segments/s (72.11 files/s)
+2025-04-10 19:46:11,384 - Batch 5000, Loss: 0.000242
+2025-04-10 19:46:11,384 - 
+Processing Time Statistics:
+2025-04-10 19:46:11,384 - Total files processed: 1,082
+2025-04-10 19:46:11,384 - Total segments processed: 2,560,682
+2025-04-10 19:46:11,384 - Total processing time: 14.86s
+2025-04-10 19:46:11,384 - Average time per file: 0.014s
+2025-04-10 19:46:11,384 - Average time per segment: 0.01ms
+2025-04-10 19:46:11,384 - Throughput: 172360.1 segments/s (72.83 files/s)
+2025-04-10 19:46:22,397 - Batch 6000, Loss: 0.000524
+2025-04-10 19:46:22,397 - 
+Processing Time Statistics:
+2025-04-10 19:46:22,398 - Total files processed: 1,298
+2025-04-10 19:46:22,398 - Total segments processed: 3,074,282
+2025-04-10 19:46:22,398 - Total processing time: 17.86s
+2025-04-10 19:46:22,398 - Average time per file: 0.014s
+2025-04-10 19:46:22,398 - Average time per segment: 0.01ms
+2025-04-10 19:46:22,398 - Throughput: 172101.9 segments/s (72.66 files/s)
+2025-04-10 19:46:33,425 - Batch 7000, Loss: 0.000501
+2025-04-10 19:46:33,425 - 
+Processing Time Statistics:
+2025-04-10 19:46:33,425 - Total files processed: 1,498
+2025-04-10 19:46:33,425 - Total segments processed: 3,586,720
+2025-04-10 19:46:33,425 - Total processing time: 20.71s
+2025-04-10 19:46:33,425 - Average time per file: 0.014s
+2025-04-10 19:46:33,425 - Average time per segment: 0.01ms
+2025-04-10 19:46:33,425 - Throughput: 173171.3 segments/s (72.33 files/s)
+2025-04-10 19:46:44,411 - Batch 8000, Loss: 0.000376
+2025-04-10 19:46:44,411 - 
+Processing Time Statistics:
+2025-04-10 19:46:44,411 - Total files processed: 1,711
+2025-04-10 19:46:44,411 - Total segments processed: 4,098,761
+2025-04-10 19:46:44,411 - Total processing time: 23.67s
+2025-04-10 19:46:44,411 - Average time per file: 0.014s
+2025-04-10 19:46:44,411 - Average time per segment: 0.01ms
+2025-04-10 19:46:44,411 - Throughput: 173130.8 segments/s (72.27 files/s)
+2025-04-10 19:46:55,454 - Batch 9000, Loss: 0.000248
+2025-04-10 19:46:55,454 - 
+Processing Time Statistics:
+2025-04-10 19:46:55,454 - Total files processed: 1,932
+2025-04-10 19:46:55,454 - Total segments processed: 4,610,402
+2025-04-10 19:46:55,454 - Total processing time: 26.72s
+2025-04-10 19:46:55,454 - Average time per file: 0.014s
+2025-04-10 19:46:55,454 - Average time per segment: 0.01ms
+2025-04-10 19:46:55,454 - Throughput: 172553.6 segments/s (72.31 files/s)
+2025-04-10 19:47:06,649 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:47:06,650 - Processed 20001 batches in epoch 22
+2025-04-10 19:47:06,650 - ====> Epoch: 22 - Total loss: 15.764850397375994 - Average loss: 0.000788203
+2025-04-10 19:47:06,730 - Epoch 23/199
+2025-04-10 19:47:06,730 - ----------
+2025-04-10 19:47:06,744 - Reset coverage statistics for new epoch
+2025-04-10 19:47:06,744 - Using default batch limit of 20,000 for epoch 23
+2025-04-10 19:47:06,786 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:47:06,786 - First batch device before transfer: cpu
+2025-04-10 19:47:06,786 - Batch range: [-1.000, 1.000]
+2025-04-10 19:47:06,787 - First batch device after transfer: cuda:0
+2025-04-10 19:47:06,787 - Model device: cuda:0
+2025-04-10 19:47:06,787 - Test computation result: 12224.380 on cuda:0
+2025-04-10 19:47:06,787 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:47:06,789 - Batch 0, Loss: 0.006447
+2025-04-10 19:47:06,789 - 
+Processing Time Statistics:
+2025-04-10 19:47:06,789 - Total files processed: 1
+2025-04-10 19:47:06,789 - Total segments processed: 1,379
+2025-04-10 19:47:06,789 - Total processing time: 0.01s
+2025-04-10 19:47:06,789 - Average time per file: 0.012s
+2025-04-10 19:47:06,789 - Average time per segment: 0.01ms
+2025-04-10 19:47:06,789 - Throughput: 118109.6 segments/s (85.65 files/s)
+2025-04-10 19:47:17,734 - Batch 1000, Loss: 0.007617
+2025-04-10 19:47:17,734 - 
+Processing Time Statistics:
+2025-04-10 19:47:17,734 - Total files processed: 203
+2025-04-10 19:47:17,734 - Total segments processed: 515,945
+2025-04-10 19:47:17,734 - Total processing time: 2.88s
+2025-04-10 19:47:17,734 - Average time per file: 0.014s
+2025-04-10 19:47:17,734 - Average time per segment: 0.01ms
+2025-04-10 19:47:17,734 - Throughput: 179226.9 segments/s (70.52 files/s)
+2025-04-10 19:47:28,908 - Batch 2000, Loss: 0.023215
+2025-04-10 19:47:28,908 - 
+Processing Time Statistics:
+2025-04-10 19:47:28,908 - Total files processed: 420
+2025-04-10 19:47:28,908 - Total segments processed: 1,032,458
+2025-04-10 19:47:28,908 - Total processing time: 5.83s
+2025-04-10 19:47:28,908 - Average time per file: 0.014s
+2025-04-10 19:47:28,908 - Average time per segment: 0.01ms
+2025-04-10 19:47:28,908 - Throughput: 176974.1 segments/s (71.99 files/s)
+2025-04-10 19:47:39,977 - Batch 3000, Loss: 0.000342
+2025-04-10 19:47:39,977 - 
+Processing Time Statistics:
+2025-04-10 19:47:39,977 - Total files processed: 648
+2025-04-10 19:47:39,977 - Total segments processed: 1,536,679
+2025-04-10 19:47:39,977 - Total processing time: 8.91s
+2025-04-10 19:47:39,977 - Average time per file: 0.014s
+2025-04-10 19:47:39,977 - Average time per segment: 0.01ms
+2025-04-10 19:47:39,977 - Throughput: 172476.6 segments/s (72.73 files/s)
+2025-04-10 19:47:51,157 - Batch 4000, Loss: 0.000245
+2025-04-10 19:47:51,157 - 
+Processing Time Statistics:
+2025-04-10 19:47:51,157 - Total files processed: 863
+2025-04-10 19:47:51,157 - Total segments processed: 2,051,243
+2025-04-10 19:47:51,157 - Total processing time: 11.90s
+2025-04-10 19:47:51,157 - Average time per file: 0.014s
+2025-04-10 19:47:51,157 - Average time per segment: 0.01ms
+2025-04-10 19:47:51,157 - Throughput: 172317.3 segments/s (72.50 files/s)
+2025-04-10 19:48:02,314 - Batch 5000, Loss: 0.000542
+2025-04-10 19:48:02,314 - 
+Processing Time Statistics:
+2025-04-10 19:48:02,314 - Total files processed: 1,088
+2025-04-10 19:48:02,314 - Total segments processed: 2,562,453
+2025-04-10 19:48:02,314 - Total processing time: 15.06s
+2025-04-10 19:48:02,314 - Average time per file: 0.014s
+2025-04-10 19:48:02,314 - Average time per segment: 0.01ms
+2025-04-10 19:48:02,314 - Throughput: 170117.4 segments/s (72.23 files/s)
+2025-04-10 19:48:13,511 - Batch 6000, Loss: 0.000226
+2025-04-10 19:48:13,511 - 
+Processing Time Statistics:
+2025-04-10 19:48:13,511 - Total files processed: 1,312
+2025-04-10 19:48:13,511 - Total segments processed: 3,072,724
+2025-04-10 19:48:13,511 - Total processing time: 18.21s
+2025-04-10 19:48:13,511 - Average time per file: 0.014s
+2025-04-10 19:48:13,511 - Average time per segment: 0.01ms
+2025-04-10 19:48:13,511 - Throughput: 168711.2 segments/s (72.04 files/s)
+2025-04-10 19:48:24,551 - Batch 7000, Loss: 0.000339
+2025-04-10 19:48:24,552 - 
+Processing Time Statistics:
+2025-04-10 19:48:24,552 - Total files processed: 1,522
+2025-04-10 19:48:24,552 - Total segments processed: 3,588,362
+2025-04-10 19:48:24,552 - Total processing time: 21.19s
+2025-04-10 19:48:24,552 - Average time per file: 0.014s
+2025-04-10 19:48:24,552 - Average time per segment: 0.01ms
+2025-04-10 19:48:24,552 - Throughput: 169348.1 segments/s (71.83 files/s)
+2025-04-10 19:48:35,756 - Batch 8000, Loss: 0.000506
+2025-04-10 19:48:35,756 - 
+Processing Time Statistics:
+2025-04-10 19:48:35,756 - Total files processed: 1,737
+2025-04-10 19:48:35,756 - Total segments processed: 4,097,973
+2025-04-10 19:48:35,756 - Total processing time: 24.24s
+2025-04-10 19:48:35,756 - Average time per file: 0.014s
+2025-04-10 19:48:35,756 - Average time per segment: 0.01ms
+2025-04-10 19:48:35,756 - Throughput: 169075.7 segments/s (71.67 files/s)
+2025-04-10 19:48:46,797 - Batch 9000, Loss: 0.000225
+2025-04-10 19:48:46,797 - 
+Processing Time Statistics:
+2025-04-10 19:48:46,797 - Total files processed: 1,953
+2025-04-10 19:48:46,797 - Total segments processed: 4,614,012
+2025-04-10 19:48:46,797 - Total processing time: 27.22s
+2025-04-10 19:48:46,797 - Average time per file: 0.014s
+2025-04-10 19:48:46,797 - Average time per segment: 0.01ms
+2025-04-10 19:48:46,797 - Throughput: 169510.3 segments/s (71.75 files/s)
+2025-04-10 19:48:58,054 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:48:58,054 - Processed 20001 batches in epoch 23
+2025-04-10 19:48:58,054 - ====> Epoch: 23 - Total loss: 14.170101457566489 - Average loss: 0.000708470
+2025-04-10 19:48:58,133 - Epoch 24/199
+2025-04-10 19:48:58,133 - ----------
+2025-04-10 19:48:58,148 - Reset coverage statistics for new epoch
+2025-04-10 19:48:58,148 - Using default batch limit of 20,000 for epoch 24
+2025-04-10 19:48:58,194 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:48:58,194 - First batch device before transfer: cpu
+2025-04-10 19:48:58,195 - Batch range: [-0.561, 0.582]
+2025-04-10 19:48:58,195 - First batch device after transfer: cuda:0
+2025-04-10 19:48:58,195 - Model device: cuda:0
+2025-04-10 19:48:58,195 - Test computation result: 15356.758 on cuda:0
+2025-04-10 19:48:58,195 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:48:58,196 - Batch 0, Loss: 0.005354
+2025-04-10 19:48:58,197 - 
+Processing Time Statistics:
+2025-04-10 19:48:58,197 - Total files processed: 1
+2025-04-10 19:48:58,197 - Total segments processed: 2,064
+2025-04-10 19:48:58,197 - Total processing time: 0.01s
+2025-04-10 19:48:58,197 - Average time per file: 0.013s
+2025-04-10 19:48:58,197 - Average time per segment: 0.01ms
+2025-04-10 19:48:58,197 - Throughput: 154350.3 segments/s (74.78 files/s)
+2025-04-10 19:49:09,200 - Batch 1000, Loss: 0.001570
+2025-04-10 19:49:09,201 - 
+Processing Time Statistics:
+2025-04-10 19:49:09,201 - Total files processed: 214
+2025-04-10 19:49:09,201 - Total segments processed: 513,805
+2025-04-10 19:49:09,201 - Total processing time: 2.96s
+2025-04-10 19:49:09,201 - Average time per file: 0.014s
+2025-04-10 19:49:09,201 - Average time per segment: 0.01ms
+2025-04-10 19:49:09,201 - Throughput: 173682.7 segments/s (72.34 files/s)
+2025-04-10 19:49:20,371 - Batch 2000, Loss: 0.000308
+2025-04-10 19:49:20,371 - 
+Processing Time Statistics:
+2025-04-10 19:49:20,372 - Total files processed: 431
+2025-04-10 19:49:20,372 - Total segments processed: 1,026,640
+2025-04-10 19:49:20,372 - Total processing time: 6.06s
+2025-04-10 19:49:20,372 - Average time per file: 0.014s
+2025-04-10 19:49:20,372 - Average time per segment: 0.01ms
+2025-04-10 19:49:20,372 - Throughput: 169441.7 segments/s (71.13 files/s)
+2025-04-10 19:49:31,419 - Batch 3000, Loss: 0.000184
+2025-04-10 19:49:31,419 - 
+Processing Time Statistics:
+2025-04-10 19:49:31,419 - Total files processed: 636
+2025-04-10 19:49:31,419 - Total segments processed: 1,536,835
+2025-04-10 19:49:31,419 - Total processing time: 8.93s
+2025-04-10 19:49:31,419 - Average time per file: 0.014s
+2025-04-10 19:49:31,419 - Average time per segment: 0.01ms
+2025-04-10 19:49:31,419 - Throughput: 172161.5 segments/s (71.25 files/s)
+2025-04-10 19:49:42,570 - Batch 4000, Loss: 0.000917
+2025-04-10 19:49:42,570 - 
+Processing Time Statistics:
+2025-04-10 19:49:42,570 - Total files processed: 856
+2025-04-10 19:49:42,570 - Total segments processed: 2,051,235
+2025-04-10 19:49:42,570 - Total processing time: 11.99s
+2025-04-10 19:49:42,570 - Average time per file: 0.014s
+2025-04-10 19:49:42,570 - Average time per segment: 0.01ms
+2025-04-10 19:49:42,570 - Throughput: 171147.7 segments/s (71.42 files/s)
+2025-04-10 19:49:53,676 - Batch 5000, Loss: 0.000726
+2025-04-10 19:49:53,676 - 
+Processing Time Statistics:
+2025-04-10 19:49:53,676 - Total files processed: 1,069
+2025-04-10 19:49:53,677 - Total segments processed: 2,560,947
+2025-04-10 19:49:53,677 - Total processing time: 14.92s
+2025-04-10 19:49:53,677 - Average time per file: 0.014s
+2025-04-10 19:49:53,677 - Average time per segment: 0.01ms
+2025-04-10 19:49:53,677 - Throughput: 171625.8 segments/s (71.64 files/s)
+2025-04-10 19:50:04,565 - Batch 6000, Loss: 0.000945
+2025-04-10 19:50:04,565 - 
+Processing Time Statistics:
+2025-04-10 19:50:04,565 - Total files processed: 1,274
+2025-04-10 19:50:04,565 - Total segments processed: 3,073,362
+2025-04-10 19:50:04,566 - Total processing time: 17.78s
+2025-04-10 19:50:04,566 - Average time per file: 0.014s
+2025-04-10 19:50:04,566 - Average time per segment: 0.01ms
+2025-04-10 19:50:04,566 - Throughput: 172851.6 segments/s (71.65 files/s)
+2025-04-10 19:50:15,889 - Batch 7000, Loss: 0.000317
+2025-04-10 19:50:15,889 - 
+Processing Time Statistics:
+2025-04-10 19:50:15,889 - Total files processed: 1,496
+2025-04-10 19:50:15,889 - Total segments processed: 3,587,743
+2025-04-10 19:50:15,889 - Total processing time: 20.90s
+2025-04-10 19:50:15,889 - Average time per file: 0.014s
+2025-04-10 19:50:15,889 - Average time per segment: 0.01ms
+2025-04-10 19:50:15,889 - Throughput: 171655.5 segments/s (71.58 files/s)
+2025-04-10 19:50:26,760 - Batch 8000, Loss: 0.000205
+2025-04-10 19:50:26,760 - 
+Processing Time Statistics:
+2025-04-10 19:50:26,760 - Total files processed: 1,712
+2025-04-10 19:50:26,760 - Total segments processed: 4,099,284
+2025-04-10 19:50:26,760 - Total processing time: 23.80s
+2025-04-10 19:50:26,761 - Average time per file: 0.014s
+2025-04-10 19:50:26,761 - Average time per segment: 0.01ms
+2025-04-10 19:50:26,761 - Throughput: 172245.4 segments/s (71.94 files/s)
+2025-04-10 19:50:38,174 - Batch 9000, Loss: 0.000213
+2025-04-10 19:50:38,174 - 
+Processing Time Statistics:
+2025-04-10 19:50:38,174 - Total files processed: 1,961
+2025-04-10 19:50:38,174 - Total segments processed: 4,609,926
+2025-04-10 19:50:38,174 - Total processing time: 27.19s
+2025-04-10 19:50:38,174 - Average time per file: 0.014s
+2025-04-10 19:50:38,174 - Average time per segment: 0.01ms
+2025-04-10 19:50:38,174 - Throughput: 169518.9 segments/s (72.11 files/s)
+2025-04-10 19:50:49,111 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:50:49,111 - Processed 20001 batches in epoch 24
+2025-04-10 19:50:49,111 - ====> Epoch: 24 - Total loss: 16.782104718484334 - Average loss: 0.000839063
+2025-04-10 19:50:49,191 - Epoch 25/199
+2025-04-10 19:50:49,191 - ----------
+2025-04-10 19:50:49,205 - Reset coverage statistics for new epoch
+2025-04-10 19:50:49,205 - Using default batch limit of 20,000 for epoch 25
+2025-04-10 19:50:49,275 - First batch shape: torch.Size([512, 1, 1024])
+2025-04-10 19:50:49,275 - First batch device before transfer: cpu
+2025-04-10 19:50:49,275 - Batch range: [-0.725, 0.776]
+2025-04-10 19:50:49,276 - First batch device after transfer: cuda:0
+2025-04-10 19:50:49,276 - Model device: cuda:0
+2025-04-10 19:50:49,276 - Test computation result: 33041.273 on cuda:0
+2025-04-10 19:50:49,276 - Current GPU memory after first batch: 107.84 MB
+2025-04-10 19:50:49,278 - Batch 0, Loss: 0.015241
+2025-04-10 19:50:49,278 - 
+Processing Time Statistics:
+2025-04-10 19:50:49,278 - Total files processed: 1
+2025-04-10 19:50:49,278 - Total segments processed: 4,128
+2025-04-10 19:50:49,278 - Total processing time: 0.02s
+2025-04-10 19:50:49,278 - Average time per file: 0.020s
+2025-04-10 19:50:49,278 - Average time per segment: 0.00ms
+2025-04-10 19:50:49,278 - Throughput: 208119.5 segments/s (50.42 files/s)
+2025-04-10 19:51:00,471 - Batch 1000, Loss: 0.002947
+2025-04-10 19:51:00,471 - 
+Processing Time Statistics:
+2025-04-10 19:51:00,471 - Total files processed: 220
+2025-04-10 19:51:00,471 - Total segments processed: 515,170
+2025-04-10 19:51:00,471 - Total processing time: 3.04s
+2025-04-10 19:51:00,471 - Average time per file: 0.014s
+2025-04-10 19:51:00,471 - Average time per segment: 0.01ms
+2025-04-10 19:51:00,471 - Throughput: 169630.0 segments/s (72.44 files/s)
+2025-04-10 19:51:11,229 - Batch 2000, Loss: 0.000603
+2025-04-10 19:51:11,229 - 
+Processing Time Statistics:
+2025-04-10 19:51:11,229 - Total files processed: 411
+2025-04-10 19:51:11,229 - Total segments processed: 1,027,888
+2025-04-10 19:51:11,229 - Total processing time: 5.74s
+2025-04-10 19:51:11,229 - Average time per file: 0.014s
+2025-04-10 19:51:11,229 - Average time per segment: 0.01ms
+2025-04-10 19:51:11,229 - Throughput: 178964.8 segments/s (71.56 files/s)
+2025-04-10 19:51:22,296 - Batch 3000, Loss: 0.001342
+2025-04-10 19:51:22,296 - 
+Processing Time Statistics:
+2025-04-10 19:51:22,296 - Total files processed: 641
+2025-04-10 19:51:22,296 - Total segments processed: 1,537,283
+2025-04-10 19:51:22,296 - Total processing time: 8.80s
+2025-04-10 19:51:22,296 - Average time per file: 0.014s
+2025-04-10 19:51:22,296 - Average time per segment: 0.01ms
+2025-04-10 19:51:22,296 - Throughput: 174650.2 segments/s (72.82 files/s)
+2025-04-10 19:51:33,329 - Batch 4000, Loss: 0.000332
+2025-04-10 19:51:33,330 - 
+Processing Time Statistics:
+2025-04-10 19:51:33,330 - Total files processed: 857
+2025-04-10 19:51:33,330 - Total segments processed: 2,049,392
+2025-04-10 19:51:33,330 - Total processing time: 11.78s
+2025-04-10 19:51:33,330 - Average time per file: 0.014s
+2025-04-10 19:51:33,330 - Average time per segment: 0.01ms
+2025-04-10 19:51:33,330 - Throughput: 173971.6 segments/s (72.75 files/s)
+2025-04-10 19:51:44,168 - Batch 5000, Loss: 0.000240
+2025-04-10 19:51:44,168 - 
+Processing Time Statistics:
+2025-04-10 19:51:44,168 - Total files processed: 1,044
+2025-04-10 19:51:44,168 - Total segments processed: 2,565,643
+2025-04-10 19:51:44,168 - Total processing time: 14.44s
+2025-04-10 19:51:44,169 - Average time per file: 0.014s
+2025-04-10 19:51:44,169 - Average time per segment: 0.01ms
+2025-04-10 19:51:44,169 - Throughput: 177697.3 segments/s (72.31 files/s)
+2025-04-10 19:51:55,031 - Batch 6000, Loss: 0.000510
+2025-04-10 19:51:55,031 - 
+Processing Time Statistics:
+2025-04-10 19:51:55,031 - Total files processed: 1,240
+2025-04-10 19:51:55,031 - Total segments processed: 3,073,052
+2025-04-10 19:51:55,031 - Total processing time: 17.14s
+2025-04-10 19:51:55,031 - Average time per file: 0.014s
+2025-04-10 19:51:55,032 - Average time per segment: 0.01ms
+2025-04-10 19:51:55,032 - Throughput: 179286.0 segments/s (72.34 files/s)
+2025-04-10 19:52:06,076 - Batch 7000, Loss: 0.002223
+2025-04-10 19:52:06,076 - 
+Processing Time Statistics:
+2025-04-10 19:52:06,076 - Total files processed: 1,455
+2025-04-10 19:52:06,076 - Total segments processed: 3,584,530
+2025-04-10 19:52:06,076 - Total processing time: 20.13s
+2025-04-10 19:52:06,076 - Average time per file: 0.014s
+2025-04-10 19:52:06,076 - Average time per segment: 0.01ms
+2025-04-10 19:52:06,076 - Throughput: 178037.5 segments/s (72.27 files/s)
+2025-04-10 19:52:17,093 - Batch 8000, Loss: 0.000228
+2025-04-10 19:52:17,093 - 
+Processing Time Statistics:
+2025-04-10 19:52:17,093 - Total files processed: 1,672
+2025-04-10 19:52:17,093 - Total segments processed: 4,096,560
+2025-04-10 19:52:17,093 - Total processing time: 23.03s
+2025-04-10 19:52:17,093 - Average time per file: 0.014s
+2025-04-10 19:52:17,093 - Average time per segment: 0.01ms
+2025-04-10 19:52:17,093 - Throughput: 177850.4 segments/s (72.59 files/s)
+2025-04-10 19:52:28,170 - Batch 9000, Loss: 0.001146
+2025-04-10 19:52:28,170 - 
+Processing Time Statistics:
+2025-04-10 19:52:28,170 - Total files processed: 1,913
+2025-04-10 19:52:28,170 - Total segments processed: 4,608,776
+2025-04-10 19:52:28,170 - Total processing time: 26.16s
+2025-04-10 19:52:28,170 - Average time per file: 0.014s
+2025-04-10 19:52:28,170 - Average time per segment: 0.01ms
+2025-04-10 19:52:28,170 - Throughput: 176149.2 segments/s (73.12 files/s)
+2025-04-10 19:52:39,056 - Reached batch limit of 20000. Ending epoch.
+2025-04-10 19:52:39,056 - Processed 20001 batches in epoch 25
+2025-04-10 19:52:39,056 - ====> Epoch: 25 - Total loss: 17.000209025587537 - Average loss: 0.000849968
+2025-04-10 19:52:39,136 - Checkpoint - Epoch 25
+2025-04-10 19:52:39,266 - Saved checkpoint: /mimer/NOBACKUP/groups/x_kelco_musai_2024/FSD50K/FSD50K_MASTER/20250410_BaselineRun_FSD50KLib_workstation/run-000/model/checkpoints/ckpt_00025
+2025-04-10 20:17:31,257 - Audio examples generated: /mimer/NOBACKUP/groups/x_kelco_musai_2024/FSD50K/FSD50K_MASTER/20250410_BaselineRun_FSD50KLib_workstation/run-000/audio_logs/test_reconst_00025.wav
