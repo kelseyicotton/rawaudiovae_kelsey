@@ -180,7 +180,18 @@ class AudioDataset(IterableDataset):
             # logging.warning(f"Padding audio with {num_zeros} zeros to match hop size {self.hop_size}")
             audio = np.pad(audio, (0, num_zeros), 'constant', constant_values=(0, 0))
         return audio
+    
+    def apply_window(self, segments): # 🆕
+        """
+        Apply Hann window to audio segments for better audio reconstructions
+        """
 
+        window = np.hanning(self.segment_length) # 🆕
+
+        windowed_segments = [seg * window for seg in segments] # 🆕
+
+        return windowed_segments # 🆕
+    
     def log_processing_stats(self):
         """Log processing time statistics."""
         stats = self.get_processing_stats()
@@ -250,6 +261,10 @@ class AudioDataset(IterableDataset):
             segments = [audio[i:i+self.segment_length] for i in range(0, len(audio), self.hop_size)]
             segments = [seg for seg in segments if len(seg) == self.segment_length] #ensure segments are all same length
             
+
+            # Apply windowing to segments # 🆕
+            segments = self.apply_window(segments) # 🆕
+
             # Calculate processing time
             processing_time = time.time() - start_time
             
