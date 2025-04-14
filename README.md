@@ -1,4 +1,4 @@
-# Kelsey rawVAE_iterable Repository
+# Kelsey rawVAE_iterabledataloader Repository
 
 
 This is the repository for Kelsey's dev work.
