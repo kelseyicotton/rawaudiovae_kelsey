@@ -200,7 +200,7 @@ def main():
         os.makedirs(log_dir, exist_ok=True)
 
         if generate_test:
-            test_dataset, audio_log_dir = init_test_audio(workdir, test_audio, dataset_test_audio, sampling_rate, segment_length)
+            test_dataset, audio_log_dir, reconstruction_info = init_test_audio(workdir, test_audio, dataset_test_audio, sampling_rate, segment_length)
             test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
         # Neural Network
@@ -374,26 +374,90 @@ def main():
 
                 # Test and save audio examples
                 if generate_test:
-                    init_test = True
-
-                    for iterno, test_sample in enumerate(test_dataloader):
-                        with torch.no_grad():
+                    with torch.no_grad():
+                        # Set up for overlap-add reconstruction
+                        init_test = True
+                        all_test_predictions = []
+                        
+                        # Process all test segments through the model
+                        for iterno, test_sample in enumerate(test_dataloader):
                             test_sample = test_sample.to(device)
                             test_pred = model(test_sample)[0]
-
-                        if init_test:
-                            test_predictions = test_pred
-                            init_test = False
-                        else:
-                            test_predictions = torch.cat((test_predictions, test_pred), 0)
-
-                    audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(epoch))
-                    test_predictions_np = test_predictions.view(-1).cpu().numpy()
-                    sf.write(audio_out, test_predictions_np, sampling_rate)
-                    logging.info('Audio examples generated: {}'.format(audio_out))
-
-                    # TensorBoard_ReconstructedAudio
-                    writer.add_audio('Reconstructed Audio', test_predictions_np, epoch, sample_rate=sampling_rate)
+                            
+                            # Store all predictions (keep on CPU to save GPU memory)
+                            test_pred_cpu = test_pred.cpu()
+                            all_test_predictions.append(test_pred_cpu)
+                        
+                        # Concatenate all predictions into a single tensor
+                        test_predictions = torch.cat(all_test_predictions, 0)
+                        
+                        # Convert to numpy for reconstruction
+                        test_predictions_np = test_predictions.numpy()
+                        
+                        # Get the number of segments and expected outputs
+                        num_segments = len(test_predictions_np)
+                        
+                        # CRITICAL FIX: Get the exact hop_length from the dataset reconstruction_info
+                        hop_size = reconstruction_info['hop_length']
+                        segment_len = reconstruction_info['segment_length']
+                        
+                        # Calculate the exact expected output length
+                        expected_output_length = (num_segments - 1) * hop_size + segment_len
+                        
+                        logging.info(f"Reconstruction parameters: segments={num_segments}, hop_size={hop_size}, segment_length={segment_len}")
+                        logging.info(f"Expected output length: {expected_output_length} samples ({expected_output_length/sampling_rate:.2f} seconds)")
+                        
+                        # Initialize buffers for overlap-add reconstruction
+                        reconstructed_audio = np.zeros(expected_output_length)
+                        window_sum = np.zeros(expected_output_length)
+                        
+                        # Create Hann window (identical to what was used in dataset creation)
+                        window = np.hanning(segment_len)
+                        
+                        # Standard overlap-add reconstruction
+                        for i, segment in enumerate(test_predictions_np):
+                            # Calculate the position using the hop size
+                            position = i * hop_size
+                            
+                            # Apply window (same as during dataset creation)
+                            windowed_segment = segment * window
+                            
+                            # Add to the reconstruction buffer
+                            reconstructed_audio[position:position + segment_len] += windowed_segment
+                            window_sum[position:position + segment_len] += window
+                        
+                        # Normalize by window sum for consistent amplitude
+                        mask = window_sum > 1e-10
+                        reconstructed_audio[mask] /= window_sum[mask]
+                        
+                        # Check for NaN or inf values and replace them
+                        if np.any(np.isnan(reconstructed_audio)) or np.any(np.isinf(reconstructed_audio)):
+                            logging.warning("Found NaN or Inf values in reconstructed audio. Replacing with zeros.")
+                            reconstructed_audio = np.nan_to_num(reconstructed_audio, nan=0.0, posinf=0.0, neginf=0.0)
+                        
+                        # Ensure the audio is in the correct range (-1 to 1)
+                        if np.max(np.abs(reconstructed_audio)) > 0:
+                            reconstructed_audio = reconstructed_audio / np.max(np.abs(reconstructed_audio))
+                        
+                        # Convert to float32 explicitly to avoid potential data type issues with soundfile
+                        reconstructed_audio = reconstructed_audio.astype(np.float32)
+                        
+                        # Save the reconstructed audio using a try-except block to handle errors
+                        audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(epoch))
+                        try:
+                            logging.info(f"Writing audio file: {audio_out}, shape: {reconstructed_audio.shape}, dtype: {reconstructed_audio.dtype}")
+                            sf.write(audio_out, reconstructed_audio, sampling_rate)
+                            logging.info(f'Audio example generated: {audio_out} (length: {len(reconstructed_audio)/sampling_rate:.2f} seconds)')
+                        except Exception as e:
+                            logging.error(f"Error writing audio file: {e}")
+                            # Alternative approach to writing the file
+                            try:
+                                from scipy.io import wavfile
+                                logging.info("Attempting to write using scipy.io.wavfile instead...")
+                                wavfile.write(audio_out, sampling_rate, reconstructed_audio)
+                                logging.info(f'Audio example generated using scipy: {audio_out}')
+                            except Exception as e2:
+                                logging.error(f"Failed to write audio with scipy too: {e2}")
 
                 # Save if best model so far
                 if (train_loss < train_loss_prev) and (epoch > save_best_model_after):

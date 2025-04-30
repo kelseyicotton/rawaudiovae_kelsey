@@ -252,6 +252,7 @@ def main():
     # LOAD MODEL, CHECK PATH CORRECT
     print(f"\nLoading model checkpoint... ⌛")
     checkpoint_path = input("Please paste path to your checkpoint file")
+    
     # r'D:\kelse\03_Repositories\RAWAUDIOVAE_PROJECT\KELSEY_DEV\rawaudiovae_kelsey\rawaudiovae_BASE\content\kelsey\checkpoints\ckpt_00150'
     # REPLACE THIS EVENTUALLY WITH READING BACK FROM LAST MODEL RUN LOG
 
@@ -267,7 +268,10 @@ def main():
     print("Locked and loaded ⛑️")
 
     # AUDIO DIR
-    audio_dir = input("Please paste path to your audio directory")
+
+    audio_dir = /mimer/NOBACKUP/groups/x_kelco_musai_2024/FSD50K/FSD50K_MASTER/test_audio_kelsey
+    
+    # audio_dir = input("Please paste path to your audio directory")
     # r"D:\kelse\03_Repositories\RAWAUDIOVAE_PROJECT\KELSEY_DEV\rawaudiovae_kelsey\rawaudiovae_BASE\audio_experiments"
     # REPLACE THIS EVENTUALLY WITH READING BACK TEST_AUDIO FROM CONFIG FILE
     audio_file1, audio_file2 = get_random_audio(audio_dir)

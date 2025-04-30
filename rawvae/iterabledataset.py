@@ -171,8 +171,8 @@ class AudioDataset(IterableDataset):
 
     def process_data(self, audio): # Pad audio to fit the hop size, because we use a sliding window and hop_size matters
         # Normalize audio to [-1, 1] range
-        if np.max(np.abs(audio)) > 0:
-            audio = audio / np.max(np.abs(audio))
+        # if np.max(np.abs(audio)) > 0:
+        #     audio = audio / np.max(np.abs(audio))
             
         # Pad if needed
         if len(audio) % self.hop_size != 0:
@@ -380,6 +380,8 @@ class TestDataset(torch.utils.data.Dataset):
             audio_np = np.pad(audio_np, (0, num_zeros), 'constant', constant_values=(0,0))
 
         self.audio_np = audio_np
+        # Create the window once during initialisation # 🆕
+        self.window = np.hanning(self.segment_length) # 🆕
         
     def __getitem__(self, index):
         
@@ -387,6 +389,9 @@ class TestDataset(torch.utils.data.Dataset):
         seg_start = index * self.segment_length
         seg_end = (index * self.segment_length) + self.segment_length
         sample = self.audio_np[ seg_start : seg_end ]
+
+        # Apply windowing to segment # 🆕
+        sample = sample * self.window # 🆕
         
         if self.transform:
             sample = self.transform(sample)

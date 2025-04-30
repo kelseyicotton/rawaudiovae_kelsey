@@ -5,12 +5,22 @@ This is the repository for Kelsey's dev work.
 
 ## To Do List
 
-- [ ] Check if Hannes windowing in audio reconstruction is integrated
-  - [ ] If not, integrate it
+- [x] Check if Hannes windowing in audio reconstruction is integrated
+  - [x] If not, integrate it
+- [x] Option 0: Add 5% silence to FSD50K dataset
+  - [x] silence_splitter.py for the 200hours audio file
+  - [x] migrated silence files onto Alvis
+  - [x] test reconstructions on KC audio
+    - [ ] completely shit. find out why. 
+      - [ ] audio normalization was happening in the IterableDataloader script! 
+        - [x] Remove
+        - [ ] Retrain
+  - [ ] re-integrate the interpolations! 
 - [ ] Option 1: Integrate reconstruction and spectrogram loss
 - [ ] Option 2: Integrate ResNet layers
 - [ ] Option 3: Integrate MelGAN Approach to segment length reduction in decoder layer
 - [ ] Option 4: Integrate Neural FFT layer in the network
+- [ ] Finetune trained VAE on Kelsey sound library
 
 ## What is this repository about?
 
