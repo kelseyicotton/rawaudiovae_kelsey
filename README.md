@@ -16,11 +16,16 @@ This is the repository for Kelsey's dev work.
         - [x] Remove
         - [ ] Retrain
   - [ ] re-integrate the interpolations! 
+- [x] Finetune trained VAE on Kelsey sound library
+  - [ ] attempting now!
+
+### For Later
+
 - [ ] Option 1: Integrate reconstruction and spectrogram loss
 - [ ] Option 2: Integrate ResNet layers
 - [ ] Option 3: Integrate MelGAN Approach to segment length reduction in decoder layer
 - [ ] Option 4: Integrate Neural FFT layer in the network
-- [ ] Finetune trained VAE on Kelsey sound library
+
 
 ## What is this repository about?
 
