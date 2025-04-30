@@ -14,7 +14,7 @@ This is the repository for Kelsey's dev work.
     - [ ] completely shit. find out why. 
       - [ ] audio normalization was happening in the IterableDataloader script! 
         - [x] Remove
-        - [ ] Retrain
+        - [x] Retrain
   - [ ] re-integrate the interpolations! 
 - [x] Finetune trained VAE on Kelsey sound library
   - [ ] attempting now!
