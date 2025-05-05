@@ -282,6 +282,42 @@ def create_mixed_dataset(original_dataset, voice_dataset, voice_ratio=0.7, batch
     """
     return None  # We'll handle mixing during training
 
+def overlap_add(segments, hop_length, original_length=None):
+    """Combine overlapping segments using overlap-add synthesis"""
+    segment_length = segments.shape[1]
+    
+    if original_length is None:
+        # Calculate expected output length
+        original_length = (len(segments) - 1) * hop_length + segment_length
+    
+    # Initialize output buffer and normalization buffer
+    output = np.zeros(original_length)
+    norm = np.zeros(original_length)
+    
+    # Create hanning window for overlap-add
+    window = np.hanning(segment_length)
+    
+    # Overlap-add segments
+    for i, segment in enumerate(segments):
+        pos = i * hop_length
+        end = min(pos + segment_length, original_length)
+        seg_end = end - pos
+        
+        # Apply window again to ensure smooth transitions
+        windowed_segment = segment[:seg_end] * window[:seg_end]
+        
+        # Add to output buffer
+        output[pos:end] += windowed_segment
+        
+        # Add window weights to normalization buffer
+        norm[pos:end] += window[:seg_end]
+    
+    # Normalize by the summed window weights
+    mask = norm > 1e-10
+    output[mask] /= norm[mask]
+    
+    return output
+
 def plot_reconstructions(model, test_samples, output_dir, epoch, config):
     """
     Generate and save audio reconstructions from the model to monitor progress.
@@ -294,6 +330,9 @@ def plot_reconstructions(model, test_samples, output_dir, epoch, config):
         config: Configuration object with audio settings
     """
     sampling_rate = config['audio'].getint('sampling_rate')
+    segment_length = config['audio'].getint('segment_length')
+    hop_length = int(segment_length * 0.25)  # Use 25% of segment length as hop size
+    
     os.makedirs(output_dir, exist_ok=True)
     
     model.eval()
@@ -305,15 +344,51 @@ def plot_reconstructions(model, test_samples, output_dir, epoch, config):
         originals = test_samples.cpu().numpy()
         reconstructions = recon_samples.cpu().numpy()
         
-        # Save a few examples
+        # Log reconstruction statistics
+        logging.info(f"Reconstruction stats - Original range: [{np.min(originals):.3f}, {np.max(originals):.3f}], "
+                     f"Reconstructed range: [{np.min(reconstructions):.3f}, {np.max(reconstructions):.3f}]")
+        
+        # Check for NaN or infinity values
+        if np.any(np.isnan(reconstructions)) or np.any(np.isinf(reconstructions)):
+            logging.warning("Found NaN or Inf values in reconstructions. Replacing with zeros.")
+            reconstructions = np.nan_to_num(reconstructions, nan=0.0, posinf=1.0, neginf=-1.0)
+        
+        # Save individual segments
         for i in range(min(5, originals.shape[0])):
+            # Ensure audio is within [-1, 1] range for saving
+            original_audio = originals[i].copy()
+            if np.max(np.abs(original_audio)) > 0:
+                original_audio = np.clip(original_audio / np.max(np.abs(original_audio)), -1.0, 1.0)
+            
+            recon_audio = reconstructions[i].copy()
+            if np.max(np.abs(recon_audio)) > 0:
+                recon_audio = np.clip(recon_audio / np.max(np.abs(recon_audio)), -1.0, 1.0)
+            
+            # Convert to float32 for soundfile
+            original_audio = original_audio.astype(np.float32)
+            recon_audio = recon_audio.astype(np.float32)
+            
+            # Check if audio contains only zeros
+            if np.all(original_audio == 0):
+                logging.warning(f"Original audio sample {i} contains only zeros!")
+            if np.all(recon_audio == 0):
+                logging.warning(f"Reconstructed audio sample {i} contains only zeros!")
+            
             # Save original audio
             orig_path = os.path.join(output_dir, f"epoch_{epoch}_original_{i}.wav")
-            sf.write(orig_path, originals[i], sampling_rate)
+            try:
+                sf.write(orig_path, original_audio, sampling_rate)
+                logging.info(f"Saved original audio to {orig_path}, shape: {original_audio.shape}")
+            except Exception as e:
+                logging.error(f"Error saving original audio: {e}")
             
             # Save reconstruction
             recon_path = os.path.join(output_dir, f"epoch_{epoch}_recon_{i}.wav")
-            sf.write(recon_path, reconstructions[i], sampling_rate)
+            try:
+                sf.write(recon_path, recon_audio, sampling_rate)
+                logging.info(f"Saved reconstructed audio to {recon_path}, shape: {recon_audio.shape}")
+            except Exception as e:
+                logging.error(f"Error saving reconstructed audio: {e}")
             
             # Plot spectrograms
             plt.figure(figsize=(12, 6))
@@ -321,21 +396,108 @@ def plot_reconstructions(model, test_samples, output_dir, epoch, config):
             # Original spectrogram
             plt.subplot(1, 2, 1)
             plt.title("Original")
-            D = librosa.amplitude_to_db(np.abs(librosa.stft(originals[i])), ref=np.max)
+            D = librosa.amplitude_to_db(np.abs(librosa.stft(original_audio)), ref=np.max)
             librosa.display.specshow(D, sr=sampling_rate, x_axis='time', y_axis='log')
             plt.colorbar(format='%+2.0f dB')
             
             # Reconstruction spectrogram
             plt.subplot(1, 2, 2)
             plt.title("Reconstruction")
-            D = librosa.amplitude_to_db(np.abs(librosa.stft(reconstructions[i])), ref=np.max)
+            D = librosa.amplitude_to_db(np.abs(librosa.stft(recon_audio)), ref=np.max)
             librosa.display.specshow(D, sr=sampling_rate, x_axis='time', y_axis='log')
             plt.colorbar(format='%+2.0f dB')
             
             # Save figure
             plt.tight_layout()
-            plt.savefig(os.path.join(output_dir, f"epoch_{epoch}_spectrogram_{i}.png"))
+            spec_path = os.path.join(output_dir, f"epoch_{epoch}_spectrogram_{i}.png")
+            plt.savefig(spec_path)
             plt.close()
+            logging.info(f"Saved spectrogram to {spec_path}")
+        
+        # Calculate how many segments we need to create 10 seconds of audio
+        # For 10 seconds at 44.1kHz, we need 10 * 44100 = 441,000 samples
+        target_samples = 10 * sampling_rate
+        
+        # Calculate how many segments we need to loop
+        samples_per_segment_with_hop = hop_length  # Each new segment adds hop_length samples
+        num_loops_needed = target_samples // samples_per_segment_with_hop + 1
+        
+        logging.info(f"Creating long audio reconstruction (target: 10 seconds, {target_samples} samples)")
+        logging.info(f"Need approximately {num_loops_needed} segment repetitions")
+        
+        # Create longer audio by repeating and concatenating segments using overlap-add
+        # We'll use all available segments and repeat them as needed
+        available_segments = originals.shape[0]
+        
+        # Create arrays that will hold all the repeated segments
+        num_total_segments = num_loops_needed
+        logging.info(f"Creating array with {num_total_segments} segments")
+        
+        # Create extended arrays by repeating the segments we have
+        extended_originals = np.zeros((num_total_segments, segment_length))
+        extended_reconstructions = np.zeros((num_total_segments, segment_length))
+        
+        for i in range(num_total_segments):
+            segment_idx = i % available_segments  # Loop through available segments
+            extended_originals[i] = originals[segment_idx]
+            extended_reconstructions[i] = reconstructions[segment_idx]
+        
+        # Apply overlap-add to create long audio streams
+        logging.info(f"Applying overlap-add to create long audio streams")
+        long_original = overlap_add(extended_originals, hop_length)
+        long_recon = overlap_add(extended_reconstructions, hop_length)
+        
+        # Calculate actual duration
+        original_duration_sec = len(long_original) / sampling_rate
+        recon_duration_sec = len(long_recon) / sampling_rate
+        
+        logging.info(f"Generated long audio examples - Original: {original_duration_sec:.2f}s, Reconstructed: {recon_duration_sec:.2f}s")
+        
+        # Ensure audio is within [-1, 1] range for saving
+        if np.max(np.abs(long_original)) > 0:
+            long_original = long_original / np.max(np.abs(long_original))
+        if np.max(np.abs(long_recon)) > 0:
+            long_recon = long_recon / np.max(np.abs(long_recon))
+        
+        # Convert to float32 for soundfile
+        long_original = long_original.astype(np.float32)
+        long_recon = long_recon.astype(np.float32)
+        
+        # Save longer audio files
+        long_orig_path = os.path.join(output_dir, f"epoch_{epoch}_long_original.wav")
+        long_recon_path = os.path.join(output_dir, f"epoch_{epoch}_long_recon.wav")
+        
+        try:
+            sf.write(long_orig_path, long_original, sampling_rate)
+            sf.write(long_recon_path, long_recon, sampling_rate)
+            logging.info(f"Saved long audio examples: {long_orig_path} and {long_recon_path}")
+            
+            # Plot spectrograms for longer audio
+            plt.figure(figsize=(14, 8))
+            
+            # Original spectrogram
+            plt.subplot(2, 1, 1)
+            plt.title(f"Long Original Audio ({original_duration_sec:.2f}s)")
+            D = librosa.amplitude_to_db(np.abs(librosa.stft(long_original)), ref=np.max)
+            librosa.display.specshow(D, sr=sampling_rate, x_axis='time', y_axis='log')
+            plt.colorbar(format='%+2.0f dB')
+            
+            # Reconstruction spectrogram
+            plt.subplot(2, 1, 2)
+            plt.title(f"Long Reconstructed Audio ({recon_duration_sec:.2f}s)")
+            D = librosa.amplitude_to_db(np.abs(librosa.stft(long_recon)), ref=np.max)
+            librosa.display.specshow(D, sr=sampling_rate, x_axis='time', y_axis='log')
+            plt.colorbar(format='%+2.0f dB')
+            
+            # Save figure
+            plt.tight_layout()
+            long_spec_path = os.path.join(output_dir, f"epoch_{epoch}_long_spectrogram.png")
+            plt.savefig(long_spec_path)
+            plt.close()
+            logging.info(f"Saved long spectrogram to {long_spec_path}")
+            
+        except Exception as e:
+            logging.error(f"Error saving longer audio examples: {e}")
     
     model.train()
     logging.info(f"Saved reconstructions for epoch {epoch}")
@@ -423,7 +585,9 @@ def finetune_model(model, voice_loader, validation_loader, output_dir, writer,
         for val_batch in validation_loader:
             # Ensure visualization samples are float32
             val_batch = val_batch.float()
-            vis_samples = val_batch[:5].to(next(model.parameters()).device)
+            # Get more samples (15-20) so we can create longer reconstructions
+            vis_samples = val_batch[:20].to(next(model.parameters()).device)
+            logging.info(f"Using {len(vis_samples)} validation samples for reconstruction monitoring")
             break
     
     for epoch in range(epochs):
