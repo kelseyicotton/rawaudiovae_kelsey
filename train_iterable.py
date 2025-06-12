@@ -111,6 +111,27 @@ config['dataset']['workspace'] = str(workdir.resolve())
 
 print("Workspace: {}".format(workdir))
 
+# Set up console logging to file
+console_log_path = workdir / 'console_log'
+
+class Tee:
+    def __init__(self, *files):
+        self.files = files
+    def write(self, obj):
+        for f in self.files:
+            f.write(obj)
+            f.flush()
+    def flush(self):
+        for f in self.files:
+            f.flush()
+
+# Open log file and redirect stdout
+log_file = open(console_log_path, 'w')
+original_stdout = sys.stdout
+sys.stdout = Tee(sys.stdout, log_file)
+
+print("Console logging started - all output will be saved to: {}".format(console_log_path))
+
 # Create the dataset
 print('creating the dataset...')
 
@@ -301,3 +322,8 @@ with open(config_path, 'w') as configfile:
   config.write(configfile)
 
 writer.close()
+
+# Close the log file and restore stdout
+sys.stdout = original_stdout
+log_file.close()
+print("Training completed. Console log saved to: {}".format(console_log_path))
