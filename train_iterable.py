@@ -173,8 +173,8 @@ batch_id = 0
 
 for data in islice(training_dataloader, total_num_batches):
   
-  # data, = data
-  if device == "cuda":
+  # Move data to device
+  if device.type == "cuda":
     data = data.to(device)
   optimizer.zero_grad()
   recon_batch, mu, logvar = model(data)
@@ -210,7 +210,7 @@ for data in islice(training_dataloader, total_num_batches):
       
       for iterno, test_sample in enumerate(test_dataloader):
         with torch.no_grad():
-          if device == cuda:
+          if device.type == "cuda":
             test_sample = test_sample.to(device)
           test_pred = model(test_sample)[0]
         
@@ -257,7 +257,7 @@ if generate_test:
   
   for iterno, test_sample in enumerate(test_dataloader):
     with torch.no_grad():
-      if device == "cuda":
+      if device.type == "cuda":
         test_sample = test_sample.to(device)
       test_pred = model(test_sample)[0]
   
