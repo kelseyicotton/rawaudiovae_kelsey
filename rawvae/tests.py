@@ -2,7 +2,8 @@ import os
 import torch
 from torch.utils.data import Dataset, TensorDataset, DataLoader
 
-from spectralvae.dataset import TestDataset, ToTensor
+#from spectralvae.dataset import TestDataset, ToTensor
+from rawvae.dataset import TestDataset, ToTensor
 
 import numpy as np
 import librosa
