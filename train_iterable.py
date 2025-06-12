@@ -131,6 +131,7 @@ print('Total number of audio frames: {}'.format(total_frames))
 config['dataset']['total_frames'] = str(total_frames)
 
 # Create the dataset
+training_dataset = AudioDataset(training_array, segment_length = segment_length, sampling_rate = sampling_rate, hop_size = hop_length, transform=ToTensor())
 training_dataset = IterableAudioDataset(training_array, segment_length = segment_length, sampling_rate = sampling_rate, hop_size = hop_length, shuffle=True)
 training_dataloader = DataLoader(training_dataset, batch_size = batch_size, shuffle=False)
 
