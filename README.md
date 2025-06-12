@@ -33,4 +33,4 @@ This work was partially supported by the Wallenberg AI, Autonomous Systems and S
 - Resolved ConfigParser Comment Issues
   - Calculation documentation to [notes] section instead
 - Commenced training run on erokia dataset:
-  - 12hrs: /mimer/NOBACKUP/groups/x_kelco_musai_2024/erokia/20250612_rawaudiovae-Kelsey/run-000
+  - 12hrs: /mimer/NOBACKUP/groups/x_kelco_musai_2024/erokia/20250612_rawaudiovae-Kelsey/run-004
