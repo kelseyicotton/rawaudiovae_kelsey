@@ -182,14 +182,14 @@ for data in islice(training_dataloader, total_num_batches):
   
   # Log batch loss
   writer.add_scalar('Loss/Batch', loss.item(), batch_id)  #🪵 Log batch loss
-  print('====> Batch: {} - Loss: {:.9f}'.format(batch_id, train_loss))
+  print('====> Batch: {} - Loss: {:.9f}'.format(batch_id, loss.item()))
 
   loss.backward()
   train_loss += loss.item()
   optimizer.step()
 
   # Log learning rate
-  writer.add_scalar('Learning Rate', optimizer.param_groups[0]['lr'], epoch * len(training_dataloader) + i)  #🪵 Log learning rate
+  writer.add_scalar('Learning Rate', optimizer.param_groups[0]['lr'], batch_id)  #🪵 Log learning rate
 
   # TensorBoard_ModelParameter
   for name, param in model.named_parameters():
@@ -242,6 +242,9 @@ for data in islice(training_dataloader, total_num_batches):
     elif (train_loss > train_loss_prev):
       print("Loss did not improve.")
 
+  # This is the end of batch loop
+  batch_id += 1
+
 final_loss = train_loss
 
 print('Last Checkpoint - batch_id {}'.format(batch_id))
@@ -277,9 +280,6 @@ if generate_test:
   print('Last Audio examples generated: {}'.format(audio_out))
   #TensorBoard_ReconstructedAudio 
   writer.add_audio('Reconstructed Audio', test_predictions_np, batch_id, sample_rate=sampling_rate)
-
-  # This is the end of batch loop
-  batch_id += 1
 
 # Save the last model as a checkpoint dict
 torch.save(state, checkpoint_dir.joinpath('ckpt_{:05d}'.format(total_num_batches)))
