@@ -113,27 +113,21 @@ print("Workspace: {}".format(workdir))
 
 # Create the dataset
 print('creating the dataset...')
-training_array = []
-new_loop = True
 
-for f in my_audio.glob('*.wav'): 
-  print('adding-> %s' % f.stem)
-  new_array, _ = librosa.load(f, sr=sampling_rate)
+# Count total audio files for reference
+audio_files = list(my_audio.glob('*.wav'))
+print('Found {} audio files'.format(len(audio_files)))
 
-  if new_loop:
-      training_array = new_array
-      new_loop = False
-  else:
-      training_array = np.concatenate((training_array, new_array), axis=0)
-
-total_frames = len(training_array) // segment_length
-print('Total number of audio frames: {}'.format(total_frames))
-config['dataset']['total_frames'] = str(total_frames)
-
-# Create the dataset
-training_dataset = AudioDataset(training_array, segment_length = segment_length, sampling_rate = sampling_rate, hop_size = hop_length, transform=ToTensor())
-training_dataset = IterableAudioDataset(training_array, segment_length = segment_length, sampling_rate = sampling_rate, hop_size = hop_length, shuffle=True)
-training_dataloader = DataLoader(training_dataset, batch_size = batch_size, shuffle=False)
+# Create the dataset using IterableAudioDataset
+training_dataset = IterableAudioDataset(
+    audio_folder=my_audio, 
+    sampling_rate=sampling_rate, 
+    hop_size=hop_length,
+    dtype=torch.float32,
+    device=device,
+    shuffle=True
+)
+training_dataloader = DataLoader(training_dataset, batch_size=batch_size, shuffle=False)
 
 print("saving initial configs...")
 config_path = workdir / 'config.ini'
