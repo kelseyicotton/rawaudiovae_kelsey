@@ -10,7 +10,7 @@ from torchvision import datasets, transforms
 
 from rawvae.model import VAE, loss_function
 from rawvae.tests import init_test_audio
-from rawvae.dataset import ItearableAudioDataset, AudioDataset, ToTensor
+from rawvae.dataset import IterableAudioDataset, AudioDataset, ToTensor
 
 import random
 import numpy as np
