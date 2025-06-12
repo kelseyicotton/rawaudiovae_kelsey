@@ -151,7 +151,7 @@ if generate_test:
   test_dataloader = DataLoader(test_dataset, batch_size = batch_size, shuffle=False)
 
 # Neural Network
-if device == "cuda":
+if device.type == "cuda":
   model = VAE(segment_length, n_units, latent_dim).to(device)
 else:
   model = VAE(segment_length, n_units, latent_dim)
