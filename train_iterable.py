@@ -240,7 +240,7 @@ for data in islice(training_dataloader, total_num_batches):
           init_test = False
         
         else:
-          test_predictions = torch.cat(test_predictions, test_pred, 0)
+          test_predictions = torch.cat([test_predictions, test_pred], 0)
         
       audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format( batch_id))
       test_predictions_np = test_predictions.view(-1).cpu().numpy()
@@ -290,7 +290,7 @@ if generate_test:
       init_test = False
     
     else:
-      test_predictions = torch.cat(test_predictions, test_pred, 0)
+      test_predictions = torch.cat([test_predictions, test_pred], 0)
     
   audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(total_num_batches))
   test_predictions_np = test_predictions.view(-1).cpu().numpy()
