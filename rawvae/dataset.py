@@ -50,17 +50,29 @@ class IterableAudioDataset(IterableDataset):
         if audio_sr != self.sampling_rate:
             audio_np = torchaudio.functional.resample(audio_np, audio_sr, self.sampling_rate)
 
+        # Flatten to mono if stereo (take first channel)
+        if audio_np.shape[0] > 1:
+            audio_np = audio_np[0:1, :]  # Keep first channel
+        
+        # Flatten to 1D
+        audio_np = audio_np.flatten()
+        
         # Pad if the length is not a multiplier of hop_size
-        if audio_np.shape[1] % self.hop_size != 0:
-            num_zeros = self.hop_size - (audio_np.shape[1] % self.hop_size)
+        if len(audio_np) % self.hop_size != 0:
+            num_zeros = self.hop_size - (len(audio_np) % self.hop_size)
             audio_np = torch.nn.functional.pad(audio_np, (0, num_zeros), 'constant')            
         
-        # Check if we are using cuda then move the audio to cuda
-        if self.device.type == "cuda":
-            audio_np = audio_np.to(self.device)
-
-        for frame in audio_np:
-            yield frame
+        # Generate segments of fixed size (segment_length)
+        segment_length = 1024  # This should match your config segment_length
+        
+        for i in range(0, len(audio_np) - segment_length + 1, self.hop_size):
+            segment = audio_np[i:i + segment_length]
+            
+            # Move to device if CUDA
+            if self.device.type == "cuda":
+                segment = segment.to(self.device)
+            
+            yield segment
 
     def get_stream(self, audio_file_list):
         return chain.from_iterable(map(self.process_data, cycle(audio_file_list)))
