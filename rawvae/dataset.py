@@ -1,4 +1,5 @@
 import torch
+<<<<<<< HEAD
 import torchaudio
 import librosa
 from torch.utils.data import IterableDataset
@@ -82,6 +83,12 @@ class IterableAudioDataset(IterableDataset):
             return self.get_stream(self.shuffled_data_list)
         else: 
             return self.get_stream(self.audio_file_list)
+=======
+import librosa
+
+from pathlib import Path
+import numpy as np
+>>>>>>> windowing-repo/main
 
 class AudioDataset(torch.utils.data.Dataset):
     """
@@ -157,4 +164,8 @@ class TestDataset(torch.utils.data.Dataset):
         return sample
 
     def __len__(self):
+<<<<<<< HEAD
         return len(self.audio_np) // self.segment_length
+=======
+        return len(self.audio_np) // self.segment_length
+>>>>>>> windowing-repo/main

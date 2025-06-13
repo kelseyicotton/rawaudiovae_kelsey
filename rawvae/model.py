@@ -2,19 +2,35 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
+<<<<<<< HEAD
 class VAE(nn.Module):
   def __init__(self, segment_length, n_units, latent_dim):
+=======
+# ORIGINAL
+class VAE(nn.Module):
+  def __init__(self, segment_length, n_units, latent_dim): 
+  
+>>>>>>> windowing-repo/main
     super(VAE, self).__init__()
 
     self.segment_length = segment_length
     self.n_units = n_units
     self.latent_dim = latent_dim
     
+<<<<<<< HEAD
     self.fc1 = nn.Linear(segment_length, n_units)
     self.fc21 = nn.Linear(n_units, latent_dim)
     self.fc22 = nn.Linear(n_units, latent_dim)
     self.fc3 = nn.Linear(latent_dim, n_units)
     self.fc4 = nn.Linear(n_units, segment_length)
+=======
+ # EncoderDecoder
+    self.fc1 = nn.Linear(segment_length, n_units)
+    self.fc21 = nn.Linear(n_units, latent_dim) 
+    self.fc22 = nn.Linear(n_units, latent_dim) 
+    self.fc3 = nn.Linear(latent_dim, n_units) 
+    self.fc4 = nn.Linear(n_units, segment_length) 
+>>>>>>> windowing-repo/main
 
   def encode(self, x):
       h1 = F.relu(self.fc1(x))
@@ -26,8 +42,13 @@ class VAE(nn.Module):
       return mu + eps*std
 
   def decode(self, z):
+<<<<<<< HEAD
       h3 = F.relu(self.fc3(z))
       return F.tanh(self.fc4(h3))
+=======
+      h3 = F.relu(self.fc3(z))      
+      return F.tanh(self.fc4(h3)) 
+>>>>>>> windowing-repo/main
 
   def forward(self, x):
       mu, logvar = self.encode(x.view(-1, self.segment_length))
@@ -36,7 +57,11 @@ class VAE(nn.Module):
 
 # Reconstruction + KL divergence losses summed over all elements and batch
 def loss_function(recon_x, x, mu, logvar, kl_beta, segment_length):
+<<<<<<< HEAD
   recon_loss = F.mse_loss(recon_x, x.view(-1, segment_length)) # mse_loss default is mean
+=======
+  recon_loss = F.mse_loss(recon_x, x.view(-1, segment_length))
+>>>>>>> windowing-repo/main
 
   # see Appendix B from VAE paper:
   # Kingma and Welling. Auto-Encoding Variational Bayes. ICLR, 2014
@@ -44,4 +69,8 @@ def loss_function(recon_x, x, mu, logvar, kl_beta, segment_length):
   # 0.5 * sum(1 + log(sigma^2) - mu^2 - sigma^2)
   KLD = -0.5 * torch.mean(1 + logvar - mu.pow(2) - logvar.exp())
 
+<<<<<<< HEAD
   return recon_loss + ( kl_beta * KLD)
+=======
+  return recon_loss + ( kl_beta * KLD)
+>>>>>>> windowing-repo/main
