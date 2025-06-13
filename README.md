@@ -1,7 +1,7 @@
 # Kelsey rawVAE_iterabledataloader Repository
 
+## MAKE SURE YOU ARE ON THE 'CLEAN' BRANCH!!!!!!
 
-This is the repository for Kelsey's dev work.
 
 ## To Do List
 
