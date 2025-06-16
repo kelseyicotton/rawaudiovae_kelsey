@@ -242,6 +242,8 @@ for data in islice(training_dataloader, total_num_batches):
         with torch.no_grad():
           if device.type == "cuda":
             test_sample = test_sample.to(device)
+          # Ensure test_sample is float32 to match model dtype
+          test_sample = test_sample.float()
           test_pred = model(test_sample)[0]
         
         if init_test:
@@ -292,6 +294,8 @@ if generate_test:
     with torch.no_grad():
       if device.type == "cuda":
         test_sample = test_sample.to(device)
+      # Ensure test_sample is float32 to match model dtype
+      test_sample = test_sample.float()
       test_pred = model(test_sample)[0]
   
     if init_test:
