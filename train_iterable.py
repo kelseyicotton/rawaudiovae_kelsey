@@ -199,14 +199,23 @@ for data in islice(training_dataloader, total_num_batches):
     data = data.to(device)
   optimizer.zero_grad()
   recon_batch, mu, logvar = model(data)
-  loss = loss_function(recon_batch, data, mu, logvar, kl_beta, segment_length)
+  total_loss, recon_loss, kld_loss = loss_function(recon_batch, data, mu, logvar, kl_beta, segment_length)
   
-  # Log batch loss
-  writer.add_scalar('Loss/Batch', loss.item(), batch_id)  #🪵 Log batch loss
-  print('====> Batch: {} - Loss: {:.9f}'.format(batch_id, loss.item()))
+  # Calculate weighted KLD for logging (the actual KLD term used in total loss)
+  weighted_kld = kl_beta * kld_loss
+  
+  # Log all loss components to TensorBoard
+  writer.add_scalar('Loss/Total', total_loss.item(), batch_id)
+  writer.add_scalar('Loss/Reconstruction', recon_loss.item(), batch_id)
+  writer.add_scalar('Loss/KLD_Raw', kld_loss.item(), batch_id)
+  writer.add_scalar('Loss/KLD_Weighted', weighted_kld.item(), batch_id)
+  
+  # Print detailed loss breakdown
+  print('====> Batch: {} - Total Loss: {:.9f} | Recon: {:.9f} | KLD: {:.9f} | Weighted KLD: {:.9f}'.format(
+      batch_id, total_loss.item(), recon_loss.item(), kld_loss.item(), weighted_kld.item()))
 
-  loss.backward()
-  train_loss += loss.item()
+  total_loss.backward()
+  train_loss += total_loss.item()
   optimizer.step()
 
   # Log learning rate
