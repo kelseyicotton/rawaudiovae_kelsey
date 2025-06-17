@@ -227,7 +227,7 @@ for data in islice(training_dataloader, total_num_batches):
 
   # If the checkpoint interval reached, start the process below
   if batch_id % checkpoint_interval == 0 and batch_id != 0: 
-    print('Checkpoint - Epoch {}'.format(batch_id))
+    print('Checkpoint - Batch {}'.format(batch_id))
     state = {
       'batch_id': batch_id,
       'state_dict': model.state_dict(),
