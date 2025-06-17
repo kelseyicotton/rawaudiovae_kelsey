@@ -236,7 +236,8 @@ for data in islice(training_dataloader, total_num_batches):
   
     if generate_test:
       
-      init_test = True
+      # Store all test predictions for proper overlap-add reconstruction
+      all_test_predictions = []
       
       for iterno, test_sample in enumerate(test_dataloader):
         with torch.no_grad():
@@ -245,21 +246,57 @@ for data in islice(training_dataloader, total_num_batches):
           # Ensure test_sample is float32 to match model dtype
           test_sample = test_sample.float()
           test_pred = model(test_sample)[0]
-        
-        if init_test:
-          test_predictions = test_pred
-          init_test = False
-        
-        else:
-          test_predictions = torch.cat([test_predictions, test_pred], 0)
-        
-      audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format( batch_id))
-      test_predictions_np = test_predictions.view(-1).cpu().numpy()
-      sf.write( audio_out, test_predictions_np, sampling_rate)
-      print('Audio examples generated: {}'.format(audio_out))
+          
+          # Store predictions on CPU to save GPU memory
+          all_test_predictions.append(test_pred.cpu())
       
-      #TensorBoard_ReconstructedAudio 
-      writer.add_audio('Reconstructed Audio', test_predictions_np, batch_id, sample_rate=sampling_rate)
+      # Concatenate all predictions
+      test_predictions = torch.cat(all_test_predictions, 0)
+      test_predictions_np = test_predictions.numpy()
+      
+      # Get reconstruction parameters
+      num_segments = len(test_predictions_np)
+      segment_len = segment_length
+      hop_size = hop_length
+      
+      # Calculate expected output length
+      expected_length = (num_segments - 1) * hop_size + segment_len
+      
+      # Initialize buffers for overlap-add reconstruction
+      reconstructed_audio = np.zeros(expected_length)
+      window_sum = np.zeros(expected_length)
+      
+      # Create Hann window (same as used in dataset)
+      window = np.hanning(segment_len)
+      
+      # Perform overlap-add reconstruction
+      for i, segment in enumerate(test_predictions_np):
+        position = i * hop_size
+        
+        # Apply window to reconstructed segment
+        windowed_segment = segment * window
+        
+        # Add to reconstruction buffer
+        end_pos = min(position + segment_len, expected_length)
+        seg_len = end_pos - position
+        reconstructed_audio[position:end_pos] += windowed_segment[:seg_len]
+        window_sum[position:end_pos] += window[:seg_len]
+      
+      # Normalize by window sum
+      mask = window_sum > 1e-10
+      reconstructed_audio[mask] /= window_sum[mask]
+      
+      # Ensure audio is in valid range
+      if np.max(np.abs(reconstructed_audio)) > 0:
+        reconstructed_audio = reconstructed_audio / np.max(np.abs(reconstructed_audio))
+      
+      # Save reconstructed audio
+      audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(batch_id))
+      sf.write(audio_out, reconstructed_audio.astype(np.float32), sampling_rate)
+      print('🎵 Audio examples generated: {}'.format(audio_out))
+      
+      # TensorBoard logging
+      writer.add_audio('Reconstructed Audio', reconstructed_audio, batch_id, sample_rate=sampling_rate)
   
     torch.save(state, checkpoint_dir.joinpath('ckpt_{:05d}'.format(batch_id)))
   
@@ -287,8 +324,9 @@ state = {
 }
 
 if generate_test:
-      
-  init_test = True
+  
+  # Store all test predictions for proper overlap-add reconstruction
+  all_test_predictions = []
   
   for iterno, test_sample in enumerate(test_dataloader):
     with torch.no_grad():
@@ -297,23 +335,54 @@ if generate_test:
       # Ensure test_sample is float32 to match model dtype
       test_sample = test_sample.float()
       test_pred = model(test_sample)[0]
+      
+      # Store predictions on CPU to save GPU memory
+      all_test_predictions.append(test_pred.cpu())
   
-    if init_test:
-      test_predictions = test_pred
-      init_test = False
+  # Concatenate all predictions
+  test_predictions = torch.cat(all_test_predictions, 0)
+  test_predictions_np = test_predictions.numpy()
+  
+  # Get reconstruction parameters
+  num_segments = len(test_predictions_np)
+  segment_len = segment_length
+  hop_size = hop_length
+  
+  # Calculate expected output length
+  expected_length = (num_segments - 1) * hop_size + segment_len
+  
+  # Initialize buffers for overlap-add reconstruction
+  reconstructed_audio = np.zeros(expected_length)
+  window_sum = np.zeros(expected_length)
+  
+  # Create Hann window (same as used in dataset)
+  window = np.hanning(segment_len)
+  
+  # Perform overlap-add reconstruction
+  for i, segment in enumerate(test_predictions_np):
+    position = i * hop_size
     
-    else:
-      test_predictions = torch.cat([test_predictions, test_pred], 0)
+    # Apply window to reconstructed segment
+    windowed_segment = segment * window
     
+    # Add to reconstruction buffer
+    end_pos = min(position + segment_len, expected_length)
+    seg_len = end_pos - position
+    reconstructed_audio[position:end_pos] += windowed_segment[:seg_len]
+    window_sum[position:end_pos] += window[:seg_len]
+  
+  # Normalize by window sum
+  mask = window_sum > 1e-10
+  reconstructed_audio[mask] /= window_sum[mask]
+  
+  # Ensure audio is in valid range
+  if np.max(np.abs(reconstructed_audio)) > 0:
+    reconstructed_audio = reconstructed_audio / np.max(np.abs(reconstructed_audio))
+  
+  # Save final reconstructed audio
   audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(total_num_batches))
-  test_predictions_np = test_predictions.view(-1).cpu().numpy()
-  sf.write( audio_out, test_predictions_np, sampling_rate)
-  print('Audio examples generated: {}'.format(audio_out))
-
-  sf.write( audio_out, test_predictions_np, sampling_rate)
-  print('Last Audio examples generated: {}'.format(audio_out))
-  #TensorBoard_ReconstructedAudio 
-  writer.add_audio('Reconstructed Audio', test_predictions_np, batch_id, sample_rate=sampling_rate)
+  sf.write(audio_out, reconstructed_audio.astype(np.float32), sampling_rate)
+  print('🎵 Final audio examples generated: {}'.format(audio_out))
 
 # Save the last model as a checkpoint dict
 torch.save(state, checkpoint_dir.joinpath('ckpt_{:05d}'.format(total_num_batches)))
