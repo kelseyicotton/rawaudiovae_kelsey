@@ -5,7 +5,7 @@
 
 ## To Do List
 
-- [ ] Rerun Vae-windowing on erokia: print KLD; total; recon loss per batch
+- [x] Rerun Vae-windowing on erokia: print KLD; total; recon loss per batch
 - [ ] Rerun VAE with no windowing on training, calculate between train loss and recon loss; windowing after recon (after loss calculation). 
   - [ ] ! We use windowing to generate the audio files only. Make a new branch for this!
 
