@@ -293,7 +293,7 @@ for data in islice(training_dataloader, total_num_batches):
       # Save reconstructed audio
       audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(batch_id))
       sf.write(audio_out, reconstructed_audio.astype(np.float32), sampling_rate)
-      print('🎵 Audio examples generated: {}'.format(audio_out))
+      print('🎵    Audio examples generated: {}'.format(audio_out))
       
       # TensorBoard logging
       writer.add_audio('Reconstructed Audio', reconstructed_audio, batch_id, sample_rate=sampling_rate)
