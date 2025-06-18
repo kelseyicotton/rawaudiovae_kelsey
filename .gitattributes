@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-# Example of a `.gitattributes` file which reclassifies `.rb` files as Java:
-*.ipynb linguist-language=Python
-=======
-*.pack filter=lfs diff=lfs merge=lfs -text
->>>>>>> windowing-repo/main
