@@ -1,0 +1,190 @@
+import torch
+import torchaudio
+import librosa
+from torch.utils.data import IterableDataset
+import pathlib
+from pathlib import Path
+import numpy as np
+from itertools import chain, cycle
+import random
+
+class IterableAudioDataset(IterableDataset):
+    """
+    This is the main class that calculates the streams CQT spectrogram frames
+
+    # Iterable Dataset class structure source:
+    Source: https://medium.com/speechmatics/how-to-build-a-streaming-dataloader-with-pytorch-a66dd891d9dd
+
+    The current loading mechanism shuffles the audio file list, but not the audio windows. 
+    
+    """
+
+    def __init__(self, audio_folder, sampling_rate, hop_size, dtype, device, shuffle = True):
+        
+        self.sampling_rate = sampling_rate
+        self.hop_size = hop_size
+        self.dtype = dtype
+        self.device = device
+        self.shuffle = shuffle
+
+        if isinstance(audio_folder, pathlib.PurePath):
+            self.audio_folder = audio_folder
+        else: 
+            self.audio_folder = Path(audio_folder)
+
+        self.audio_file_list = [f for f in audio_folder.glob('*.wav')]
+        self.num_files = len(self.audio_file_list)
+        
+        # Set segment_length (this should match your config segment_length)
+        self.segment_length = 1024
+
+    @property
+    def shuffled_data_list(self):
+        # This is a workaround for shuffling. We only shuffle the audio file list
+        # MAKE SURE THE DATALOADER IN THE TRAINING SCRIPT IS SHUFFLE FALSE.
+        return random.sample(self.audio_file_list, len(self.audio_file_list))
+
+    def apply_window(self, segments):
+        """
+        Apply Hann window to audio segments for better audio reconstructions
+        """
+
+        window = np.hanning(self.segment_length)
+
+        windowed_segments = [seg * window for seg in segments]
+
+        return windowed_segments
+
+    def process_data(self, audio_file):
+        
+        # torchaudio.load with multichannel. Let's use all channels as content for training
+        audio_np, audio_sr = torchaudio.load(audio_file)
+
+        # Check if the file sampling rate is different than the config sampling_rate. This is done because librosa loads slower if sr != None above.
+        if audio_sr != self.sampling_rate:
+            audio_np = torchaudio.functional.resample(audio_np, audio_sr, self.sampling_rate)
+
+        # Flatten to mono if stereo (take first channel)
+        if audio_np.shape[0] > 1:
+            audio_np = audio_np[0:1, :]  # Keep first channel
+        
+        # Flatten to 1D
+        audio_np = audio_np.flatten()
+        
+        # Pad if the length is not a multiplier of hop_size
+        if len(audio_np) % self.hop_size != 0:
+            num_zeros = self.hop_size - (len(audio_np) % self.hop_size)
+            audio_np = torch.nn.functional.pad(audio_np, (0, num_zeros), 'constant')            
+        
+        # Convert to numpy for segment processing
+        audio_np = audio_np.numpy()
+        
+        # Generate segments of fixed size (segment_length)
+        segments = [audio_np[i:i+self.segment_length] for i in range(0, len(audio_np), self.hop_size)]
+        segments = [seg for seg in segments if len(seg) == self.segment_length] #ensure segments are all same length
+        
+        # Apply windowing to segments
+        segments = self.apply_window(segments)
+        
+        for segment in segments:
+            # Convert back to tensor
+            segment_tensor = torch.tensor(segment, dtype=torch.float32)
+            
+            # Move to device if CUDA
+            if self.device.type == "cuda":
+                segment_tensor = segment_tensor.to(self.device)
+            
+            yield segment_tensor
+
+    def get_stream(self, audio_file_list):
+        return chain.from_iterable(map(self.process_data, cycle(audio_file_list)))
+        
+    def __iter__(self):
+        if self.shuffle:
+            return self.get_stream(self.shuffled_data_list)
+        else: 
+            return self.get_stream(self.audio_file_list)
+
+class AudioDataset(torch.utils.data.Dataset):
+    """
+    This is the main class that calculates the spectrogram and returns the
+    spectrogram, audio pair.
+    """
+
+    def __init__(self, audio_np, segment_length, sampling_rate, hop_size, transform=None):
+        
+        self.transform = transform
+        self.sampling_rate = sampling_rate
+        self.segment_length = segment_length
+        self.hop_size = hop_size
+        
+        if segment_length % hop_size != 0:
+            raise ValueError("segment_length {} is not a multiple of hop_size {}".format(segment_length, hop_size))
+
+        if len(audio_np) % hop_size != 0:
+            num_zeros = hop_size - (len(audio_np) % hop_size)
+            audio_np = np.pad(audio_np, (0, num_zeros), 'constant', constant_values=(0,0))
+
+        self.audio_np = audio_np
+        
+    def __getitem__(self, index):
+        
+        # Take segment
+        seg_start = index * self.hop_size
+        seg_end = (index * self.hop_size) + self.segment_length
+        sample = self.audio_np[ seg_start : seg_end ]
+        
+        if self.transform:
+            sample = self.transform(sample)
+
+        return sample
+
+    def __len__(self):
+        return (len(self.audio_np) // self.hop_size) - (self.segment_length // self.hop_size) + 1
+
+class ToTensor(object):
+    """Convert ndarrays in sample to Tensors."""
+
+    def __call__(self, sample):
+        return torch.from_numpy(sample)
+
+class TestDataset(torch.utils.data.Dataset):
+    """
+    This is the main class that calculates the spectrogram and returns the
+    spectrogram, audio pair.
+    """
+
+    def __init__(self, audio_np, segment_length, sampling_rate, hop_size=128, transform=None):
+        
+        self.transform = transform
+        self.sampling_rate = sampling_rate
+        self.segment_length = segment_length
+        self.hop_size = hop_size  # Add hop_size parameter
+        
+        # Pad audio to ensure we can extract overlapping segments
+        if len(audio_np) % hop_size != 0:
+            num_zeros = hop_size - (len(audio_np) % hop_size)
+            audio_np = np.pad(audio_np, (0, num_zeros), 'constant', constant_values=(0,0))
+
+        self.audio_np = audio_np
+        # Create the window once during initialisation # 🆕
+        self.window = np.hanning(self.segment_length) # 🆕
+        
+    def __getitem__(self, index):
+        
+        # Take overlapping segment using hop_size (like training data)
+        seg_start = index * self.hop_size
+        seg_end = seg_start + self.segment_length
+        sample = self.audio_np[ seg_start : seg_end ]
+
+        # Apply windowing to segment # 🆕
+        sample = sample * self.window # 🆕
+        
+        if self.transform:
+            sample = self.transform(sample)
+
+        return sample
+
+    def __len__(self):
+        # Calculate number of overlapping segments (like IterableAudioDataset)
+        return (len(self.audio_np) - self.segment_length) // self.hop_size + 1
