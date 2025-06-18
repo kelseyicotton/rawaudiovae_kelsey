@@ -34,6 +34,9 @@ class IterableAudioDataset(IterableDataset):
 
         self.audio_file_list = [f for f in audio_folder.glob('*.wav')]
         self.num_files = len(self.audio_file_list)
+        
+        # Set segment_length (this should match your config segment_length)
+        self.segment_length = 1024
 
     @property
     def shuffled_data_list(self):
@@ -62,17 +65,28 @@ class IterableAudioDataset(IterableDataset):
             num_zeros = self.hop_size - (len(audio_np) % self.hop_size)
             audio_np = torch.nn.functional.pad(audio_np, (0, num_zeros), 'constant')            
         
-        # Generate segments of fixed size (segment_length)
-        segment_length = 1024  # This should match your config segment_length
+        # Convert to numpy for segment processing
+        audio_np = audio_np.numpy()
         
-        for i in range(0, len(audio_np) - segment_length + 1, self.hop_size):
-            segment = audio_np[i:i + segment_length]
+        # Generate overlapping segments (NO windowing for training data)
+        num_segments = (len(audio_np) - self.segment_length) // self.hop_size + 1
+        
+        for i in range(num_segments):
+            # Take overlapping segment using hop_size
+            seg_start = i * self.hop_size
+            seg_end = seg_start + self.segment_length
+            segment = audio_np[seg_start:seg_end]
+            
+            # NO windowing applied here - raw segments for training
+            
+            # Convert to tensor
+            segment_tensor = torch.tensor(segment, dtype=torch.float32)
             
             # Move to device if CUDA
             if self.device.type == "cuda":
-                segment = segment.to(self.device)
+                segment_tensor = segment_tensor.to(self.device)
             
-            yield segment
+            yield segment_tensor
 
     def get_stream(self, audio_file_list):
         return chain.from_iterable(map(self.process_data, cycle(audio_file_list)))
@@ -112,6 +126,8 @@ class AudioDataset(torch.utils.data.Dataset):
         seg_end = (index * self.hop_size) + self.segment_length
         sample = self.audio_np[ seg_start : seg_end ]
         
+        # NO windowing applied here - raw segments for training
+        
         if self.transform:
             sample = self.transform(sample)
 
@@ -132,24 +148,28 @@ class TestDataset(torch.utils.data.Dataset):
     spectrogram, audio pair.
     """
 
-    def __init__(self, audio_np, segment_length, sampling_rate, transform=None):
+    def __init__(self, audio_np, segment_length, sampling_rate, hop_size=128, transform=None):
         
         self.transform = transform
         self.sampling_rate = sampling_rate
         self.segment_length = segment_length
+        self.hop_size = hop_size  # Add hop_size parameter
         
-        if len(audio_np) % segment_length != 0:
-            num_zeros = segment_length - (len(audio_np) % segment_length)
+        # Pad audio to ensure we can extract overlapping segments
+        if len(audio_np) % hop_size != 0:
+            num_zeros = hop_size - (len(audio_np) % hop_size)
             audio_np = np.pad(audio_np, (0, num_zeros), 'constant', constant_values=(0,0))
 
         self.audio_np = audio_np
         
     def __getitem__(self, index):
         
-        # Take segment
-        seg_start = index * self.segment_length
-        seg_end = (index * self.segment_length) + self.segment_length
+        # Take overlapping segment using hop_size
+        seg_start = index * self.hop_size
+        seg_end = seg_start + self.segment_length
         sample = self.audio_np[ seg_start : seg_end ]
+
+        # NO windowing applied here - raw segments for training/testing
         
         if self.transform:
             sample = self.transform(sample)
@@ -157,4 +177,5 @@ class TestDataset(torch.utils.data.Dataset):
         return sample
 
     def __len__(self):
-        return len(self.audio_np) // self.segment_length
+        # Calculate number of overlapping segments
+        return (len(self.audio_np) - self.segment_length) // self.hop_size + 1
