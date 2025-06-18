@@ -9,7 +9,7 @@ from torch.nn import functional as F
 from torchvision import datasets, transforms
 
 from rawvae.model import VAE, loss_function
-from rawvae.tests import init_test_audio
+from rawvae.tests import init_test_audio, apply_window_to_segments, overlap_add_reconstruction
 from rawvae.dataset import IterableAudioDataset, AudioDataset, ToTensor
 
 import random
@@ -190,6 +190,8 @@ final_loss = 1000000
 # With Iterable Dataset, there is no epoch anymore. 
 model.train()
 train_loss = 0
+train_recon_loss = 0
+train_kl_loss = 0
 batch_id = 0
 
 for data in islice(training_dataloader, total_num_batches):
@@ -199,14 +201,23 @@ for data in islice(training_dataloader, total_num_batches):
     data = data.to(device)
   optimizer.zero_grad()
   recon_batch, mu, logvar = model(data)
-  loss = loss_function(recon_batch, data, mu, logvar, kl_beta, segment_length)
   
-  # Log batch loss
-  writer.add_scalar('Loss/Batch', loss.item(), batch_id)  #🪵 Log batch loss
-  print('====> Batch: {} - Loss: {:.9f}'.format(batch_id, loss.item()))
+  # Calculate detailed loss components
+  total_loss, recon_loss, kl_loss = loss_function(recon_batch, data, mu, logvar, kl_beta, segment_length, return_components=True)
+  
+  # Log individual loss components
+  writer.add_scalar('Loss/Total', total_loss.item(), batch_id)
+  writer.add_scalar('Loss/Reconstruction', recon_loss.item(), batch_id)
+  writer.add_scalar('Loss/KL_Divergence', kl_loss.item(), batch_id)
+  
+  # Print detailed loss information
+  print('====> Batch: {} - Total Loss: {:.9f} | Recon Loss: {:.9f} | KL Loss: {:.9f}'.format(
+      batch_id, total_loss.item(), recon_loss.item(), kl_loss.item()))
 
-  loss.backward()
-  train_loss += loss.item()
+  total_loss.backward()
+  train_loss += total_loss.item()
+  train_recon_loss += recon_loss.item()
+  train_kl_loss += kl_loss.item()
   optimizer.step()
 
   # Log learning rate
@@ -218,7 +229,10 @@ for data in islice(training_dataloader, total_num_batches):
 
   # If the checkpoint interval reached, start the process below
   if batch_id % checkpoint_interval == 0 and batch_id != 0: 
-    print('Checkpoint - Epoch {}'.format(batch_id))
+    print('Checkpoint - Batch {}'.format(batch_id))
+    print('Average Losses - Total: {:.9f} | Recon: {:.9f} | KL: {:.9f}'.format(
+        train_loss / batch_id, train_recon_loss / batch_id, train_kl_loss / batch_id))
+    
     state = {
       'batch_id': batch_id,
       'state_dict': model.state_dict(),
@@ -233,22 +247,29 @@ for data in islice(training_dataloader, total_num_batches):
         with torch.no_grad():
           if device.type == "cuda":
             test_sample = test_sample.to(device)
-          test_pred = model(test_sample)[0]
+          test_pred_raw = model(test_sample)[0]
+          
+          # Apply windowing to predictions for audio generation ONLY
+          test_pred_windowed = apply_window_to_segments(test_pred_raw, window_type='hann')
         
         if init_test:
-          test_predictions = test_pred
+          test_predictions = test_pred_windowed
           init_test = False
-        
         else:
-          test_predictions = torch.cat([test_predictions, test_pred], 0)
+          test_predictions = torch.cat([test_predictions, test_pred_windowed], 0)
         
-      audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format( batch_id))
-      test_predictions_np = test_predictions.view(-1).cpu().numpy()
-      sf.write( audio_out, test_predictions_np, sampling_rate)
-      print('Audio examples generated: {}'.format(audio_out))
+      # Reconstruct audio using overlap-add for smoother output
+      audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(batch_id))
+      
+      # Use overlap-add reconstruction for better audio quality
+      test_predictions_reconstructed = overlap_add_reconstruction(test_predictions, hop_length)
+      test_predictions_np = test_predictions_reconstructed.cpu().numpy()
+      
+      sf.write(audio_out, test_predictions_np, sampling_rate)
+      print('Windowed audio examples generated: {}'.format(audio_out))
       
       #TensorBoard_ReconstructedAudio 
-      writer.add_audio('Reconstructed Audio', test_predictions_np, batch_id, sample_rate=sampling_rate)
+      writer.add_audio('Reconstructed Audio (Windowed)', test_predictions_np, batch_id, sample_rate=sampling_rate)
   
     torch.save(state, checkpoint_dir.joinpath('ckpt_{:05d}'.format(batch_id)))
   
@@ -269,6 +290,9 @@ for data in islice(training_dataloader, total_num_batches):
 final_loss = train_loss
 
 print('Last Checkpoint - batch_id {}'.format(batch_id))
+print('Final Average Losses - Total: {:.9f} | Recon: {:.9f} | KL: {:.9f}'.format(
+    final_loss / total_num_batches, train_recon_loss / total_num_batches, train_kl_loss / total_num_batches))
+
 state = {
   'batch_id': batch_id,
   'state_dict': model.state_dict(),
@@ -283,24 +307,28 @@ if generate_test:
     with torch.no_grad():
       if device.type == "cuda":
         test_sample = test_sample.to(device)
-      test_pred = model(test_sample)[0]
+      test_pred_raw = model(test_sample)[0]
+      
+      # Apply windowing for final audio generation
+      test_pred_windowed = apply_window_to_segments(test_pred_raw, window_type='hann')
   
     if init_test:
-      test_predictions = test_pred
+      test_predictions = test_pred_windowed
       init_test = False
-    
     else:
-      test_predictions = torch.cat([test_predictions, test_pred], 0)
+      test_predictions = torch.cat([test_predictions, test_pred_windowed], 0)
     
   audio_out = audio_log_dir.joinpath('test_reconst_{:05d}.wav'.format(total_num_batches))
-  test_predictions_np = test_predictions.view(-1).cpu().numpy()
-  sf.write( audio_out, test_predictions_np, sampling_rate)
-  print('Audio examples generated: {}'.format(audio_out))
-
-  sf.write( audio_out, test_predictions_np, sampling_rate)
-  print('Last Audio examples generated: {}'.format(audio_out))
+  
+  # Use overlap-add reconstruction for final audio
+  test_predictions_reconstructed = overlap_add_reconstruction(test_predictions, hop_length)
+  test_predictions_np = test_predictions_reconstructed.cpu().numpy()
+  
+  sf.write(audio_out, test_predictions_np, sampling_rate)
+  print('Final windowed audio examples generated: {}'.format(audio_out))
+  
   #TensorBoard_ReconstructedAudio 
-  writer.add_audio('Reconstructed Audio', test_predictions_np, batch_id, sample_rate=sampling_rate)
+  writer.add_audio('Reconstructed Audio (Windowed)', test_predictions_np, batch_id, sample_rate=sampling_rate)
 
 # Save the last model as a checkpoint dict
 torch.save(state, checkpoint_dir.joinpath('ckpt_{:05d}'.format(total_num_batches)))
